@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+:host(.white-text) {
+  color: var(--gw-color-white);
+}
+.image {
+  margin-top: var(--gw-space-m);
+}
+/* RESPONSIVE */
+/*sm*/
+@media (min-width: 576px) {
+}
+/*md*/
+@media (min-width: 768px) {
+}
+/*lg*/
+@media (min-width: 992px) {
+  .image {
+    margin-top: 0;
+  }
+}
+/*xl*/
+@media (min-width: 1200px) {
+}
+/*xxl*/
+@media (min-width: 1400px) {
+}

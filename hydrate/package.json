@@ -1,0 +1,6 @@
+{
+  "name": "gwds/hydrate",
+  "description": "gwds component hydration app.",
+  "main": "index.js",
+  "types": "index.d.ts"
+}
