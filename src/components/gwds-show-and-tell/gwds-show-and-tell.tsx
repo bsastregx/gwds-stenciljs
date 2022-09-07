@@ -1,8 +1,8 @@
 import { Component, Host, h, Prop, State } from '@stencil/core';
 
 @Component({
-  tag: 'gw-show-and-tell',
-  styleUrl: 'gw-show-and-tell.scss',
+  tag: 'gwds-show-and-tell',
+  styleUrl: 'gwds-show-and-tell.scss',
   shadow: true,
 })
 export class GwShowAndTell {
@@ -39,7 +39,7 @@ export class GwShowAndTell {
     return (
       <Host
         style={{
-          backgroundColor: `var(--gw-color-${this.bgColor})`,
+          backgroundColor: `var(--gwds-color-${this.bgColor})`,
         }}
         class={{ 'white-text': this.whiteText }}
       >
@@ -53,14 +53,14 @@ export class GwShowAndTell {
           <div class={this.rowClasses}>
             <div class={this.leftColClasses}>
               {this.preTitle ? (
-                <gw-title type="h3" looks="h4" light class={{ 'pre-title': true }}>
+                <gwds-title type="h3" looks="h4" light class={{ 'pre-title': true }}>
                   {this.preTitle}
-                </gw-title>
+                </gwds-title>
               ) : null}
               {this.mainTitle ? (
-                <gw-title type="h2" looks="h3">
+                <gwds-title type="h2" looks="h3">
                   {this.mainTitle}
-                </gw-title>
+                </gwds-title>
               ) : null}
               <slot></slot>
             </div>

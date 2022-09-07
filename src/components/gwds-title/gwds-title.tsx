@@ -1,8 +1,8 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'gw-title',
-  styleUrl: 'gw-title.scss',
+  tag: 'gwds-title',
+  styleUrl: 'gwds-title.scss',
   shadow: true,
 })
 export class GwTitle {

@@ -6,7 +6,7 @@
   position: relative;
 }
 :host(.white-text) {
-  color: var(--gw-color-white);
+  color: var(--gwds-color-white);
 }
 .container {
   position: relative;
@@ -23,7 +23,7 @@
   top: 0;
   left: 0;
   opacity: 0;
-  transition: var(--gw-transition-regular);
+  transition: var(--gwds-transition-regular);
 
   &--one {
     z-index: 5;

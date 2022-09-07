@@ -1,8 +1,8 @@
 import { Component, Host, h, Prop, State } from '@stencil/core';
 
 @Component({
-  tag: 'gw-look-at-me',
-  styleUrl: 'gw-look-at-me.scss',
+  tag: 'gwds-look-at-me',
+  styleUrl: 'gwds-look-at-me.scss',
   shadow: true,
 })
 export class GwLookAtMe {
@@ -32,7 +32,7 @@ export class GwLookAtMe {
   componentWillLoad() {
     //define this.rowClasses and this.colClasses css classes.
     if (this.alignContent === 'center') {
-      this.rowClasses = 'row justify-content-md-center text-md-center';
+      this.rowClasses = 'row justify-content-md-center tac-md';
       this.colClasses = 'col-12 col-lg-7 col-xl-6';
     } else if (this.alignContent === 'right') {
       this.rowClasses = 'row justify-content-md-end';
@@ -73,7 +73,7 @@ export class GwLookAtMe {
     return (
       <Host
         style={{
-          backgroundColor: `var(--gw-color-${this.bgColor})`,
+          backgroundColor: `var(--gwds-color-${this.bgColor})`,
           backgroundImage: `url(${this.bgImage})`,
           backgroundSize: this.bgSize,
           backgroundPosition: this.bgPosition,
@@ -90,14 +90,14 @@ export class GwLookAtMe {
           <div class={this.rowClasses}>
             <div class={this.colClasses}>
               {this.preTitle ? (
-                <gw-title type="h3" looks="h3" light class={{ 'pre-title': true }} mt-0>
+                <gwds-title type="h3" looks="h3" light class={{ 'pre-title': true }} mt-0>
                   {this.preTitle}
-                </gw-title>
+                </gwds-title>
               ) : null}
               {this.mainTitle ? (
-                <gw-title type="h2" looks="h1" mt0={!this.preTitle ? true : false}>
+                <gwds-title type="h2" looks="h1" mt0={!this.preTitle ? true : false}>
                   {this.mainTitle}
-                </gw-title>
+                </gwds-title>
               ) : null}
               <slot></slot>
             </div>

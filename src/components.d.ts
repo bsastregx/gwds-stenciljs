@@ -6,14 +6,14 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface GwButton {
+    interface GwdsButton {
         "blank": boolean;
         "label": string;
         "size": 'small' | 'regular';
         "type": 'primary' | 'secondary' | 'tertiary';
         "url": string;
     }
-    interface GwLookAtMe {
+    interface GwdsLookAtMe {
         "alignContent": 'left' | 'center' | 'right';
         "bgColor": string;
         "bgImage": string;
@@ -29,7 +29,7 @@ export namespace Components {
         "test": string;
         "whiteText": boolean;
     }
-    interface GwShowAndTell {
+    interface GwdsShowAndTell {
         "alignContent": 'left' | 'right';
         "bgColor": string;
         "imageAlt": string;
@@ -40,86 +40,54 @@ export namespace Components {
         "pt0": boolean;
         "whiteText": boolean;
     }
-    interface GwTest {
-        "bgColor": string;
-        "theTitle": string;
-    }
-    interface GwTitle {
+    interface GwdsTitle {
         "light": boolean;
         "looks": string;
         "mt0": boolean;
         "type": string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
 }
 declare global {
-    interface HTMLGwButtonElement extends Components.GwButton, HTMLStencilElement {
+    interface HTMLGwdsButtonElement extends Components.GwdsButton, HTMLStencilElement {
     }
-    var HTMLGwButtonElement: {
-        prototype: HTMLGwButtonElement;
-        new (): HTMLGwButtonElement;
+    var HTMLGwdsButtonElement: {
+        prototype: HTMLGwdsButtonElement;
+        new (): HTMLGwdsButtonElement;
     };
-    interface HTMLGwLookAtMeElement extends Components.GwLookAtMe, HTMLStencilElement {
+    interface HTMLGwdsLookAtMeElement extends Components.GwdsLookAtMe, HTMLStencilElement {
     }
-    var HTMLGwLookAtMeElement: {
-        prototype: HTMLGwLookAtMeElement;
-        new (): HTMLGwLookAtMeElement;
+    var HTMLGwdsLookAtMeElement: {
+        prototype: HTMLGwdsLookAtMeElement;
+        new (): HTMLGwdsLookAtMeElement;
     };
-    interface HTMLGwShowAndTellElement extends Components.GwShowAndTell, HTMLStencilElement {
+    interface HTMLGwdsShowAndTellElement extends Components.GwdsShowAndTell, HTMLStencilElement {
     }
-    var HTMLGwShowAndTellElement: {
-        prototype: HTMLGwShowAndTellElement;
-        new (): HTMLGwShowAndTellElement;
+    var HTMLGwdsShowAndTellElement: {
+        prototype: HTMLGwdsShowAndTellElement;
+        new (): HTMLGwdsShowAndTellElement;
     };
-    interface HTMLGwTestElement extends Components.GwTest, HTMLStencilElement {
+    interface HTMLGwdsTitleElement extends Components.GwdsTitle, HTMLStencilElement {
     }
-    var HTMLGwTestElement: {
-        prototype: HTMLGwTestElement;
-        new (): HTMLGwTestElement;
-    };
-    interface HTMLGwTitleElement extends Components.GwTitle, HTMLStencilElement {
-    }
-    var HTMLGwTitleElement: {
-        prototype: HTMLGwTitleElement;
-        new (): HTMLGwTitleElement;
-    };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLGwdsTitleElement: {
+        prototype: HTMLGwdsTitleElement;
+        new (): HTMLGwdsTitleElement;
     };
     interface HTMLElementTagNameMap {
-        "gw-button": HTMLGwButtonElement;
-        "gw-look-at-me": HTMLGwLookAtMeElement;
-        "gw-show-and-tell": HTMLGwShowAndTellElement;
-        "gw-test": HTMLGwTestElement;
-        "gw-title": HTMLGwTitleElement;
-        "my-component": HTMLMyComponentElement;
+        "gwds-button": HTMLGwdsButtonElement;
+        "gwds-look-at-me": HTMLGwdsLookAtMeElement;
+        "gwds-show-and-tell": HTMLGwdsShowAndTellElement;
+        "gwds-title": HTMLGwdsTitleElement;
     }
 }
 declare namespace LocalJSX {
-    interface GwButton {
+    interface GwdsButton {
         "blank"?: boolean;
         "label"?: string;
         "size"?: 'small' | 'regular';
         "type"?: 'primary' | 'secondary' | 'tertiary';
         "url"?: string;
     }
-    interface GwLookAtMe {
+    interface GwdsLookAtMe {
         "alignContent"?: 'left' | 'center' | 'right';
         "bgColor"?: string;
         "bgImage"?: string;
@@ -135,7 +103,7 @@ declare namespace LocalJSX {
         "test"?: string;
         "whiteText"?: boolean;
     }
-    interface GwShowAndTell {
+    interface GwdsShowAndTell {
         "alignContent"?: 'left' | 'right';
         "bgColor"?: string;
         "imageAlt"?: string;
@@ -146,49 +114,27 @@ declare namespace LocalJSX {
         "pt0"?: boolean;
         "whiteText"?: boolean;
     }
-    interface GwTest {
-        "bgColor"?: string;
-        "theTitle"?: string;
-    }
-    interface GwTitle {
+    interface GwdsTitle {
         "light"?: boolean;
         "looks"?: string;
         "mt0"?: boolean;
         "type"?: string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface IntrinsicElements {
-        "gw-button": GwButton;
-        "gw-look-at-me": GwLookAtMe;
-        "gw-show-and-tell": GwShowAndTell;
-        "gw-test": GwTest;
-        "gw-title": GwTitle;
-        "my-component": MyComponent;
+        "gwds-button": GwdsButton;
+        "gwds-look-at-me": GwdsLookAtMe;
+        "gwds-show-and-tell": GwdsShowAndTell;
+        "gwds-title": GwdsTitle;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "gw-button": LocalJSX.GwButton & JSXBase.HTMLAttributes<HTMLGwButtonElement>;
-            "gw-look-at-me": LocalJSX.GwLookAtMe & JSXBase.HTMLAttributes<HTMLGwLookAtMeElement>;
-            "gw-show-and-tell": LocalJSX.GwShowAndTell & JSXBase.HTMLAttributes<HTMLGwShowAndTellElement>;
-            "gw-test": LocalJSX.GwTest & JSXBase.HTMLAttributes<HTMLGwTestElement>;
-            "gw-title": LocalJSX.GwTitle & JSXBase.HTMLAttributes<HTMLGwTitleElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "gwds-button": LocalJSX.GwdsButton & JSXBase.HTMLAttributes<HTMLGwdsButtonElement>;
+            "gwds-look-at-me": LocalJSX.GwdsLookAtMe & JSXBase.HTMLAttributes<HTMLGwdsLookAtMeElement>;
+            "gwds-show-and-tell": LocalJSX.GwdsShowAndTell & JSXBase.HTMLAttributes<HTMLGwdsShowAndTellElement>;
+            "gwds-title": LocalJSX.GwdsTitle & JSXBase.HTMLAttributes<HTMLGwdsTitleElement>;
         }
     }
 }

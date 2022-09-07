@@ -1,0 +1,71 @@
+.tal {
+  text-align: left;
+}
+.tac {
+  text-align: center;
+}
+.tar {
+  text-align: right;
+}
+
+/* RESPONSIVE */
+/*sm*/
+@media (min-width: 576px) {
+  .tal-sm {
+    text-align: left;
+  }
+  .tac-sm {
+    text-align: center;
+  }
+  .tar-sm {
+    text-align: right;
+  }
+}
+/*md*/
+@media (min-width: 768px) {
+  .tal-md {
+    text-align: left;
+  }
+  .tac-md {
+    text-align: center;
+  }
+  .tar-md {
+    text-align: right;
+  }
+}
+/*lg*/
+@media (min-width: 992px) {
+  .tal-lg {
+    text-align: left;
+  }
+  .tac-lg {
+    text-align: center;
+  }
+  .tar-lg {
+    text-align: right;
+  }
+}
+/*xl*/
+@media (min-width: 1200px) {
+  .tal-xl {
+    text-align: left;
+  }
+  .tac-xl {
+    text-align: center;
+  }
+  .tar-xl {
+    text-align: right;
+  }
+}
+/*xxl*/
+@media (min-width: 1400px) {
+  .tal-xxl {
+    text-align: left;
+  }
+  .tac-xxl {
+    text-align: center;
+  }
+  .tar-xxl {
+    text-align: right;
+  }
+}

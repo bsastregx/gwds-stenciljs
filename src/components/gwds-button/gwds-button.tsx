@@ -1,8 +1,8 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'gw-button',
-  styleUrl: 'gw-button.scss',
+  tag: 'gwds-button',
+  styleUrl: 'gwds-button.scss',
   shadow: true,
 })
 export class GwButton {

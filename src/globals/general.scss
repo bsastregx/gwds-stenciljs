@@ -1,17 +1,17 @@
 //section
 section {
-  padding-top: var(--gw-space-m);
-  padding-bottom: var(--gw-space-m);
+  padding-top: var(--gwds-space-m);
+  padding-bottom: var(--gwds-space-m);
   /* RESPONSIVE */
   @media (min-width: 576px) {
   }
   @media (min-width: 768px) {
-    padding-top: var(--gw-space-l);
-    padding-bottom: var(--gw-space-l);
+    padding-top: var(--gwds-space-l);
+    padding-bottom: var(--gwds-space-l);
   }
   @media (min-width: 992px) {
-    padding-top: var(--gw-space-xl);
-    padding-bottom: var(--gw-space-xl);
+    padding-top: var(--gwds-space-xl);
+    padding-bottom: var(--gwds-space-xl);
   }
   @media (min-width: 1200px) {
   }
@@ -24,5 +24,5 @@ section {
   --borderWidth: 3px;
   outline-width: var(--borderWidth);
   outline-style: solid;
-  outline-color: var(--gw-color-fuchsia-500);
+  outline-color: var(--gwds-color-fuchsia-500);
 }
