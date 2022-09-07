@@ -49,26 +49,6 @@ export class GwLookAtMe {
     }
   }
 
-  componentDidLoad() {
-    console.log(this.test);
-    this.animateBackgrounds();
-  }
-
-  animateBackgrounds() {
-    setTimeout(() => {
-      this.bgImageOne ? this.bgImageOneEl.classList.add('bg-image--show') : null;
-    }, 250);
-    setTimeout(() => {
-      this.bgImageTwo ? this.bgImageTwoEl.classList.add('bg-image--show') : null;
-    }, 350);
-    setTimeout(() => {
-      this.bgImageThree ? this.bgImageThreeEl.classList.add('bg-image--show') : null;
-    }, 450);
-    setTimeout(() => {
-      this.bgImageFour ? this.bgImageFourEl.classList.add('bg-image--show') : null;
-    }, 700);
-  }
-
   render() {
     return (
       <Host
@@ -104,18 +84,6 @@ export class GwLookAtMe {
             </div>
           </div>
         </section>
-        {this.bgImageOne ? (
-          <div ref={el => (this.bgImageOneEl = el as HTMLDivElement)} class="bg-image bg-image--one" style={{ backgroundImage: `url(${this.bgImageOne})` }}></div>
-        ) : null}
-        {this.bgImageTwo ? (
-          <div ref={el => (this.bgImageTwoEl = el as HTMLDivElement)} class="bg-image bg-image--two" style={{ backgroundImage: `url(${this.bgImageTwo})` }}></div>
-        ) : null}
-        {this.bgImageThree ? (
-          <div ref={el => (this.bgImageThreeEl = el as HTMLDivElement)} class="bg-image bg-image--three" style={{ backgroundImage: `url(${this.bgImageThree})` }}></div>
-        ) : null}
-        {this.bgImageFour ? (
-          <div ref={el => (this.bgImageFourEl = el as HTMLDivElement)} class="bg-image bg-image--four" style={{ backgroundImage: `url(${this.bgImageFour})` }}></div>
-        ) : null}
       </Host>
     );
   }
