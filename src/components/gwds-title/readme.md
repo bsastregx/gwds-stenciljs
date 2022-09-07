@@ -19,15 +19,15 @@
 
 ### Used by
 
- - [gw-look-at-me](../gw-look-at-me)
- - [gw-show-and-tell](../gw-show-and-tell)
+ - [gwds-look-at-me](../gwds-look-at-me)
+ - [gwds-show-and-tell](../gwds-show-and-tell)
 
 ### Graph
 ```mermaid
 graph TD;
-  gw-look-at-me --> gw-title
-  gw-show-and-tell --> gw-title
-  style gw-title fill:#f9f,stroke:#333,stroke-width:4px
+  gwds-look-at-me --> gwds-title
+  gwds-show-and-tell --> gwds-title
+  style gwds-title fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

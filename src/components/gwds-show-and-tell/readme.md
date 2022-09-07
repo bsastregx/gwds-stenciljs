@@ -24,13 +24,13 @@
 
 ### Depends on
 
-- [gw-title](../gw-title)
+- [gwds-title](../gwds-title)
 
 ### Graph
 ```mermaid
 graph TD;
-  gw-show-and-tell --> gw-title
-  style gw-show-and-tell fill:#f9f,stroke:#333,stroke-width:4px
+  gwds-show-and-tell --> gwds-title
+  style gwds-show-and-tell fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

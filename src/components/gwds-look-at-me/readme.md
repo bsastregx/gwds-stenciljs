@@ -29,13 +29,13 @@
 
 ### Depends on
 
-- [gw-title](../gw-title)
+- [gwds-title](../gwds-title)
 
 ### Graph
 ```mermaid
 graph TD;
-  gw-look-at-me --> gw-title
-  style gw-look-at-me fill:#f9f,stroke:#333,stroke-width:4px
+  gwds-look-at-me --> gwds-title
+  style gwds-look-at-me fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

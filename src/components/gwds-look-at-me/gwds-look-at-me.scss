@@ -8,10 +8,6 @@
 :host(.white-text) {
   color: var(--gwds-color-white);
 }
-.container {
-  position: relative;
-  z-index: 10;
-}
 .bg-image {
   display: block;
   background-repeat: no-repeat;
@@ -24,19 +20,6 @@
   left: 0;
   opacity: 0;
   transition: var(--gwds-transition-regular);
-
-  &--one {
-    z-index: 5;
-  }
-  &--two {
-    z-index: 4;
-  }
-  &--three {
-    z-index: 3;
-  }
-  &--four {
-    z-index: 2;
-  }
 
   &--show {
     opacity: 1;
