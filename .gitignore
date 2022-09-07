@@ -90,6 +90,7 @@ typings/
 # Stencil
 dist/
 www/
+hydrate/
 loader/
 .stencil/
 
