@@ -52,15 +52,16 @@ export class GwShowAndTell {
         >
           <div class={this.rowClasses}>
             <div class={this.leftColClasses}>
-              {this.preTitle ? (
-                <gwds-title type="h3" looks="h4" light class={{ 'pre-title': true }}>
-                  {this.preTitle}
-                </gwds-title>
-              ) : null}
+              {this.preTitle ? <h3 class="h4 h4--light mt-0">{this.preTitle}</h3> : null}
               {this.mainTitle ? (
-                <gwds-title type="h2" looks="h3">
+                <h2
+                  class={{
+                    'h3': true,
+                    'mt-0': !this.preTitle ? true : false,
+                  }}
+                >
                   {this.mainTitle}
-                </gwds-title>
+                </h2>
               ) : null}
               <slot></slot>
             </div>

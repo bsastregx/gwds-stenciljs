@@ -40,12 +40,6 @@ export namespace Components {
         "pt0": boolean;
         "whiteText": boolean;
     }
-    interface GwdsTitle {
-        "light": boolean;
-        "looks": string;
-        "mt0": boolean;
-        "type": string;
-    }
 }
 declare global {
     interface HTMLGwdsButtonElement extends Components.GwdsButton, HTMLStencilElement {
@@ -66,17 +60,10 @@ declare global {
         prototype: HTMLGwdsShowAndTellElement;
         new (): HTMLGwdsShowAndTellElement;
     };
-    interface HTMLGwdsTitleElement extends Components.GwdsTitle, HTMLStencilElement {
-    }
-    var HTMLGwdsTitleElement: {
-        prototype: HTMLGwdsTitleElement;
-        new (): HTMLGwdsTitleElement;
-    };
     interface HTMLElementTagNameMap {
         "gwds-button": HTMLGwdsButtonElement;
         "gwds-look-at-me": HTMLGwdsLookAtMeElement;
         "gwds-show-and-tell": HTMLGwdsShowAndTellElement;
-        "gwds-title": HTMLGwdsTitleElement;
     }
 }
 declare namespace LocalJSX {
@@ -114,17 +101,10 @@ declare namespace LocalJSX {
         "pt0"?: boolean;
         "whiteText"?: boolean;
     }
-    interface GwdsTitle {
-        "light"?: boolean;
-        "looks"?: string;
-        "mt0"?: boolean;
-        "type"?: string;
-    }
     interface IntrinsicElements {
         "gwds-button": GwdsButton;
         "gwds-look-at-me": GwdsLookAtMe;
         "gwds-show-and-tell": GwdsShowAndTell;
-        "gwds-title": GwdsTitle;
     }
 }
 export { LocalJSX as JSX };
@@ -134,7 +114,6 @@ declare module "@stencil/core" {
             "gwds-button": LocalJSX.GwdsButton & JSXBase.HTMLAttributes<HTMLGwdsButtonElement>;
             "gwds-look-at-me": LocalJSX.GwdsLookAtMe & JSXBase.HTMLAttributes<HTMLGwdsLookAtMeElement>;
             "gwds-show-and-tell": LocalJSX.GwdsShowAndTell & JSXBase.HTMLAttributes<HTMLGwdsShowAndTellElement>;
-            "gwds-title": LocalJSX.GwdsTitle & JSXBase.HTMLAttributes<HTMLGwdsTitleElement>;
         }
     }
 }

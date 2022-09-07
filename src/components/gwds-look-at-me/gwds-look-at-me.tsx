@@ -89,15 +89,16 @@ export class GwLookAtMe {
         >
           <div class={this.rowClasses}>
             <div class={this.colClasses}>
-              {this.preTitle ? (
-                <gwds-title type="h3" looks="h3" light class={{ 'pre-title': true }} mt-0>
-                  {this.preTitle}
-                </gwds-title>
-              ) : null}
+              {this.preTitle ? <h3 class="h3 h3--light mt-0">{this.preTitle}</h3> : null}
               {this.mainTitle ? (
-                <gwds-title type="h2" looks="h1" mt0={!this.preTitle ? true : false}>
+                <h2
+                  class={{
+                    'h1': true,
+                    'mt-0': !this.preTitle ? true : false,
+                  }}
+                >
                   {this.mainTitle}
-                </gwds-title>
+                </h2>
               ) : null}
               <slot></slot>
             </div>

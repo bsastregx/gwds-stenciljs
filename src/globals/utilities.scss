@@ -8,6 +8,10 @@
   text-align: right;
 }
 
+.font-weight-light {
+  font-weight: var(--gwds-font-weight-light);
+}
+
 /* RESPONSIVE */
 /*sm*/
 @media (min-width: 576px) {
