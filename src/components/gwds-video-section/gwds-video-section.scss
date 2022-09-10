@@ -1,0 +1,9 @@
+:host {
+  display: block;
+}
+.gwds-video-section {
+  display: block;
+  &.white-text {
+    color: var(--gwds__color--white);
+  }
+}

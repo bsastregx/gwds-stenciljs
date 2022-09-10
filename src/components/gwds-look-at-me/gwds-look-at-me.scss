@@ -1,28 +1,16 @@
 :host {
   display: block;
-  background-repeat: no-repeat;
-  background-size: 1600px;
-  background-position: bottom right;
-  position: relative;
 }
-:host(.white-text) {
-  color: var(--gwds-color-white);
-}
-.bg-image {
+.gwds-look-at-me {
   display: block;
   background-repeat: no-repeat;
   background-size: 1600px;
   background-position: bottom right;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: var(--gwds-transition-regular);
+  position: relative;
+  transition: var(--gwds__transition--regular) background-color;
 
-  &--show {
-    opacity: 1;
+  &.white-text {
+    color: var(--gwds__color--white);
   }
 }
 
@@ -35,7 +23,7 @@
 }
 /*lg*/
 @media (max-width: 991px) {
-  :host {
+  .gwds-look-at-me {
     background-image: none !important;
   }
 }

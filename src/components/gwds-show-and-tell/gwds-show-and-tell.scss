@@ -1,11 +1,14 @@
 :host {
   display: block;
 }
-:host(.white-text) {
-  color: var(--gwds-color-white);
+.gwds__show-and-tell {
+  display: block;
+  &.white-text {
+    color: var(--gwds__color--white);
+  }
 }
 .image {
-  margin-top: var(--gwds-space-m);
+  margin-top: var(--gwds__space--m);
 }
 /* RESPONSIVE */
 /*sm*/

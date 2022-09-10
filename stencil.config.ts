@@ -3,7 +3,7 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'gwds',
-  globalStyle: 'src/globals/tokens.scss',
+  globalStyle: 'src/globals/styles.scss',
   invisiblePrehydration: true,
   outputTargets: [
     {
@@ -25,9 +25,5 @@ export const config: Config = {
       type: 'dist-hydrate-script',
     },
   ],
-  plugins: [
-    sass({
-      injectGlobalPaths: ['src/globals/global.scss'],
-    }),
-  ],
+  plugins: [sass({})],
 };

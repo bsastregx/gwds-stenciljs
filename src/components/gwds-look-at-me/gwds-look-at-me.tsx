@@ -3,14 +3,9 @@ import { Component, Host, h, Prop, State } from '@stencil/core';
 @Component({
   tag: 'gwds-look-at-me',
   styleUrl: 'gwds-look-at-me.scss',
-  shadow: true,
+  shadow: false,
 })
 export class GwLookAtMe {
-  bgImageOneEl!: HTMLDivElement;
-  bgImageTwoEl!: HTMLDivElement;
-  bgImageThreeEl!: HTMLDivElement;
-  bgImageFourEl!: HTMLDivElement;
-
   @Prop() bgColor: string = null;
   @Prop() preTitle: string = null;
   @Prop() mainTitle: string = null;
@@ -19,12 +14,20 @@ export class GwLookAtMe {
   @Prop() pB0: boolean = false; //padding-bottom:0
   @Prop() alignContent: 'left' | 'center' | 'right' = 'left';
   @Prop() bgImage: string = null;
-  @Prop() bgImageOne: string = null;
-  @Prop() bgImageTwo: string = null;
-  @Prop() bgImageThree: string = null;
-  @Prop() bgImageFour: string = null;
   @Prop() bgSize: string = '1600px';
-  @Prop() test: string = null;
+  //Button Primary
+  @Prop() bpLabel: string = null;
+  @Prop() bpUrl: string = null;
+  @Prop() bpBlank: boolean = false;
+  //Button Secondary
+  @Prop() bsLabel: string = null;
+  @Prop() bsUrl: string = null;
+  @Prop() bsBlank: boolean = false;
+  //Button Tertiary
+  @Prop() btLabel: string = null;
+  @Prop() btUrl: string = null;
+  @Prop() btBlank: boolean = false;
+
   @State() rowClasses: string = null;
   @State() colClasses: string = null;
   @State() bgPosition: string = 'bottom right';
@@ -47,18 +50,27 @@ export class GwLookAtMe {
     if (this.alignContent === 'right') {
       this.bgPosition = 'bottom left';
     }
+
+    console.log(this.bpLabel);
+    console.log(this.bpUrl);
+  }
+
+  componentDidLoad() {
+    setTimeout(() => {
+      //this.bgColor = 'black';
+    }, 1000);
   }
 
   render() {
     return (
       <Host
+        class={{ 'gwds-look-at-me': true, 'white-text': this.whiteText }}
         style={{
-          backgroundColor: `var(--gwds-color-${this.bgColor})`,
+          backgroundColor: `var(--gwds__color--${this.bgColor})`,
           backgroundImage: `url(${this.bgImage})`,
           backgroundSize: this.bgSize,
           backgroundPosition: this.bgPosition,
         }}
-        class={{ 'white-text': this.whiteText }}
       >
         <section
           class={{
@@ -81,6 +93,9 @@ export class GwLookAtMe {
                 </h2>
               ) : null}
               <slot></slot>
+              {this.bpLabel && this.bpUrl ? <gwds-button label={this.bpLabel} type="primary" blank={this.bpBlank ? true : false}></gwds-button> : null}
+              {this.bsLabel && this.bsUrl ? <gwds-button label={this.bsLabel} type="secondary" blank={this.bsBlank ? true : false}></gwds-button> : null}
+              {this.btLabel && this.btUrl ? <gwds-button label={this.btLabel} type="tertiary" blank={this.btBlank ? true : false}></gwds-button> : null}
             </div>
           </div>
         </section>

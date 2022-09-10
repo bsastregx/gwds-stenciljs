@@ -8,9 +8,29 @@
     <script type="module" src="/build/gwds.esm.js"></script>
     <script nomodule src="/build/gwds.js"></script>
     <link rel="stylesheet" href="/build/gwds.css" />
-    <style></style>
   </head>
   <body>
+    <!-- QUOTE -->
+    <gwds-quote image-url="../assets/images/elvis.jpg" image-alt="Elvis Presley" person-name="osvaldo pasut" person-location="Intersoft - Argentina GeneXus" person-position="cto"
+      >Para transformarte digitalmente es esencial un aliado de trayectoria innovadora. A la hora de migrar nuestro principal producto, de 1.100.000 líneas de código, no dudamos de
+      que el camino hacia la inteligencia empresarial y digital se hacía con GeneXus™</gwds-quote
+    >
+
+    <!-- QUOTE (CENTER VERTICAL)-->
+    <gwds-quote bg-color="green-900" white-text image-url="../assets/images/elvis.jpg" image-alt="Elvis Presley" center-vertical
+      >Para transformarte digitalmente es esencial un aliado de trayectoria innovadora. A la hora de migrar nuestro principal producto, de 1.100.000 líneas de código...</gwds-quote
+    >
+
+    <!-- VIDEO (LEFT)-->
+    <gwds-video-section main-title="Software que crea Software" source="youtube" url="https://youtu.be/b0iRrgdaEaQ" full-width
+      >GeneXus, la solución Low Code para el Desarrollo de Software.</gwds-video-section
+    >
+
+    <!-- VIDEO (RIGHT)-->
+    <gwds-video-section bg-color="black" white-text align-content="right" main-title="Software que crea Software" source="youtube" url="https://youtu.be/b0iRrgdaEaQ" full-width
+      >GeneXus, la solución Low Code para el Desarrollo de Software.</gwds-video-section
+    >
+
     <!-- LOOK AT ME (LEFT) -->
     <gwds-look-at-me
       pre-title="Pre-title"
@@ -19,6 +39,12 @@
       align-content="left"
       white-text
       bg-image="../assets/images/gwds__look-at-me-right-img.svg"
+      bp-label="Label"
+      bp-url="/label"
+      bs-label="Buy GeneXus"
+      bs-url="/label"
+      bt-label="Get a Refund"
+      bt-url="/label"
     >
       <p>
         Lorem <strong>Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has beenLorem Ipsum is simply dummy text of the printing and
@@ -27,14 +53,23 @@
     </gwds-look-at-me>
 
     <!-- LOOK AT ME (CENTER) -->
-    <gwds-look-at-me pre-title="Pre-title" main-title="Meet Our Academic Program Partner" bg-color="green-900" align-content="center" white-text>
+    <gwds-look-at-me
+      pre-title="Pre-title"
+      main-title="Meet Our Academic Program Partner"
+      bg-color="green-900"
+      align-content="center"
+      white-text
+      bp-label="Label"
+      bp-url="/label"
+      bs-label="Buy GeneXus"
+      bs-url="/label"
+      bt-label="Get a Refund"
+      bt-url="/label"
+    >
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has beenLorem Ipsum is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been
       </p>
-      <gwds-button label="Label" type="primary"> label </gwds-button>
-      <gwds-button label="Buy GeneXus" type="secondary"></gwds-button>
-      <gwds-button label="Get a Refund" type="tertiary"></gwds-button>
     </gwds-look-at-me>
 
     <!-- LOOK AT ME (RIGHT) -->
@@ -45,14 +80,17 @@
       align-content="right"
       white-text
       bg-image="../assets/images/gwds__look-at-me-left-img.svg"
+      bp-label="Label"
+      bp-url="/label"
+      bs-label="Buy GeneXus"
+      bs-url="/label"
+      bt-label="Get a Refund"
+      bt-url="/label"
     >
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has beenLorem Ipsum is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been
       </p>
-      <gwds-button label="Label" type="primary"></gwds-button>
-      <gwds-button label="Buy GeneXus" type="secondary"></gwds-button>
-      <gwds-button label="Get a Refund" type="tertiary"></gwds-button>
     </gwds-look-at-me>
 
     <!-- SHOW AND TELL (LEFT) -->
@@ -69,7 +107,15 @@
     </gwds-show-and-tell>
 
     <!-- SHOW AND TELL (RIGHT) -->
-    <gwds-show-and-tell pre-title="Save the date" main-title="Enterprise Low-Code 2022" image-url="../assets/images/gwds__show-and-tell-img.svg" align-content="right" pt-0>
+    <gwds-show-and-tell
+      pre-title="Save the date"
+      main-title="Enterprise Low-Code 2022"
+      image-url="../assets/images/gwds__show-and-tell-img.svg"
+      align-content="right"
+      pt-0
+      bg-color="green-900"
+      white-text
+    >
       <p>
         ¡Presentaremos lo que se viene en <strong>GeneXus 18</strong>! Descubre todas las novedades de la nueva versión de la Plataforma de Desarrollo de Software que ayuda a las
         empresas a mejorar la vida de las personas.

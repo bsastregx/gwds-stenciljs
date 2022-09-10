@@ -20,19 +20,6 @@
 | `whiteText`    | `white-text`    |             | `boolean`           | `false`  |
 
 
-## Dependencies
-
-### Depends on
-
-- [gwds-title](../gwds-title)
-
-### Graph
-```mermaid
-graph TD;
-  gwds-show-and-tell --> gwds-title
-  style gwds-show-and-tell fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

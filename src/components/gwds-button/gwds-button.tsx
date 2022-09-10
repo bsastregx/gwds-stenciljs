@@ -3,7 +3,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
 @Component({
   tag: 'gwds-button',
   styleUrl: 'gwds-button.scss',
-  shadow: true,
+  shadow: false,
 })
 export class GwButton {
   @Prop() label: string = null;
@@ -14,16 +14,16 @@ export class GwButton {
 
   render() {
     return (
-      <Host>
+      <Host class={{ 'gwds-button': true }}>
         <a
           tabindex="0"
           class={{
-            'button': true,
-            'button--primary': this.type === 'primary',
-            'button--secondary': this.type === 'secondary',
-            'button--tertiary': this.type === 'tertiary',
-            'button--small': this.size === 'small',
-            'button--regular': this.size === 'regular',
+            'gwds-button__button': true,
+            'gwds-button__button--primary': this.type === 'primary',
+            'gwds-button__button--secondary': this.type === 'secondary',
+            'gwds-button__button--tertiary': this.type === 'tertiary',
+            'gwds-button__button--small': this.size === 'small',
+            'gwds-button__button--regular': this.size === 'regular',
           }}
           href={this.url}
           target={this.blank ? '_blank' : '_self'}

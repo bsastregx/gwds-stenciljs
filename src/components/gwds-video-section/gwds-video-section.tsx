@@ -1,20 +1,21 @@
 import { Component, Host, h, Prop, State } from '@stencil/core';
 
 @Component({
-  tag: 'gwds-show-and-tell',
-  styleUrl: 'gwds-show-and-tell.scss',
+  tag: 'gwds-video-section',
+  styleUrl: 'gwds-video-section.scss',
   shadow: false,
 })
-export class GwShowAndTell {
+export class GwdsVideoSection {
   @Prop() bgColor: string = null;
-  @Prop() preTitle: string = null;
   @Prop() mainTitle: string = null;
   @Prop() whiteText: boolean = false;
   @Prop() pt0: boolean = false; //padding-top:0
   @Prop() pb0: boolean = false; //padding-bottom:0
   @Prop() alignContent: 'left' | 'right' = 'left';
-  @Prop() imageUrl: string = null;
-  @Prop() imageAlt: string = null;
+  @Prop() alignTop: boolean = false;
+  @Prop() url: string = null;
+  @Prop() source: 'youtube' | 'vimeo';
+  @Prop() fullWidth: boolean = true;
   @State() rowClasses: string = null;
   @State() leftColClasses: string = null;
   @State() rightColClasses: string = null;
@@ -23,13 +24,13 @@ export class GwShowAndTell {
     //define this.rowClasses and this.colClasses css classes.
     if (this.alignContent === 'right') {
       this.rowClasses = 'row justify-content-between';
-      this.leftColClasses = 'col-12 col-lg-6 order-lg-2 d-flex align-items-center';
-      this.rightColClasses = 'col-12 col-lg-5 d-flex align-items-center order-lg-1';
+      this.leftColClasses = 'col-12 col-lg-5 order-lg-2 d-flex align-items-center';
+      this.rightColClasses = 'col-12 col-lg-6 d-flex align-items-center order-lg-1';
     } else {
       //is left
       this.rowClasses = 'row justify-content-between';
-      this.leftColClasses = 'col-12 col-lg-6 order-lg-1';
-      this.rightColClasses = 'col-12 col-lg-5 d-flex align-items-center order-lg-2';
+      this.leftColClasses = 'col-12 col-lg-5 order-lg-1 d-flex align-items-center';
+      this.rightColClasses = 'col-12 col-lg-6 d-flex align-items-center order-lg-2';
     }
   }
 
@@ -38,31 +39,25 @@ export class GwShowAndTell {
   render() {
     return (
       <Host
+        class={{ 'gwds-video-section': true, 'white-text': this.whiteText }}
         style={{
           backgroundColor: `var(--gwds__color--${this.bgColor})`,
         }}
-        class={{ 'gwds__show-and-tell': true, 'white-text': this.whiteText }}
       >
         <section>
           <div class="container">
             <div class={this.rowClasses}>
               <div class={this.leftColClasses}>
                 <div>
-                  {this.preTitle ? <h3 class="h4 h4--light mt-0">{this.preTitle}</h3> : null}
-                  {this.mainTitle ? (
-                    <h2
-                      class={{
-                        'h3': true,
-                        'mt-0': !this.preTitle ? true : false,
-                      }}
-                    >
-                      {this.mainTitle}
-                    </h2>
-                  ) : null}
-                  <slot></slot>
+                  {this.mainTitle ? <h2 class="h3 mt-0">{this.mainTitle}</h2> : null}
+                  <p>
+                    <slot></slot>
+                  </p>
                 </div>
               </div>
-              <div class={this.rightColClasses}>{this.imageUrl ? <img class="image" src={this.imageUrl} alt={this.imageAlt}></img> : null}</div>
+              <div class={this.rightColClasses}>
+                <gwds-video url={this.source} fullWidth={this.fullWidth}></gwds-video>
+              </div>
             </div>
           </div>
         </section>

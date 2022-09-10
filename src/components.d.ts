@@ -17,16 +17,30 @@ export namespace Components {
         "alignContent": 'left' | 'center' | 'right';
         "bgColor": string;
         "bgImage": string;
-        "bgImageFour": string;
-        "bgImageOne": string;
-        "bgImageThree": string;
-        "bgImageTwo": string;
         "bgSize": string;
+        "bpBlank": boolean;
+        "bpLabel": string;
+        "bpUrl": string;
+        "bsBlank": boolean;
+        "bsLabel": string;
+        "bsUrl": string;
+        "btBlank": boolean;
+        "btLabel": string;
+        "btUrl": string;
         "mainTitle": string;
         "pB0": boolean;
         "pT0": boolean;
         "preTitle": string;
-        "test": string;
+        "whiteText": boolean;
+    }
+    interface GwdsQuote {
+        "bgColor": string;
+        "centerVertical": boolean;
+        "cite": string;
+        "imageAlt": string;
+        "imageUrl": string;
+        "personLocation": string;
+        "personName": string;
         "whiteText": boolean;
     }
     interface GwdsShowAndTell {
@@ -38,6 +52,23 @@ export namespace Components {
         "pb0": boolean;
         "preTitle": string;
         "pt0": boolean;
+        "whiteText": boolean;
+    }
+    interface GwdsVideo {
+        "fullWidth": boolean;
+        "source": 'youtube' | 'vimeo';
+        "url": string;
+    }
+    interface GwdsVideoSection {
+        "alignContent": 'left' | 'right';
+        "alignTop": boolean;
+        "bgColor": string;
+        "fullWidth": boolean;
+        "mainTitle": string;
+        "pb0": boolean;
+        "pt0": boolean;
+        "source": 'youtube' | 'vimeo';
+        "url": string;
         "whiteText": boolean;
     }
 }
@@ -54,16 +85,37 @@ declare global {
         prototype: HTMLGwdsLookAtMeElement;
         new (): HTMLGwdsLookAtMeElement;
     };
+    interface HTMLGwdsQuoteElement extends Components.GwdsQuote, HTMLStencilElement {
+    }
+    var HTMLGwdsQuoteElement: {
+        prototype: HTMLGwdsQuoteElement;
+        new (): HTMLGwdsQuoteElement;
+    };
     interface HTMLGwdsShowAndTellElement extends Components.GwdsShowAndTell, HTMLStencilElement {
     }
     var HTMLGwdsShowAndTellElement: {
         prototype: HTMLGwdsShowAndTellElement;
         new (): HTMLGwdsShowAndTellElement;
     };
+    interface HTMLGwdsVideoElement extends Components.GwdsVideo, HTMLStencilElement {
+    }
+    var HTMLGwdsVideoElement: {
+        prototype: HTMLGwdsVideoElement;
+        new (): HTMLGwdsVideoElement;
+    };
+    interface HTMLGwdsVideoSectionElement extends Components.GwdsVideoSection, HTMLStencilElement {
+    }
+    var HTMLGwdsVideoSectionElement: {
+        prototype: HTMLGwdsVideoSectionElement;
+        new (): HTMLGwdsVideoSectionElement;
+    };
     interface HTMLElementTagNameMap {
         "gwds-button": HTMLGwdsButtonElement;
         "gwds-look-at-me": HTMLGwdsLookAtMeElement;
+        "gwds-quote": HTMLGwdsQuoteElement;
         "gwds-show-and-tell": HTMLGwdsShowAndTellElement;
+        "gwds-video": HTMLGwdsVideoElement;
+        "gwds-video-section": HTMLGwdsVideoSectionElement;
     }
 }
 declare namespace LocalJSX {
@@ -78,16 +130,30 @@ declare namespace LocalJSX {
         "alignContent"?: 'left' | 'center' | 'right';
         "bgColor"?: string;
         "bgImage"?: string;
-        "bgImageFour"?: string;
-        "bgImageOne"?: string;
-        "bgImageThree"?: string;
-        "bgImageTwo"?: string;
         "bgSize"?: string;
+        "bpBlank"?: boolean;
+        "bpLabel"?: string;
+        "bpUrl"?: string;
+        "bsBlank"?: boolean;
+        "bsLabel"?: string;
+        "bsUrl"?: string;
+        "btBlank"?: boolean;
+        "btLabel"?: string;
+        "btUrl"?: string;
         "mainTitle"?: string;
         "pB0"?: boolean;
         "pT0"?: boolean;
         "preTitle"?: string;
-        "test"?: string;
+        "whiteText"?: boolean;
+    }
+    interface GwdsQuote {
+        "bgColor"?: string;
+        "centerVertical"?: boolean;
+        "cite"?: string;
+        "imageAlt"?: string;
+        "imageUrl"?: string;
+        "personLocation"?: string;
+        "personName"?: string;
         "whiteText"?: boolean;
     }
     interface GwdsShowAndTell {
@@ -101,10 +167,30 @@ declare namespace LocalJSX {
         "pt0"?: boolean;
         "whiteText"?: boolean;
     }
+    interface GwdsVideo {
+        "fullWidth"?: boolean;
+        "source"?: 'youtube' | 'vimeo';
+        "url"?: string;
+    }
+    interface GwdsVideoSection {
+        "alignContent"?: 'left' | 'right';
+        "alignTop"?: boolean;
+        "bgColor"?: string;
+        "fullWidth"?: boolean;
+        "mainTitle"?: string;
+        "pb0"?: boolean;
+        "pt0"?: boolean;
+        "source"?: 'youtube' | 'vimeo';
+        "url"?: string;
+        "whiteText"?: boolean;
+    }
     interface IntrinsicElements {
         "gwds-button": GwdsButton;
         "gwds-look-at-me": GwdsLookAtMe;
+        "gwds-quote": GwdsQuote;
         "gwds-show-and-tell": GwdsShowAndTell;
+        "gwds-video": GwdsVideo;
+        "gwds-video-section": GwdsVideoSection;
     }
 }
 export { LocalJSX as JSX };
@@ -113,7 +199,10 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "gwds-button": LocalJSX.GwdsButton & JSXBase.HTMLAttributes<HTMLGwdsButtonElement>;
             "gwds-look-at-me": LocalJSX.GwdsLookAtMe & JSXBase.HTMLAttributes<HTMLGwdsLookAtMeElement>;
+            "gwds-quote": LocalJSX.GwdsQuote & JSXBase.HTMLAttributes<HTMLGwdsQuoteElement>;
             "gwds-show-and-tell": LocalJSX.GwdsShowAndTell & JSXBase.HTMLAttributes<HTMLGwdsShowAndTellElement>;
+            "gwds-video": LocalJSX.GwdsVideo & JSXBase.HTMLAttributes<HTMLGwdsVideoElement>;
+            "gwds-video-section": LocalJSX.GwdsVideoSection & JSXBase.HTMLAttributes<HTMLGwdsVideoSectionElement>;
         }
     }
 }

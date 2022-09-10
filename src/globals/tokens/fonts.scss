@@ -1,25 +1,25 @@
 :root {
   //FONT FAMILY
-  --gwds-font-family-body: 'Rubik', 'sans-serif';
-  --gwds-font-family-headings: 'Graphik', 'sans-serif';
+  --gwds__font-family--body: 'Rubik', 'sans-serif';
+  --gwds__font-family--headings: 'Graphik', 'sans-serif';
 
   //FONT SIZE
-  --gwds-font-size-xs: 8px;
-  --gwds-font-size-s: 14px;
-  --gwds-font-size-m: 17px;
-  --gwds-font-size-l: 26px;
-  --gwds-font-size-xl: 36px;
-  --gwds-font-size-xxl: 46px;
-  --gwds-font-size-xxxl: 52px;
+  --gwds__font-size--xs: 8px;
+  --gwds__font-size--s: 14px;
+  --gwds__font-size--m: 17px;
+  --gwds__font-size--l: 26px;
+  --gwds__font-size--xl: 36px;
+  --gwds__font-size--xxl: 46px;
+  --gwds__font-size--xxxl: 52px;
 
   //FONT WEIGHT:
-  --gwds-font-weight-light: 300;
-  --gwds-font-weight-regular: 400;
-  --gwds-font-weight-medium: 500;
-  --gwds-font-weight-semibold: 600;
-  --gwds-font-weight-bold: 700;
+  --gwds__font-weight--light: 300;
+  --gwds__font-weight--regular: 400;
+  --gwds__font-weight--medium: 500;
+  --gwds__font-weight--semibold: 600;
+  --gwds__font-weight--bold: 700;
 
   //LINE HEIGHT
-  --gwds-line-height-regular: 1.3rem;
-  --gwds-line-height-spaced: 1.65rem;
+  --gwds__line-height--regular: 1.3em;
+  --gwds__line-height--spaced: 1.65em;
 }
