@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+.gwds-progress-bar {
+  display: block;
+  line-height: 0;
+  &__indicator {
+    display: inline-block;
+    height: var(--gwds__space--xxs);
+    background-color: var(--gwds__color--fuchsia-700);
+    width: 100px;
+  }
+}

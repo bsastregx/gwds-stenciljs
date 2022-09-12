@@ -20,6 +20,7 @@
   }
   &__quote {
     font-size: var(--gwds__font-size--m);
+    margin-bottom: 0;
   }
   &__person-data {
     display: block;
@@ -38,18 +39,33 @@
     .gwds-quote__image-wrapper {
       width: 100px;
       height: 100px;
-      margin-right: var(--gwds__space--m);
+      margin-right: var(--gwds__space--s);
     }
 
-    &_left {
+    &-left {
     }
-    &_right {
+    &-right {
+      small {
+        font-size: var(--gwds__font-size--s);
+      }
     }
   }
 
   /* RESPONSIVE */
   /*sm*/
   @media (min-width: 576px) {
+    &__footer {
+      .gwds-quote__image-wrapper {
+        width: 100px;
+        height: 100px;
+        margin-right: var(--gwds__space--m);
+      }
+      &-right {
+        small {
+          font-size: var(--gwds__font-size--m);
+        }
+      }
+    }
   }
   /*md*/
   @media (min-width: 768px) {

@@ -43,8 +43,8 @@ export class GwShowAndTell {
         }}
         class={{ 'gwds__show-and-tell': true, 'white-text': this.whiteText }}
       >
-        <section>
-          <div class="container">
+        <section class={{ 'pt-0': this.pt0, 'pb-0': this.pb0 }}>
+          <div class={{ container: true }}>
             <div class={this.rowClasses}>
               <div class={this.leftColClasses}>
                 <div>

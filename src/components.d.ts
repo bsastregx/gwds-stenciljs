@@ -13,6 +13,19 @@ export namespace Components {
         "type": 'primary' | 'secondary' | 'tertiary';
         "url": string;
     }
+    interface GwdsLearnMore {
+        "bgColor": string;
+        "bpBlank": boolean;
+        "bpLabel": string;
+        "bpUrl": string;
+        "bsBlank": boolean;
+        "bsLabel": string;
+        "bsUrl": string;
+        "mainTitle": string;
+        "pb0": boolean;
+        "pt0": boolean;
+        "whiteText": boolean;
+    }
     interface GwdsLookAtMe {
         "alignContent": 'left' | 'center' | 'right';
         "bgColor": string;
@@ -28,10 +41,14 @@ export namespace Components {
         "btLabel": string;
         "btUrl": string;
         "mainTitle": string;
-        "pB0": boolean;
-        "pT0": boolean;
+        "pb0": boolean;
         "preTitle": string;
+        "pt0": boolean;
         "whiteText": boolean;
+    }
+    interface GwdsMessage {
+    }
+    interface GwdsProgressBar {
     }
     interface GwdsQuote {
         "bgColor": string;
@@ -79,11 +96,29 @@ declare global {
         prototype: HTMLGwdsButtonElement;
         new (): HTMLGwdsButtonElement;
     };
+    interface HTMLGwdsLearnMoreElement extends Components.GwdsLearnMore, HTMLStencilElement {
+    }
+    var HTMLGwdsLearnMoreElement: {
+        prototype: HTMLGwdsLearnMoreElement;
+        new (): HTMLGwdsLearnMoreElement;
+    };
     interface HTMLGwdsLookAtMeElement extends Components.GwdsLookAtMe, HTMLStencilElement {
     }
     var HTMLGwdsLookAtMeElement: {
         prototype: HTMLGwdsLookAtMeElement;
         new (): HTMLGwdsLookAtMeElement;
+    };
+    interface HTMLGwdsMessageElement extends Components.GwdsMessage, HTMLStencilElement {
+    }
+    var HTMLGwdsMessageElement: {
+        prototype: HTMLGwdsMessageElement;
+        new (): HTMLGwdsMessageElement;
+    };
+    interface HTMLGwdsProgressBarElement extends Components.GwdsProgressBar, HTMLStencilElement {
+    }
+    var HTMLGwdsProgressBarElement: {
+        prototype: HTMLGwdsProgressBarElement;
+        new (): HTMLGwdsProgressBarElement;
     };
     interface HTMLGwdsQuoteElement extends Components.GwdsQuote, HTMLStencilElement {
     }
@@ -111,7 +146,10 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "gwds-button": HTMLGwdsButtonElement;
+        "gwds-learn-more": HTMLGwdsLearnMoreElement;
         "gwds-look-at-me": HTMLGwdsLookAtMeElement;
+        "gwds-message": HTMLGwdsMessageElement;
+        "gwds-progress-bar": HTMLGwdsProgressBarElement;
         "gwds-quote": HTMLGwdsQuoteElement;
         "gwds-show-and-tell": HTMLGwdsShowAndTellElement;
         "gwds-video": HTMLGwdsVideoElement;
@@ -125,6 +163,19 @@ declare namespace LocalJSX {
         "size"?: 'small' | 'regular';
         "type"?: 'primary' | 'secondary' | 'tertiary';
         "url"?: string;
+    }
+    interface GwdsLearnMore {
+        "bgColor"?: string;
+        "bpBlank"?: boolean;
+        "bpLabel"?: string;
+        "bpUrl"?: string;
+        "bsBlank"?: boolean;
+        "bsLabel"?: string;
+        "bsUrl"?: string;
+        "mainTitle"?: string;
+        "pb0"?: boolean;
+        "pt0"?: boolean;
+        "whiteText"?: boolean;
     }
     interface GwdsLookAtMe {
         "alignContent"?: 'left' | 'center' | 'right';
@@ -141,10 +192,14 @@ declare namespace LocalJSX {
         "btLabel"?: string;
         "btUrl"?: string;
         "mainTitle"?: string;
-        "pB0"?: boolean;
-        "pT0"?: boolean;
+        "pb0"?: boolean;
         "preTitle"?: string;
+        "pt0"?: boolean;
         "whiteText"?: boolean;
+    }
+    interface GwdsMessage {
+    }
+    interface GwdsProgressBar {
     }
     interface GwdsQuote {
         "bgColor"?: string;
@@ -186,7 +241,10 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "gwds-button": GwdsButton;
+        "gwds-learn-more": GwdsLearnMore;
         "gwds-look-at-me": GwdsLookAtMe;
+        "gwds-message": GwdsMessage;
+        "gwds-progress-bar": GwdsProgressBar;
         "gwds-quote": GwdsQuote;
         "gwds-show-and-tell": GwdsShowAndTell;
         "gwds-video": GwdsVideo;
@@ -198,7 +256,10 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "gwds-button": LocalJSX.GwdsButton & JSXBase.HTMLAttributes<HTMLGwdsButtonElement>;
+            "gwds-learn-more": LocalJSX.GwdsLearnMore & JSXBase.HTMLAttributes<HTMLGwdsLearnMoreElement>;
             "gwds-look-at-me": LocalJSX.GwdsLookAtMe & JSXBase.HTMLAttributes<HTMLGwdsLookAtMeElement>;
+            "gwds-message": LocalJSX.GwdsMessage & JSXBase.HTMLAttributes<HTMLGwdsMessageElement>;
+            "gwds-progress-bar": LocalJSX.GwdsProgressBar & JSXBase.HTMLAttributes<HTMLGwdsProgressBarElement>;
             "gwds-quote": LocalJSX.GwdsQuote & JSXBase.HTMLAttributes<HTMLGwdsQuoteElement>;
             "gwds-show-and-tell": LocalJSX.GwdsShowAndTell & JSXBase.HTMLAttributes<HTMLGwdsShowAndTellElement>;
             "gwds-video": LocalJSX.GwdsVideo & JSXBase.HTMLAttributes<HTMLGwdsVideoElement>;
