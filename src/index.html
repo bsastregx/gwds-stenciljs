@@ -18,6 +18,12 @@
   </head>
   <body>
 
+    <!-- MESSAGE -->
+    <gwds-component-title>gwds-message</gwds-component-title>
+    <gwds-message>
+      An HTTP cookie is a piece of data that a server sends to a web browser. Then, the web browser stores the HTTP cookie on the user’s computer and sends it back to the same
+      server in the later requests.
+    </gwds-message>
 
     <!-- ACCORDION -->
     <gwds-component-title>gwds-accordion</gwds-component-title>
@@ -34,65 +40,6 @@
         </gwds-accordion-item>
       </gwds-accordion>
     </gwds-accordion-section>
-
-    <!-- SLIDER LANDSCAPE -->
-    <gwds-component-title>gwds-slider (portrait + cards)</gwds-component-title>
-    <gwds-slider gap cover cards padding class="mt-m" slide-id="cards" orientation="portrait">
-      <gwds-card
-          class="splide__slide"
-          img-src="../assets/images/pexels-animals-01.jpg"
-          img-alt="Chameleon"
-          tag-label="Reptile"
-          title-label="Chameleon"
-          link-label="more info"
-          link-url="https://en.wikipedia.org/wiki/Chameleon"
-          link-target="_blank"
-          cards
-        >
-          <p>Chameleons or chamaeleons (family Chamaeleonidae) are a distinctive and highly specialized clade of Old World lizards with 202 species described as of June 2015.</p>
-        </gwds-card>
-
-        <gwds-card
-          class="splide__slide"
-          img-src="../assets/images/pexels-animals-06.jpg"
-          img-alt="Owl"
-          tag-label="Bird"
-          title-label="Owl"
-          link-label="more info"
-          link-url="https://en.wikipedia.org/wiki/Owl"
-          link-target="_blank"
-        >
-          <p>Owls hunt mostly small mammals, insects, and other birds, although a few species specialize in hunting fish.</p>
-        </gwds-card>
-
-        <gwds-card
-          class="splide__slide"
-          img-src="../assets/images/pexels-animals-07.jpg"
-          img-alt="Dog"
-          tag-label="Mammal"
-          title-label="Dog"
-          link-label="more info"
-          link-url="https://en.wikipedia.org/wiki/Dog"
-          link-target="_blank"
-        >
-          <p>The dog is derived from an ancient, extinct wolf,[6][7] and the modern wolf is the dog's nearest living relative.</p>
-        </gwds-card>
-
-        <gwds-card
-          class="splide__slide"
-          img-src="../assets/images/pexels-animals-03.jpg"
-          img-alt="Flamingo"
-          tag-label="Bird"
-          title-label="Flamingo"
-          link-label="more info"
-          link-url="https://en.wikipedia.org/wiki/Flamingo"
-          link-target="_blank"
-        >
-          <p>
-            Flamingos or flamingoes[a] /fləˈmɪŋɡoʊz/ are a type of wading bird in the family Phoenicopteridae, which is the only extant family in the order Phoenicopteriformes.
-          </p>
-        </gwds-card>
-    </gwds-slider>
 
     <!-- BLOCKS 3 -->
     <gwds-component-title>gwds-blocks 3</gwds-component-title>
@@ -181,6 +128,12 @@
       </gwds-card>
     </gwds-blocks>
 
+    <gwds-component-title experimental>gwds-gradient-title</gwds-component-title>
+    <section>
+      <gwds-gradient-title center from="blue-400" to="red-400">Design.</gwds-gradient-title>
+      <gwds-gradient-title center from="blue-400" to="green-900" style="margin-top: -40px; margin-bottom: -40px">Develop.</gwds-gradient-title>
+      <gwds-gradient-title center from="blue-400" to="blue-900">Deliver.</gwds-gradient-title>
+    </section>
 
     <!-- SLIDER LANDSCAPE -->
     <gwds-component-title>gwds-slider landscape (default)</gwds-component-title>
@@ -314,21 +267,6 @@
               </li>
     </gwds-slider>
 
-
-    <gwds-component-title experimental>gwds-gradient-title</gwds-component-title>
-    <section>
-      <gwds-gradient-title center from="blue-400" to="red-400">Design.</gwds-gradient-title>
-      <gwds-gradient-title center from="blue-400" to="green-900" style="margin-top: -40px; margin-bottom: -40px">Develop.</gwds-gradient-title>
-      <gwds-gradient-title center from="blue-400" to="blue-900">Deliver.</gwds-gradient-title>
-    </section>
-
-    <!-- MESSAGE -->
-    <gwds-component-title>gwds-message</gwds-component-title>
-    <gwds-message>
-      An HTTP cookie is a piece of data that a server sends to a web browser. Then, the web browser stores the HTTP cookie on the user’s computer and sends it back to the same
-      server in the later requests.
-    </gwds-message>
-
     <!-- GRID 2 -->
     <gwds-component-title>gwds-grid (2) </gwds-component-title>
     <section>
@@ -394,10 +332,94 @@
     </section>
 
     <!-- CARD -->
-    <gwds-component-title>gwds-card</gwds-component-title>
+    <gwds-component-title>gwds-card (with grid)</gwds-component-title>
     <section>
-      <gwds-grid per-row="3">
-        <gwds-card
+      <div class="container">
+        <gwds-grid per-row="3">
+          <gwds-card
+            img-src="../assets/images/pexels-animals-01.jpg"
+            img-alt="Chameleon"
+            tag-label="Reptile"
+            title-label="Chameleon"
+            link-label="more info"
+            link-url="https://en.wikipedia.org/wiki/Chameleon"
+            link-target="_blank"
+          >
+            <p>Chameleons or chamaeleons (family Chamaeleonidae) are a distinctive and highly specialized clade of Old World lizards with 202 species described as of June 2015.</p>
+          </gwds-card>
+  
+          <gwds-card
+            img-src="../assets/images/pexels-animals-06.jpg"
+            img-alt="Owl"
+            tag-label="Bird"
+            title-label="Owl"
+            link-label="more info"
+            link-url="https://en.wikipedia.org/wiki/Owl"
+            link-target="_blank"
+          >
+            <p>Owls hunt mostly small mammals, insects, and other birds, although a few species specialize in hunting fish.</p>
+          </gwds-card>
+  
+          <gwds-card
+            img-src="../assets/images/pexels-animals-07.jpg"
+            img-alt="Dog"
+            tag-label="Mammal"
+            title-label="Dog"
+            link-label="more info"
+            link-url="https://en.wikipedia.org/wiki/Dog"
+            link-target="_blank"
+          >
+            <p>The dog is derived from an ancient, extinct wolf,[6][7] and the modern wolf is the dog's nearest living relative.</p>
+          </gwds-card>
+  
+          <gwds-card
+            img-src="../assets/images/pexels-animals-03.jpg"
+            img-alt="Flamingo"
+            tag-label="Bird"
+            title-label="Flamingo"
+            link-label="more info"
+            link-url="https://en.wikipedia.org/wiki/Flamingo"
+            link-target="_blank"
+          >
+            <p>
+              Flamingos or flamingoes[a] /fləˈmɪŋɡoʊz/ are a type of wading bird in the family Phoenicopteridae, which is the only extant family in the order Phoenicopteriformes.
+            </p>
+          </gwds-card>
+  
+          <gwds-card
+            img-src="../assets/images/pexels-animals-02.jpg"
+            img-alt="Clownfish"
+            tag-label="Fish"
+            title-label="Clownfish"
+            link-label="more info"
+            link-url="https://en.wikipedia.org/wiki/Amphiprioninae"
+            link-target="_blank"
+          >
+            <p>lownfish or anemonefish are fishes from the subfamily Amphiprioninae in the family Pomacentridae.</p>
+          </gwds-card>
+  
+          <gwds-card
+            img-src="../assets/images/pexels-animals-04.jpg"
+            img-alt="Peafowl"
+            tag-label="Bird"
+            title-label="Peafowl"
+            link-label="more info"
+            link-url="https://en.wikipedia.org/wiki/Peafowl"
+            link-target="_blank"
+          >
+            <p>
+              Peafowl is a common name for three bird species in the genera Pavo and Afropavo within the tribe Pavonini of the family Phasianidae, the pheasants and their allies.
+            </p>
+          </gwds-card>
+        </gwds-grid>
+      </div>
+    </section>
+
+    <!-- SLIDER LANDSCAPE -->
+    <gwds-component-title>gwds-slider (portrait + cards)</gwds-component-title>
+    <gwds-slider gap cover cards padding class="mt-m" slide-id="cards" orientation="portrait">
+      <gwds-card
+          class="splide__slide"
           img-src="../assets/images/pexels-animals-01.jpg"
           img-alt="Chameleon"
           tag-label="Reptile"
@@ -405,11 +427,13 @@
           link-label="more info"
           link-url="https://en.wikipedia.org/wiki/Chameleon"
           link-target="_blank"
+          cards
         >
           <p>Chameleons or chamaeleons (family Chamaeleonidae) are a distinctive and highly specialized clade of Old World lizards with 202 species described as of June 2015.</p>
         </gwds-card>
 
         <gwds-card
+          class="splide__slide"
           img-src="../assets/images/pexels-animals-06.jpg"
           img-alt="Owl"
           tag-label="Bird"
@@ -422,6 +446,7 @@
         </gwds-card>
 
         <gwds-card
+          class="splide__slide"
           img-src="../assets/images/pexels-animals-07.jpg"
           img-alt="Dog"
           tag-label="Mammal"
@@ -434,6 +459,7 @@
         </gwds-card>
 
         <gwds-card
+          class="splide__slide"
           img-src="../assets/images/pexels-animals-03.jpg"
           img-alt="Flamingo"
           tag-label="Bird"
@@ -446,46 +472,15 @@
             Flamingos or flamingoes[a] /fləˈmɪŋɡoʊz/ are a type of wading bird in the family Phoenicopteridae, which is the only extant family in the order Phoenicopteriformes.
           </p>
         </gwds-card>
+    </gwds-slider>
 
-        <gwds-card
-          img-src="../assets/images/pexels-animals-02.jpg"
-          img-alt="Clownfish"
-          tag-label="Fish"
-          title-label="Clownfish"
-          link-label="more info"
-          link-url="https://en.wikipedia.org/wiki/Amphiprioninae"
-          link-target="_blank"
-        >
-          <p>lownfish or anemonefish are fishes from the subfamily Amphiprioninae in the family Pomacentridae.</p>
-        </gwds-card>
-
-        <gwds-card
-          img-src="../assets/images/pexels-animals-04.jpg"
-          img-alt="Peafowl"
-          tag-label="Bird"
-          title-label="Peafowl"
-          link-label="more info"
-          link-url="https://en.wikipedia.org/wiki/Peafowl"
-          link-target="_blank"
-        >
-          <p>
-            Peafowl is a common name for three bird species in the genera Pavo and Afropavo within the tribe Pavonini of the family Phasianidae, the pheasants and their allies.
-          </p>
-        </gwds-card>
-      </gwds-grid>
-    </section>
-
-    <!-- QUOTE -->
-    <gwds-component-title>gwds-quote</gwds-component-title>
-    <gwds-quote image-url="../assets/images/elvis.jpg" image-alt="Elvis Presley" person-name="osvaldo pasut" person-location="Intersoft - Argentina GeneXus" person-position="cto"
-      >Para transformarte digitalmente es esencial un aliado de trayectoria innovadora. A la hora de migrar nuestro principal producto, de 1.100.000 líneas de código, no dudamos de
-      que el camino hacia la inteligencia empresarial y digital se hacía con GeneXus™</gwds-quote
-    >
-
-    <!-- QUOTE (CENTER VERTICAL)-->
-    <gwds-quote bg-color="green-900" image-url="../assets/images/elvis.jpg" image-alt="Elvis Presley" center-vertical
-      >Para transformarte digitalmente es esencial un aliado de trayectoria innovadora. A la hora de migrar nuestro principal producto, de 1.100.000 líneas de código...</gwds-quote
-    >
+    <gwds-component-title>gwds-learn-more</gwds-component-title>
+    <!-- LEARN MORE -->
+    <gwds-learn-more bp-label="More depth for this" bp-url="/label" bs-label="Download doc" bs-url="/label" main-title="Comience a crear aplicaciones. Comience con GeneXus">
+      <p>
+        There is much depth to GeneXus Products and Technology, please take your time to visit our Products page to learn more about what makes us so different to the competition.
+      </p>
+    </gwds-learn-more>
 
     <gwds-component-title>gwds-look-at-me</gwds-component-title>
     <!-- LOOK AT ME (LEFT) -->
@@ -550,6 +545,18 @@
       </p>
     </gwds-look-at-me>
 
+    <!-- QUOTE -->
+    <gwds-component-title>gwds-quote</gwds-component-title>
+    <gwds-quote image-url="../assets/images/elvis.jpg" image-alt="Elvis Presley" person-name="osvaldo pasut" person-location="Intersoft - Argentina GeneXus" person-position="cto"
+      >Para transformarte digitalmente es esencial un aliado de trayectoria innovadora. A la hora de migrar nuestro principal producto, de 1.100.000 líneas de código, no dudamos de
+      que el camino hacia la inteligencia empresarial y digital se hacía con GeneXus™</gwds-quote
+    >
+
+    <!-- QUOTE (CENTER VERTICAL)-->
+    <gwds-quote bg-color="green-900" image-url="../assets/images/elvis.jpg" image-alt="Elvis Presley" center-vertical
+      >Para transformarte digitalmente es esencial un aliado de trayectoria innovadora. A la hora de migrar nuestro principal producto, de 1.100.000 líneas de código...</gwds-quote
+    >
+
     <gwds-component-title>gwds-show-and-tell</gwds-component-title>
     <!-- SHOW AND TELL (LEFT) -->
     <gwds-show-and-tell pre-title="Save the date" main-title="Enterprise Low-Code 2022" image-url="../assets/images/gwds__show-and-tell-img.svg">
@@ -583,14 +590,6 @@
       </p>
       <gwds-button label="Registrarse aquí" type="primary"></gwds-button>
     </gwds-show-and-tell>
-
-    <gwds-component-title>gwds-learn-more</gwds-component-title>
-    <!-- LEARN MORE -->
-    <gwds-learn-more bp-label="More depth for this" bp-url="/label" bs-label="Download doc" bs-url="/label" main-title="Comience a crear aplicaciones. Comience con GeneXus">
-      <p>
-        There is much depth to GeneXus Products and Technology, please take your time to visit our Products page to learn more about what makes us so different to the competition.
-      </p>
-    </gwds-learn-more>
 
     <gwds-component-title>gwds-video-section</gwds-component-title>
     <!-- VIDEO (LEFT)-->

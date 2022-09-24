@@ -13,7 +13,6 @@
   }
   &__collapse {
     height: 0;
-    transition: height 0.5s;
     overflow: hidden;
   }
   &--active {
@@ -34,6 +33,11 @@
       &:after {
         transform: translatey(-50%) rotate(0);
       }
+    }
+  }
+  &--transition {
+    .gwds-accordion-item__collapse {
+      transition: height 0.5s;
     }
   }
 

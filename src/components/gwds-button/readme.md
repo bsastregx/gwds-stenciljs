@@ -21,12 +21,14 @@
 
 ### Used by
 
+ - [gwds-blocks](../gwds-blocks)
  - [gwds-learn-more](../gwds-learn-more)
  - [gwds-look-at-me](../gwds-look-at-me)
 
 ### Graph
 ```mermaid
 graph TD;
+  gwds-blocks --> gwds-button
   gwds-learn-more --> gwds-button
   gwds-look-at-me --> gwds-button
   style gwds-button fill:#f9f,stroke:#333,stroke-width:4px

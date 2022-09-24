@@ -12,6 +12,7 @@ export namespace Components {
         "active": boolean;
         "itemId": string;
         "itemTitle": string;
+        "transition": boolean;
     }
     interface GwdsAccordionSection {
         "bgColor": string;
@@ -318,6 +319,7 @@ declare namespace LocalJSX {
         "itemId"?: string;
         "itemTitle"?: string;
         "onAccordionOpened"?: (event: GwdsAccordionItemCustomEvent<object>) => void;
+        "transition"?: boolean;
     }
     interface GwdsAccordionSection {
         "bgColor"?: string;

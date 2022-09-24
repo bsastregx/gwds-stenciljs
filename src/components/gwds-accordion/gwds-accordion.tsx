@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, State, Listen, Element } from '@stencil/core';
+import { Component, Host, h, State, Listen, Element } from '@stencil/core';
 import { GwdsAccordionItem } from '../gwds-accordion-item/gwds-accordion-item';
 
 @Component({
@@ -9,6 +9,7 @@ import { GwdsAccordionItem } from '../gwds-accordion-item/gwds-accordion-item';
 export class GwdsAccordion {
   @Element() el: HTMLElement;
   @State() pageJustLoaded: boolean = true;
+  @State() transition: boolean = false;
 
   @Listen('accordionOpened')
   accordionOpenedHandler(event: CustomEvent<object>) {
@@ -28,6 +29,14 @@ export class GwdsAccordion {
 
   componentWillLoad() {
     this.resizeObserver();
+  }
+
+  componentDidLoad() {
+    const accordionItems = this.el.querySelectorAll('gwds-accordion-item');
+
+    accordionItems.forEach(item => {
+      (item as unknown as GwdsAccordionItem).transition = true;
+    });
   }
 
   resizeObserver() {
