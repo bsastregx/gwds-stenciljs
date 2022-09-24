@@ -8,33 +8,471 @@
     <script type="module" src="/build/gwds.esm.js"></script>
     <script nomodule src="/build/gwds.js"></script>
     <link rel="stylesheet" href="/build/gwds.css" />
+    <style>
+      .card {
+        background-color: var(--gwds__color--black);
+        height: 100px;
+        border-radius: var(--gwds__radius--xs);
+      }
+    </style>
   </head>
   <body>
+
+
+
+    <!-- SLIDER LANDSCAPE -->
+    <gwds-component-title>gwds-slider (portrait + cards)</gwds-component-title>
+    <gwds-slider gap cover cards padding class="mt-m" slide-id="cards" orientation="portrait">
+      <gwds-card
+          class="splide__slide"
+          img-src="../assets/images/pexels-animals-01.jpg"
+          img-alt="Chameleon"
+          tag-label="Reptile"
+          title-label="Chameleon"
+          link-label="more info"
+          link-url="https://en.wikipedia.org/wiki/Chameleon"
+          link-target="_blank"
+          cards
+        >
+          <p>Chameleons or chamaeleons (family Chamaeleonidae) are a distinctive and highly specialized clade of Old World lizards with 202 species described as of June 2015.</p>
+        </gwds-card>
+
+        <gwds-card
+          class="splide__slide"
+          img-src="../assets/images/pexels-animals-06.jpg"
+          img-alt="Owl"
+          tag-label="Bird"
+          title-label="Owl"
+          link-label="more info"
+          link-url="https://en.wikipedia.org/wiki/Owl"
+          link-target="_blank"
+        >
+          <p>Owls hunt mostly small mammals, insects, and other birds, although a few species specialize in hunting fish.</p>
+        </gwds-card>
+
+        <gwds-card
+          class="splide__slide"
+          img-src="../assets/images/pexels-animals-07.jpg"
+          img-alt="Dog"
+          tag-label="Mammal"
+          title-label="Dog"
+          link-label="more info"
+          link-url="https://en.wikipedia.org/wiki/Dog"
+          link-target="_blank"
+        >
+          <p>The dog is derived from an ancient, extinct wolf,[6][7] and the modern wolf is the dog's nearest living relative.</p>
+        </gwds-card>
+
+        <gwds-card
+          class="splide__slide"
+          img-src="../assets/images/pexels-animals-03.jpg"
+          img-alt="Flamingo"
+          tag-label="Bird"
+          title-label="Flamingo"
+          link-label="more info"
+          link-url="https://en.wikipedia.org/wiki/Flamingo"
+          link-target="_blank"
+        >
+          <p>
+            Flamingos or flamingoes[a] /fləˈmɪŋɡoʊz/ are a type of wading bird in the family Phoenicopteridae, which is the only extant family in the order Phoenicopteriformes.
+          </p>
+        </gwds-card>
+    </gwds-slider>
+
+    <!-- BLOCKS 3 -->
+    <gwds-component-title>gwds-blocks 3</gwds-component-title>
+    <gwds-blocks bg-color="red-400" display="grid-3" main-title="This is the title" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto." link-url="/some-url" link-label="Label">
+      <gwds-card
+        bg-color="black-opacity"
+        title-label="Title"
+        link-label="more info"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+      >
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
+      </gwds-card>
+      <gwds-card
+        bg-color="black-opacity"
+        title-label="Title"
+        link-label="more info"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+      >
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
+      </gwds-card>
+      <gwds-card
+      bg-color="black-opacity"
+      title-label="Title"
+      link-label="more info"
+      link-url="https://en.wikipedia.org/wiki/Owl"
+      link-target="_blank"
+      >
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
+      </gwds-card>
+    </gwds-blocks>
+
+    <!-- BLOCKS 2 -->
+    <gwds-component-title>gwds-blocks 2</gwds-component-title>
+    <gwds-blocks bg-color="red-400" display="grid-2" main-title="This is the title" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto." link-url="/some-url" link-label="Label">
+      <gwds-card
+        bg-color="black-opacity"
+        title-label="Title"
+        link-label="more info"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+      >
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
+      </gwds-card>
+      <gwds-card
+        bg-color="black-opacity"
+        title-label="Title"
+        link-label="more info"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+      >
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
+      </gwds-card>
+    </gwds-blocks>
+
+    <!-- BLOCKS ASIDE-->
+    <gwds-component-title>gwds-blocks aside</gwds-component-title>
+    <gwds-blocks bg-color="red-400" display="grid-aside" main-title="This is the title" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto." link-url="/some-url" link-label="Label">
+      <gwds-card
+        bg-color="black-opacity"
+        title-label="Title"
+        link-label="more info"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+      >
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
+      </gwds-card>
+      <gwds-card
+        bg-color="black-opacity"
+        title-label="Title"
+        link-label="more info"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+      >
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
+      </gwds-card>
+      <gwds-card
+      bg-color="black-opacity"
+      title-label="Title"
+      link-label="more info"
+      link-url="https://en.wikipedia.org/wiki/Owl"
+      link-target="_blank"
+      >
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
+      </gwds-card>
+    </gwds-blocks>
+
+
+    <!-- SLIDER LANDSCAPE -->
+    <gwds-component-title>gwds-slider landscape (default)</gwds-component-title>
+    <gwds-slider class="mt-m" slide-id="default" orientation="landscape">
+               <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-01.jpg" alt="paisaje 01" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-02.jpg" alt="paisaje 02" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-03.jpg" alt="paisaje 03" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-04.jpg" alt="paisaje 04" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-05.jpg" alt="paisaje 05" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-06.jpg" alt="paisaje 06" />
+              </li>
+    </gwds-slider>
+
+    <!-- SLIDER LANDSCAPE -->
+    <gwds-component-title>gwds-slider landscape (gap)</gwds-component-title>
+    <gwds-slider gap class="mt-m" slide-id="gap" orientation="landscape">
+                <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-01.jpg" alt="paisaje 01" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-02.jpg" alt="paisaje 02" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-03.jpg" alt="paisaje 03" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-04.jpg" alt="paisaje 04" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-05.jpg" alt="paisaje 05" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-06.jpg" alt="paisaje 06" />
+              </li>
+    </gwds-slider>
+
+    <!-- SLIDER LANDSCAPE -->
+    <gwds-component-title>gwds-slider landscape (padding)</gwds-component-title>
+    <gwds-slider gap padding class="mt-m" slide-id="padding" orientation="landscape">
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-01.jpg" alt="paisaje 01" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-02.jpg" alt="paisaje 02" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-03.jpg" alt="paisaje 03" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-04.jpg" alt="paisaje 04" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-05.jpg" alt="paisaje 05" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-06.jpg" alt="paisaje 06" />
+              </li>
+    </gwds-slider>
+
+    <!-- SLIDER LANDSCAPE -->
+    <gwds-component-title>gwds-slider landscape (cover)</gwds-component-title>
+    <gwds-slider gap padding cover class="mt-m" slide-id="cover" orientation="landscape">
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-01.jpg" alt="paisaje 01" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-02.jpg" alt="paisaje 02" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-03.jpg" alt="paisaje 03" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-04.jpg" alt="paisaje 04" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-05.jpg" alt="paisaje 05" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-06.jpg" alt="paisaje 06" />
+              </li>
+    </gwds-slider>
+
+    <!-- SLIDER LANDSCAPE -->
+    <gwds-component-title>gwds-slider (landscape : golden ratio)</gwds-component-title>
+    <gwds-slider gap padding class="mt-m" slide-id="landscape" orientation="landscape">
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-01-l.jpg" alt="paisaje 01" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-02-l.jpg" alt="paisaje 02" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-03-l.jpg" alt="paisaje 03" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-04-l.jpg" alt="paisaje 04" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/paisaje-05-l.jpg" alt="paisaje 05" />
+              </li>
+    </gwds-slider>
+
+    <!-- SLIDER LANDSCAPE -->
+    <gwds-component-title>gwds-slider (portrait : golden ratio)</gwds-component-title>
+    <gwds-slider gap padding class="mt-m" slide-id="portrait" orientation="portrait">
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/arbol-01-p.jpg" alt="arbol 01" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/arbol-02-p.jpg" alt="arbol 02" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/arbol-03-p.jpg" alt="arbol 03" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/arbol-04-p.jpg" alt="arbol 04" />
+              </li>
+              <li class="splide__slide">
+                <img src="../assets/images/paisajes/arbol-05-p.jpg" alt="arbol 05" />
+              </li>
+    </gwds-slider>
+
+
+    <gwds-component-title experimental>gwds-gradient-title</gwds-component-title>
+    <section>
+      <gwds-gradient-title center from="blue-400" to="red-400">Design.</gwds-gradient-title>
+      <gwds-gradient-title center from="blue-400" to="green-900" style="margin-top: -40px; margin-bottom: -40px">Develop.</gwds-gradient-title>
+      <gwds-gradient-title center from="blue-400" to="blue-900">Deliver.</gwds-gradient-title>
+    </section>
+
+    <!-- MESSAGE -->
+    <gwds-component-title>gwds-message</gwds-component-title>
     <gwds-message>
       An HTTP cookie is a piece of data that a server sends to a web browser. Then, the web browser stores the HTTP cookie on the user’s computer and sends it back to the same
       server in the later requests.
     </gwds-message>
+
+    <!-- GRID 2 -->
+    <gwds-component-title>gwds-grid (2) </gwds-component-title>
+    <section>
+      <div class="container">
+        <gwds-grid per-row="2">
+          <div class="card" style="background-color: var(--gwds__color--orange-400)"></div>
+          <div class="card" style="background-color: var(--gwds__color--red-400)"></div>
+        </gwds-grid>
+      </div>
+    </section>
+
+    <!-- GRID 3 -->
+    <gwds-component-title>gwds-grid (3) </gwds-component-title>
+    <section>
+      <div class="container">
+        <gwds-grid per-row="3">
+          <div class="card" style="background-color: var(--gwds__color--orange-400)"></div>
+          <div class="card" style="background-color: var(--gwds__color--red-400)"></div>
+          <div class="card" style="background-color: var(--gwds__color--green-900)"></div>
+        </gwds-grid>
+      </div>
+    </section>
+
+    <!-- GRID 4 -->
+    <gwds-component-title>gwds-grid (4) </gwds-component-title>
+    <section>
+      <div class="container">
+        <gwds-grid per-row="4">
+          <div class="card" style="background-color: var(--gwds__color--orange-400)"></div>
+          <div class="card" style="background-color: var(--gwds__color--red-400)"></div>
+          <div class="card" style="background-color: var(--gwds__color--green-900)"></div>
+          <div class="card" style="background-color: var(--gwds__color--blue-400)"></div>
+        </gwds-grid>
+      </div>
+    </section>
+
+    <!-- GRID 6 -->
+    <gwds-component-title>gwds-grid (6) </gwds-component-title>
+    <section>
+      <div class="container">
+        <gwds-grid per-row="6">
+          <div class="card" style="background-color: var(--gwds__color--orange-400)"></div>
+          <div class="card" style="background-color: var(--gwds__color--red-400)"></div>
+          <div class="card" style="background-color: var(--gwds__color--green-900)"></div>
+          <div class="card" style="background-color: var(--gwds__color--blue-400)"></div>
+          <div class="card" style="background-color: var(--gwds__color--purple-400)"></div>
+          <div class="card" style="background-color: var(--gwds__color--purple-900)"></div>
+        </gwds-grid>
+      </div>
+    </section>
+
+    <!-- LOGOS -->
+    <gwds-component-title>gwds-logo </gwds-component-title>
+    <section>
+      <gwds-logos main-title="Golden Sponsors">
+          <gwds-logo label="Apple" img-src="../assets/images/logo-apple.svg" size="30px" link-url="https://www.apple.com/"></gwds-logo>
+          <gwds-logo label="Microsoft" img-src="../assets/images/logo-windows.svg" size="30px" link-url="https://www.microsoft.com/es-uy/"></gwds-logo>
+          <gwds-logo label="Apple" img-src="../assets/images/logo-apple.svg" size="30px"link-url="https://www.apple.com/"></gwds-logo>
+          <gwds-logo label="Microsoft" img-src="../assets/images/logo-windows.svg" size="30px" link-url="https://www.microsoft.com/es-uy/"></gwds-logo>
+          <gwds-logo label="Apple" img-src="../assets/images/logo-apple.svg" size="30px" link-url="https://www.apple.com/"></gwds-logo>
+          <gwds-logo label="Microsoft" img-src="../assets/images/logo-windows.svg" size="30px" link-url="https://www.microsoft.com/es-uy/"></gwds-logo>
+      </gwds-grid>
+    </section>
+
+    <!-- CARD -->
+    <gwds-component-title>gwds-card</gwds-component-title>
+    <section>
+      <gwds-grid per-row="3">
+        <gwds-card
+          img-src="../assets/images/pexels-animals-01.jpg"
+          img-alt="Chameleon"
+          tag-label="Reptile"
+          title-label="Chameleon"
+          link-label="more info"
+          link-url="https://en.wikipedia.org/wiki/Chameleon"
+          link-target="_blank"
+        >
+          <p>Chameleons or chamaeleons (family Chamaeleonidae) are a distinctive and highly specialized clade of Old World lizards with 202 species described as of June 2015.</p>
+        </gwds-card>
+
+        <gwds-card
+          img-src="../assets/images/pexels-animals-06.jpg"
+          img-alt="Owl"
+          tag-label="Bird"
+          title-label="Owl"
+          link-label="more info"
+          link-url="https://en.wikipedia.org/wiki/Owl"
+          link-target="_blank"
+        >
+          <p>Owls hunt mostly small mammals, insects, and other birds, although a few species specialize in hunting fish.</p>
+        </gwds-card>
+
+        <gwds-card
+          img-src="../assets/images/pexels-animals-07.jpg"
+          img-alt="Dog"
+          tag-label="Mammal"
+          title-label="Dog"
+          link-label="more info"
+          link-url="https://en.wikipedia.org/wiki/Dog"
+          link-target="_blank"
+        >
+          <p>The dog is derived from an ancient, extinct wolf,[6][7] and the modern wolf is the dog's nearest living relative.</p>
+        </gwds-card>
+
+        <gwds-card
+          img-src="../assets/images/pexels-animals-03.jpg"
+          img-alt="Flamingo"
+          tag-label="Bird"
+          title-label="Flamingo"
+          link-label="more info"
+          link-url="https://en.wikipedia.org/wiki/Flamingo"
+          link-target="_blank"
+        >
+          <p>
+            Flamingos or flamingoes[a] /fləˈmɪŋɡoʊz/ are a type of wading bird in the family Phoenicopteridae, which is the only extant family in the order Phoenicopteriformes.
+          </p>
+        </gwds-card>
+
+        <gwds-card
+          img-src="../assets/images/pexels-animals-02.jpg"
+          img-alt="Clownfish"
+          tag-label="Fish"
+          title-label="Clownfish"
+          link-label="more info"
+          link-url="https://en.wikipedia.org/wiki/Amphiprioninae"
+          link-target="_blank"
+        >
+          <p>lownfish or anemonefish are fishes from the subfamily Amphiprioninae in the family Pomacentridae.</p>
+        </gwds-card>
+
+        <gwds-card
+          img-src="../assets/images/pexels-animals-04.jpg"
+          img-alt="Peafowl"
+          tag-label="Bird"
+          title-label="Peafowl"
+          link-label="more info"
+          link-url="https://en.wikipedia.org/wiki/Peafowl"
+          link-target="_blank"
+        >
+          <p>
+            Peafowl is a common name for three bird species in the genera Pavo and Afropavo within the tribe Pavonini of the family Phasianidae, the pheasants and their allies.
+          </p>
+        </gwds-card>
+      </gwds-grid>
+    </section>
+
     <!-- QUOTE -->
+    <gwds-component-title>gwds-quote</gwds-component-title>
     <gwds-quote image-url="../assets/images/elvis.jpg" image-alt="Elvis Presley" person-name="osvaldo pasut" person-location="Intersoft - Argentina GeneXus" person-position="cto"
       >Para transformarte digitalmente es esencial un aliado de trayectoria innovadora. A la hora de migrar nuestro principal producto, de 1.100.000 líneas de código, no dudamos de
       que el camino hacia la inteligencia empresarial y digital se hacía con GeneXus™</gwds-quote
     >
 
     <!-- QUOTE (CENTER VERTICAL)-->
-    <gwds-quote bg-color="green-900" white-text image-url="../assets/images/elvis.jpg" image-alt="Elvis Presley" center-vertical
+    <gwds-quote bg-color="green-900" image-url="../assets/images/elvis.jpg" image-alt="Elvis Presley" center-vertical
       >Para transformarte digitalmente es esencial un aliado de trayectoria innovadora. A la hora de migrar nuestro principal producto, de 1.100.000 líneas de código...</gwds-quote
     >
 
-    <!-- VIDEO (LEFT)-->
-    <gwds-video-section main-title="Software que crea Software" source="youtube" url="https://youtu.be/b0iRrgdaEaQ" full-width
-      >GeneXus, la solución Low Code para el Desarrollo de Software.</gwds-video-section
-    >
-
-    <!-- VIDEO (RIGHT)-->
-    <gwds-video-section bg-color="black" white-text align-content="right" main-title="Software que crea Software" source="youtube" url="https://youtu.be/b0iRrgdaEaQ" full-width
-      >GeneXus, la solución Low Code para el Desarrollo de Software.</gwds-video-section
-    >
-
+    <gwds-component-title>gwds-look-at-me</gwds-component-title>
     <!-- LOOK AT ME (LEFT) -->
     <gwds-look-at-me
       pre-title="Pre-title"
@@ -80,7 +518,7 @@
     <gwds-look-at-me
       pre-title="Pre-title"
       main-title="Meet Our Academic Program Partner"
-      bg-color="blue-900"
+      bg-color="blue-50"
       align-content="right"
       white-text
       bg-image="../assets/images/gwds__look-at-me-left-img.svg"
@@ -97,6 +535,7 @@
       </p>
     </gwds-look-at-me>
 
+    <gwds-component-title>gwds-show-and-tell</gwds-component-title>
     <!-- SHOW AND TELL (LEFT) -->
     <gwds-show-and-tell pre-title="Save the date" main-title="Enterprise Low-Code 2022" image-url="../assets/images/gwds__show-and-tell-img.svg">
       <p>
@@ -130,11 +569,30 @@
       <gwds-button label="Registrarse aquí" type="primary"></gwds-button>
     </gwds-show-and-tell>
 
+    <gwds-component-title>gwds-learn-more</gwds-component-title>
     <!-- LEARN MORE -->
     <gwds-learn-more bp-label="More depth for this" bp-url="/label" bs-label="Download doc" bs-url="/label" main-title="Comience a crear aplicaciones. Comience con GeneXus">
       <p>
         There is much depth to GeneXus Products and Technology, please take your time to visit our Products page to learn more about what makes us so different to the competition.
       </p>
     </gwds-learn-more>
+
+    <gwds-component-title>gwds-video-section</gwds-component-title>
+    <!-- VIDEO (LEFT)-->
+    <gwds-video-section main-title="Software que crea Software" source="youtube" url="https://www.youtube.com/embed/VcjzHMhBtf0" full-width
+      ><p>GeneXus, la solución Low Code para el Desarrollo de Software.</p></gwds-video-section
+    >
+
+    <!-- VIDEO (RIGHT)-->
+    <gwds-video-section
+      bg-color="black"
+      white-text
+      align-content="right"
+      main-title="Software que crea Software"
+      source="youtube"
+      url="https://www.youtube.com/embed/VI57QHL6ge0"
+      full-width
+      ><p>GeneXus, la solución Low Code para el Desarrollo de Software.</p></gwds-video-section
+    >
   </body>
 </html>

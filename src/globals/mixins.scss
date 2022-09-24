@@ -1,0 +1,22 @@
+//scroll bar
+@mixin scrollbar {
+  /* width */
+  &::-webkit-scrollbar {
+    width: var(--gwds__space--xs);
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: var(--gwds__color--white);
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: var(--gwds__color--dark-500);
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--gwds__color--dark-700);
+  }
+}

@@ -9,8 +9,10 @@
   position: relative;
   transition: var(--gwds__transition--regular) background-color;
 
-  &.white-text {
-    color: var(--gwds__color--white);
+  &__buttons-container {
+    :last-child {
+      margin-right: 0;
+    }
   }
 }
 

@@ -26,6 +26,7 @@
     "generate": "stencil generate"
   },
   "dependencies": {
+    "@splidejs/splide": "^4.0.17",
     "@stencil/core": "^2.13.0"
   },
   "devDependencies": {

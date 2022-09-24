@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop, State } from '@stencil/core';
+import textContrast from '../../utils/utils';
 
 @Component({
   tag: 'gwds-learn-more',
@@ -8,7 +9,6 @@ import { Component, Host, h, Prop, State } from '@stencil/core';
 export class GwdsLearnMore {
   @Prop() bgColor: string = 'dark-100';
   @Prop() mainTitle: string = null;
-  @Prop() whiteText: boolean = false;
   @Prop() pt0: boolean = false; //padding-top:0
   @Prop() pb0: boolean = false; //padding-bottom:0
   //Button Primary
@@ -22,13 +22,20 @@ export class GwdsLearnMore {
 
   @State() rowClasses: string = null;
   @State() colClasses: string = null;
+  @State() textColor: string = null;
+
+  componentWillLoad() {
+    //define text color based on contrast with the background
+    this.textColor = textContrast(this.bgColor);
+  }
 
   render() {
     return (
-      <Host class={{ 'gwds-learn-more': true, 'white-text': this.whiteText }}>
+      <Host class={{ 'gwds-learn-more': true }}>
         <section
           style={{
             backgroundColor: `var(--gwds__color--${this.bgColor})`,
+            color: `var(${this.textColor})`,
           }}
         >
           <div
@@ -39,7 +46,7 @@ export class GwdsLearnMore {
             }}
           >
             <div class={{ 'row d-flex align-items-center': true }}>
-              <div class={{ 'col col-12 col-lg-6': true }}>
+              <div class={{ 'gwds-learn-more__col-left col col-12 col-lg-6': true }}>
                 {this.mainTitle ? (
                   <h2
                     class={{
@@ -50,9 +57,7 @@ export class GwdsLearnMore {
                     {this.mainTitle}
                   </h2>
                 ) : null}
-                <p>
-                  <slot></slot>
-                </p>
+                <slot></slot>
               </div>
               <div class={{ 'col col-12 col-lg-6 d-lg-flex justify-content-lg-end': true }}>
                 {this.bpLabel && this.bpUrl ? <gwds-button label={this.bpLabel} type="primary" blank={this.bpBlank ? true : false}></gwds-button> : null}

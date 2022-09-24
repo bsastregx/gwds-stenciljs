@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+.gwds-component-title {
+  &__label {
+    display: block;
+    background-color: var(--gwds__color--dark-900);
+    color: var(--gwds__color--white);
+    padding: var(--gwds__space--xs) var(--gwds__space--s);
+  }
+  &__experimental {
+    font-size: var(--gwds__font-size--s);
+    border-radius: var(--gwds__radius--xxs);
+    padding: var(--gwds__space--xxs) var(--gwds__space--xs);
+    background-color: var(--gwds__color--black);
+    color: var(--gwds__color--turquoise-200);
+  }
+}

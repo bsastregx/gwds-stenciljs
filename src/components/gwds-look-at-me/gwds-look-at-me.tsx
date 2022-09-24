@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop, State } from '@stencil/core';
+import textContrast from '../../utils/utils';
 
 @Component({
   tag: 'gwds-look-at-me',
@@ -9,7 +10,6 @@ export class GwLookAtMe {
   @Prop() bgColor: string = null;
   @Prop() preTitle: string = null;
   @Prop() mainTitle: string = null;
-  @Prop() whiteText: boolean = false;
   @Prop() pt0: boolean = false; //padding-top:0
   @Prop() pb0: boolean = false; //padding-bottom:0
   @Prop() alignContent: 'left' | 'center' | 'right' = 'left';
@@ -31,6 +31,7 @@ export class GwLookAtMe {
   @State() rowClasses: string = null;
   @State() colClasses: string = null;
   @State() bgPosition: string = 'bottom right';
+  @State() textColor: string = null;
 
   componentWillLoad() {
     //define this.rowClasses and this.colClasses css classes.
@@ -50,6 +51,9 @@ export class GwLookAtMe {
     if (this.alignContent === 'right') {
       this.bgPosition = 'bottom left';
     }
+
+    //define text color based on contrast with the background
+    this.textColor = textContrast(this.bgColor);
   }
 
   componentDidLoad() {}
@@ -57,12 +61,13 @@ export class GwLookAtMe {
   render() {
     return (
       <Host
-        class={{ 'gwds-look-at-me': true, 'white-text': this.whiteText }}
+        class={{ 'gwds-look-at-me': true }}
         style={{
           backgroundColor: `var(--gwds__color--${this.bgColor})`,
           backgroundImage: `url(${this.bgImage})`,
           backgroundSize: this.bgSize,
           backgroundPosition: this.bgPosition,
+          color: `var(${this.textColor})`,
         }}
       >
         <section>
@@ -87,9 +92,15 @@ export class GwLookAtMe {
                   </h2>
                 ) : null}
                 <slot></slot>
-                {this.bpLabel && this.bpUrl ? <gwds-button label={this.bpLabel} type="primary" blank={this.bpBlank ? true : false}></gwds-button> : null}
-                {this.bsLabel && this.bsUrl ? <gwds-button label={this.bsLabel} type="secondary" blank={this.bsBlank ? true : false}></gwds-button> : null}
-                {this.btLabel && this.btUrl ? <gwds-button label={this.btLabel} type="tertiary" blank={this.btBlank ? true : false}></gwds-button> : null}
+                <div
+                  class={{
+                    'gwds-look-at-me__buttons-container': true,
+                  }}
+                >
+                  {this.bpLabel && this.bpUrl ? <gwds-button label={this.bpLabel} type="primary" blank={this.bpBlank ? true : false}></gwds-button> : null}
+                  {this.bsLabel && this.bsUrl ? <gwds-button label={this.bsLabel} type="secondary" blank={this.bsBlank ? true : false}></gwds-button> : null}
+                  {this.btLabel && this.btUrl ? <gwds-button label={this.btLabel} type="tertiary" blank={this.btBlank ? true : false}></gwds-button> : null}
+                </div>
               </div>
             </div>
           </div>

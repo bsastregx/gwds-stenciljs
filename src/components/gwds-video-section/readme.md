@@ -18,7 +18,6 @@
 | `pt0`          | `pt-0`          |             | `boolean`              | `false`     |
 | `source`       | `source`        |             | `"vimeo" \| "youtube"` | `undefined` |
 | `url`          | `url`           |             | `string`               | `null`      |
-| `whiteText`    | `white-text`    |             | `boolean`              | `false`     |
 
 
 ## Dependencies

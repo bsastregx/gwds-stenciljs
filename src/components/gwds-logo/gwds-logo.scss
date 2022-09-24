@@ -1,0 +1,41 @@
+:host {
+  display: block;
+}
+.gwds-logo {
+  &__anchor {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--gwds__color--black);
+    border-radius: var(--gwds__radius--s);
+    opacity: 0.075;
+    transition: opacity var(--gwds__transition--fast);
+
+    &:hover {
+      opacity: 0;
+    }
+  }
+  &__container {
+    position: relative;
+    background-color: var(--gwds__color--dark-200);
+    color: var(--gwds__color--dark-800);
+    text-align: center;
+    padding: var(--gwds__space--m);
+    height: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: var(--gwds__radius--s);
+  }
+  &__image {
+    width: 100%;
+    margin-bottom: var(--gwds__space--s);
+  }
+  &__label {
+    margin: 0 !important;
+  }
+}

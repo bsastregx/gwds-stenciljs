@@ -1,31 +1,33 @@
 :host {
   display: block;
 }
-.gwds__show-and-tell {
+.gwds-show-and-tell {
   display: block;
-  &.white-text {
-    color: var(--gwds__color--white);
+  &__content-wrapper {
+    :last-child {
+      margin-bottom: 0;
+    }
   }
-}
-.image {
-  margin-top: var(--gwds__space--m);
-}
-/* RESPONSIVE */
-/*sm*/
-@media (min-width: 576px) {
-}
-/*md*/
-@media (min-width: 768px) {
-}
-/*lg*/
-@media (min-width: 992px) {
-  .image {
-    margin-top: 0;
+  &__image {
+    margin-top: var(--gwds__space--m);
   }
-}
-/*xl*/
-@media (min-width: 1200px) {
-}
-/*xxl*/
-@media (min-width: 1400px) {
+  /* RESPONSIVE */
+  /*sm*/
+  @media (min-width: 576px) {
+  }
+  /*md*/
+  @media (min-width: 768px) {
+  }
+  /*lg*/
+  @media (min-width: 992px) {
+    &__image {
+      margin-top: 0;
+    }
+  }
+  /*xl*/
+  @media (min-width: 1200px) {
+  }
+  /*xxl*/
+  @media (min-width: 1400px) {
+  }
 }

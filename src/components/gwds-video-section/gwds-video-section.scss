@@ -3,7 +3,14 @@
 }
 .gwds-video-section {
   display: block;
-  &.white-text {
-    color: var(--gwds__color--white);
+
+  /* RESPONSIVE */
+  /*lg*/
+  @media (min-width: 992px) {
+    &__content-wrapper {
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }

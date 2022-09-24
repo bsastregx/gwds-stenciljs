@@ -11,6 +11,7 @@
 | -------- | --------- | ----------- | ---------------------------------------- | ----------- |
 | `blank`  | `blank`   |             | `boolean`                                | `false`     |
 | `label`  | `label`   |             | `string`                                 | `null`      |
+| `m0`     | `m-0`     |             | `boolean`                                | `false`     |
 | `size`   | `size`    |             | `"regular" \| "small"`                   | `'regular'` |
 | `type`   | `type`    |             | `"primary" \| "secondary" \| "tertiary"` | `'primary'` |
 | `url`    | `url`     |             | `string`                                 | `null`      |

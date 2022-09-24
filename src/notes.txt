@@ -1,0 +1,13 @@
+Sliders:
+
+Splide: https://splidejs.com/ (demasiadas opciones?)
+Embla: https://www.embla-carousel.com/
+Owl: https://owlcarousel2.github.io/OwlCarousel2/ (usa Jquery)
+Glider: https://nickpiscitelli.github.io/Glider.js/ (al deslizar con el dedo, queda quieto exactamente donde soltaste) 
+Glidejs: https://glidejs.com/docs/ (28kb)
+Swiper: https://swiperjs.com/demos
+
+------------------------------------
+
+padding top y bottom de los componentes queda en : 96px
+cuando dos componentes con el mismo color quedan la lado, uno de ellos la mitas del padding. 

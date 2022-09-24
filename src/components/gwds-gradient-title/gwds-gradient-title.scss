@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+.gwds-gradient-title {
+  display: block;
+  .title {
+    -webkit-background-clip: text !important;
+    -moz-background-clip: text !important;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    line-height: 1.5em;
+    display: inline-block;
+    font-size: 64px;
+    letter-spacing: -0.05em;
+    margin: 0;
+  }
+}

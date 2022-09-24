@@ -1,4 +1,5 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, State } from '@stencil/core';
+import textContrast from '../../utils/utils';
 
 @Component({
   tag: 'gwds-quote',
@@ -15,12 +16,20 @@ export class GwdsQuote {
   @Prop() personName: string = null;
   @Prop() centerVertical: boolean = false;
 
+  @State() textColor: string = null;
+
+  componentWillLoad() {
+    //define text color based on contrast with the background
+    this.textColor = textContrast(this.bgColor);
+  }
+
   render() {
     return (
       <Host
         class={{ 'gwds-quote': true, 'white-text': this.whiteText }}
         style={{
           backgroundColor: `var(--gwds__color--${this.bgColor})`,
+          color: `var(${this.textColor})`,
         }}
       >
         <section>
@@ -41,7 +50,7 @@ export class GwdsQuote {
                 >
                   <div>
                     <blockquote cite={this.cite} class="gwds-quote__quote">
-                      <p class="mt-0">
+                      <p class="m-0">
                         <slot></slot>
                       </p>
                       {this.personName || this.personLocation ? (

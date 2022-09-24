@@ -1,0 +1,70 @@
+:host {
+  display: block;
+}
+@import '~@splidejs/splide/dist/css/splide.min.css';
+
+.gwds-slider {
+  display: block;
+  .splide {
+    position: relative;
+    //background-color: var(--gwds__color--dark-900);
+    margin-bottom: var(--gwds__space--m);
+  }
+  .splide__list {
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &--cover {
+    .splide__list {
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+  &--gap {
+    .splide {
+      background-color: transparent;
+    }
+  }
+  &--cards {
+    gwds-card {
+      height: auto;
+      margin-bottom: var(--gwds__space--xs);
+    }
+  }
+  .splide__pagination {
+    bottom: -21px;
+    li:before {
+      display: none;
+    }
+    &__page {
+      background-color: var(--gwds__color--dark-500);
+      width: 32px;
+      height: 2px;
+      border-radius: 0;
+      &.is-active {
+        opacity: 1;
+        transform: none;
+        background-color: var(--gwds__color--fuchsia-500);
+      }
+    }
+  }
+  .splide__arrow {
+    background-color: transparent;
+    height: 100%;
+    width: 50px;
+    svg {
+      fill: #fff;
+    }
+    &--next {
+      padding-right: 16px;
+      right: 0;
+    }
+    &--prev {
+      padding-left: 16px;
+      left: 0;
+    }
+  }
+}

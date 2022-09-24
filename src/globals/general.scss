@@ -6,6 +6,12 @@ body {
   font-size: var(--gwds__font-size--m);
 }
 
+//selection
+::selection {
+  color: var(--gwds__color--black);
+  background: var(--gwds__color--violet-50);
+}
+
 //paragraph
 p {
   margin: var(--gwds__space--s) 0 var(--gwds__space--s) 0;

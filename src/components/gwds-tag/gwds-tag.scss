@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+.gwds-tag {
+  display: block;
+  margin-bottom: var(--gwds__space--xs);
+
+  &__span {
+    font-size: var(--gwds__font-size--s);
+    padding: var(--gwds__space--xxs) var(--gwds__space--xs);
+    border-radius: var(--gwds__radius--xxs);
+    overflow: hidden;
+  }
+}

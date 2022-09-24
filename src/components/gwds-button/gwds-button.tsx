@@ -11,23 +11,22 @@ export class GwButton {
   @Prop() size: 'small' | 'regular' = 'regular';
   @Prop() url: string = null;
   @Prop() blank: boolean = false;
+  @Prop() m0: boolean = false;
 
   render() {
     return (
-      <Host class={{ 'gwds-button': true }}>
-        <a
-          tabindex="0"
-          class={{
-            'gwds-button__button': true,
-            'gwds-button__button--primary': this.type === 'primary',
-            'gwds-button__button--secondary': this.type === 'secondary',
-            'gwds-button__button--tertiary': this.type === 'tertiary',
-            'gwds-button__button--small': this.size === 'small',
-            'gwds-button__button--regular': this.size === 'regular',
-          }}
-          href={this.url}
-          target={this.blank ? '_blank' : '_self'}
-        >
+      <Host
+        class={{
+          'gwds-button': true,
+          'gwds-button--primary': this.type === 'primary',
+          'gwds-button--secondary': this.type === 'secondary',
+          'gwds-button--tertiary': this.type === 'tertiary',
+          'gwds-button--small': this.size === 'small',
+          'gwds-button--regular': this.size === 'regular',
+          'm-0': this.m0,
+        }}
+      >
+        <a tabindex="0" class={{ 'gwds-button__button': true }} href={this.url} target={this.blank ? '_blank' : '_self'}>
           {this.label}
         </a>
       </Host>

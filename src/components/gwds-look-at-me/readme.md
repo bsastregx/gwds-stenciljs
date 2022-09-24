@@ -26,7 +26,6 @@
 | `pb0`          | `pb-0`          |             | `boolean`                       | `false`    |
 | `preTitle`     | `pre-title`     |             | `string`                        | `null`     |
 | `pt0`          | `pt-0`          |             | `boolean`                       | `false`    |
-| `whiteText`    | `white-text`    |             | `boolean`                       | `false`    |
 
 
 ## Dependencies

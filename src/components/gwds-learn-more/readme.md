@@ -19,7 +19,6 @@
 | `mainTitle` | `main-title` |             | `string`  | `null`       |
 | `pb0`       | `pb-0`       |             | `boolean` | `false`      |
 | `pt0`       | `pt-0`       |             | `boolean` | `false`      |
-| `whiteText` | `white-text` |             | `boolean` | `false`      |
 
 
 ## Dependencies
