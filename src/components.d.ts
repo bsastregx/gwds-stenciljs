@@ -6,6 +6,19 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface GwdsAccordion {
+    }
+    interface GwdsAccordionItem {
+        "active": boolean;
+        "itemId": string;
+        "itemTitle": string;
+    }
+    interface GwdsAccordionSection {
+        "bgColor": string;
+        "mainTitle": string;
+        "pb0": boolean;
+        "pt0": boolean;
+    }
     interface GwdsBlocks {
         "bgColor": string;
         "buttonLabel": string;
@@ -142,7 +155,29 @@ export namespace Components {
         "url": string;
     }
 }
+export interface GwdsAccordionItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLGwdsAccordionItemElement;
+}
 declare global {
+    interface HTMLGwdsAccordionElement extends Components.GwdsAccordion, HTMLStencilElement {
+    }
+    var HTMLGwdsAccordionElement: {
+        prototype: HTMLGwdsAccordionElement;
+        new (): HTMLGwdsAccordionElement;
+    };
+    interface HTMLGwdsAccordionItemElement extends Components.GwdsAccordionItem, HTMLStencilElement {
+    }
+    var HTMLGwdsAccordionItemElement: {
+        prototype: HTMLGwdsAccordionItemElement;
+        new (): HTMLGwdsAccordionItemElement;
+    };
+    interface HTMLGwdsAccordionSectionElement extends Components.GwdsAccordionSection, HTMLStencilElement {
+    }
+    var HTMLGwdsAccordionSectionElement: {
+        prototype: HTMLGwdsAccordionSectionElement;
+        new (): HTMLGwdsAccordionSectionElement;
+    };
     interface HTMLGwdsBlocksElement extends Components.GwdsBlocks, HTMLStencilElement {
     }
     var HTMLGwdsBlocksElement: {
@@ -252,6 +287,9 @@ declare global {
         new (): HTMLGwdsVideoSectionElement;
     };
     interface HTMLElementTagNameMap {
+        "gwds-accordion": HTMLGwdsAccordionElement;
+        "gwds-accordion-item": HTMLGwdsAccordionItemElement;
+        "gwds-accordion-section": HTMLGwdsAccordionSectionElement;
         "gwds-blocks": HTMLGwdsBlocksElement;
         "gwds-button": HTMLGwdsButtonElement;
         "gwds-card": HTMLGwdsCardElement;
@@ -273,6 +311,20 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface GwdsAccordion {
+    }
+    interface GwdsAccordionItem {
+        "active"?: boolean;
+        "itemId"?: string;
+        "itemTitle"?: string;
+        "onAccordionOpened"?: (event: GwdsAccordionItemCustomEvent<object>) => void;
+    }
+    interface GwdsAccordionSection {
+        "bgColor"?: string;
+        "mainTitle"?: string;
+        "pb0"?: boolean;
+        "pt0"?: boolean;
+    }
     interface GwdsBlocks {
         "bgColor"?: string;
         "buttonLabel"?: string;
@@ -409,6 +461,9 @@ declare namespace LocalJSX {
         "url"?: string;
     }
     interface IntrinsicElements {
+        "gwds-accordion": GwdsAccordion;
+        "gwds-accordion-item": GwdsAccordionItem;
+        "gwds-accordion-section": GwdsAccordionSection;
         "gwds-blocks": GwdsBlocks;
         "gwds-button": GwdsButton;
         "gwds-card": GwdsCard;
@@ -433,6 +488,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "gwds-accordion": LocalJSX.GwdsAccordion & JSXBase.HTMLAttributes<HTMLGwdsAccordionElement>;
+            "gwds-accordion-item": LocalJSX.GwdsAccordionItem & JSXBase.HTMLAttributes<HTMLGwdsAccordionItemElement>;
+            "gwds-accordion-section": LocalJSX.GwdsAccordionSection & JSXBase.HTMLAttributes<HTMLGwdsAccordionSectionElement>;
             "gwds-blocks": LocalJSX.GwdsBlocks & JSXBase.HTMLAttributes<HTMLGwdsBlocksElement>;
             "gwds-button": LocalJSX.GwdsButton & JSXBase.HTMLAttributes<HTMLGwdsButtonElement>;
             "gwds-card": LocalJSX.GwdsCard & JSXBase.HTMLAttributes<HTMLGwdsCardElement>;
