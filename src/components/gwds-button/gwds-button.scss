@@ -10,16 +10,21 @@
 
   &__button {
     cursor: pointer;
+    background-position: center;
     display: inline-block;
     padding: var(--gwds__space--s) var(--gwds__space--m);
     border-radius: var(--gwds__radius--m);
     background-color: transparent;
     text-decoration: none;
-    transition: var(--gwds__transition--super-fast) all;
+    transition: transform var(--gwds__transition--super-fast), background var(--gwds__transition--regular);
 
     &:hover {
       transform: scale(1.05);
       text-decoration: none;
+    }
+    &:active {
+      background-size: 100% !important;
+      transition: background 0s;
     }
   }
 
@@ -29,6 +34,10 @@
       background-color: var(--gwds__color--fuchsia-500);
       &:hover {
         color: var(--gwds__color--white);
+        background: var(--gwds__color--fuchsia-500) radial-gradient(circle, transparent 1%, var(--gwds__color--fuchsia-500) 1%) center/15000%;
+      }
+      &:active {
+        background-color: #fb5981;
       }
     }
   }
@@ -36,8 +45,10 @@
     .gwds-button__button {
       color: var(--gwds__color--black);
       background-color: var(--gwds__color--white);
+      border: 1px solid var(--gwds__color--black);
       &:hover {
         color: var(--gwds__color--black);
+        background: var(--gwds__color--white) radial-gradient(circle, transparent 1%, rgba(0, 0, 0, 0.025) 1%) center/15000%;
       }
     }
   }

@@ -11,8 +11,10 @@ export class GwdsSlider {
   @Prop() gap: boolean = false;
   @Prop() padding: boolean = false;
   @Prop() orientation: 'landscape' | 'portrait' = 'landscape';
-  @Prop() slideId: string = null;
+  @Prop() sliderId: string = null;
   @Prop() cards: boolean = false;
+  @Prop() individual: boolean = false;
+  @Prop() dark: boolean = false;
   @State() paddingValue = '0';
 
   componentWillLoad() {
@@ -21,16 +23,36 @@ export class GwdsSlider {
     }
   }
 
+  perPage() {
+    if (this.orientation === 'landscape' && !this.individual) {
+      return 2;
+    } else if (this.orientation === 'portrait' && !this.individual) {
+      return 3;
+    } else if (this.individual) {
+      return 1;
+    }
+  }
+
+  perPage1399() {
+    if (this.orientation === 'landscape' && !this.individual) {
+      return 2;
+    } else if (this.orientation === 'portrait' && !this.individual) {
+      return 3;
+    } else if (this.individual) {
+      return 1;
+    }
+  }
+
   componentDidLoad() {
-    new Splide(`#${this.slideId}`, {
-      perPage: this.orientation === 'landscape' ? 3 : 4,
+    new Splide(`#${this.sliderId}`, {
+      perPage: this.perPage(),
       lazyLoad: 'nearby',
       gap: this.gap ? `var(--gwds__space--s)` : 0,
       arrows: true,
       padding: { left: this.paddingValue, right: this.paddingValue },
       breakpoints: {
         1399: {
-          perPage: this.orientation === 'landscape' ? 2 : 3,
+          perPage: this.perPage1399(),
         },
         992: {
           perPage: this.orientation === 'landscape' ? 1 : 2,
@@ -53,9 +75,10 @@ export class GwdsSlider {
           'gwds-slider--cover': this.cover,
           'gwds-slider--gap': this.gap,
           'gwds-slider--cards': this.cards,
+          'gwds-slider--dark': this.dark,
         }}
       >
-        <section id={this.slideId} class={{ 'splide': true, 'p-0': true }} aria-labelledby="carousel-heading">
+        <section id={this.sliderId} class={{ 'splide': true, 'p-0': true }} aria-labelledby="carousel-heading">
           <div class="splide__track">
             <ul class="splide__list unstyled">
               <slot></slot>

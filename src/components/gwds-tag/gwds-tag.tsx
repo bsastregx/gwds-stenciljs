@@ -1,4 +1,5 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, State } from '@stencil/core';
+import textContrast from '../../utils/utils';
 
 @Component({
   tag: 'gwds-tag',
@@ -7,11 +8,20 @@ import { Component, Host, h, Prop } from '@stencil/core';
 })
 export class GwdsTag {
   @Prop() label: string = null;
-  @Prop() bgColor: 'violet-50' = 'violet-50';
+  @Prop() bgColor: string = 'violet-50';
+  @Prop() url: string = null;
+
+  @State() textColor: string = null;
+
+  componentWillLoad() {
+    //define text color based on contrast with the background
+    this.textColor = textContrast(this.bgColor);
+  }
+
   render() {
     return (
       <Host class={{ 'gwds-tag': true }}>
-        <small class={{ 'gwds-tag__span': true }} style={{ backgroundColor: `var(--gwds__color--${this.bgColor})` }}>
+        <small class={{ 'gwds-tag__span': true }} style={{ backgroundColor: `var(--gwds__color--${this.bgColor})`, color: `var(${this.textColor})` }}>
           {this.label}
         </small>
       </Host>

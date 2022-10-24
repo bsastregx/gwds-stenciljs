@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+.gwds-good-news-section {
+  &__slotted-content {
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__wrapper {
+    margin-top: var(--gwds__space--l);
+  }
+}

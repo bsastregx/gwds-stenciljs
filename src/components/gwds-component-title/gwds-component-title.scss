@@ -2,11 +2,44 @@
   display: block;
 }
 .gwds-component-title {
-  &__label {
+  display: block;
+  background-color: var(--gwds__color--dark-900);
+  color: var(--gwds__color--white);
+  padding: var(--gwds__space--xs) var(--gwds__space--s);
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__show-properties {
+    line-height: 1em;
+    padding: var(--gwds__space--xs) var(--gwds__space--xs);
+    color: var(--gwds__color--dark-500);
+    border: 1px solid var(--gwds__color--dark-500);
+    font-size: var(--gwds__font-size--s);
+    font-family: monospace;
+    margin-left: var(--gwds__space--s);
+    //opacity: 0.5;
+
+    &:hover {
+      background-color: var(--gwds__color--white);
+      color: var(--gwds__color--black);
+      cursor: pointer;
+    }
+  }
+  &__code {
     display: block;
-    background-color: var(--gwds__color--dark-900);
-    color: var(--gwds__color--white);
-    padding: var(--gwds__space--xs) var(--gwds__space--s);
+    height: 0;
+    overflow: hidden;
+    color: var(--gwds__color--turquoise-200);
+    &--show {
+      padding-top: var(--gwds__space--xs);
+      height: auto;
+    }
+  }
+  &__label {
   }
   &__experimental {
     font-size: var(--gwds__font-size--s);

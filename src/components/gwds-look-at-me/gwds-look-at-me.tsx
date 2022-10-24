@@ -16,17 +16,17 @@ export class GwLookAtMe {
   @Prop() bgImage: string = null;
   @Prop() bgSize: string = '1600px';
   //Button Primary
-  @Prop() bpLabel: string = null;
-  @Prop() bpUrl: string = null;
-  @Prop() bpBlank: boolean = false;
+  @Prop() buttonPrimaryLabel: string = null;
+  @Prop() buttonPrimaryUrl: string = null;
+  @Prop() buttonPrimaryBlank: boolean = false;
   //Button Secondary
-  @Prop() bsLabel: string = null;
-  @Prop() bsUrl: string = null;
-  @Prop() bsBlank: boolean = false;
+  @Prop() buttonSecondaryLabel: string = null;
+  @Prop() buttonSecondaryUrl: string = null;
+  @Prop() buttonSecondaryBlank: boolean = false;
   //Button Tertiary
-  @Prop() btLabel: string = null;
-  @Prop() btUrl: string = null;
-  @Prop() btBlank: boolean = false;
+  @Prop() buttonTertiaryLabel: string = null;
+  @Prop() buttonTertiaryUrl: string = null;
+  @Prop() buttonTertiaryBlank: boolean = false;
 
   @State() rowClasses: string = null;
   @State() colClasses: string = null;
@@ -70,7 +70,7 @@ export class GwLookAtMe {
           color: `var(${this.textColor})`,
         }}
       >
-        <section>
+        <section class="section">
           <div
             class={{
               'container': true,
@@ -97,9 +97,15 @@ export class GwLookAtMe {
                     'gwds-look-at-me__buttons-container': true,
                   }}
                 >
-                  {this.bpLabel && this.bpUrl ? <gwds-button label={this.bpLabel} type="primary" blank={this.bpBlank ? true : false}></gwds-button> : null}
-                  {this.bsLabel && this.bsUrl ? <gwds-button label={this.bsLabel} type="secondary" blank={this.bsBlank ? true : false}></gwds-button> : null}
-                  {this.btLabel && this.btUrl ? <gwds-button label={this.btLabel} type="tertiary" blank={this.btBlank ? true : false}></gwds-button> : null}
+                  {this.buttonPrimaryLabel && this.buttonPrimaryUrl ? (
+                    <gwds-button label={this.buttonPrimaryLabel} type="primary" url={this.buttonPrimaryUrl} blank={this.buttonPrimaryBlank ? true : false}></gwds-button>
+                  ) : null}
+                  {this.buttonSecondaryLabel && this.buttonSecondaryUrl ? (
+                    <gwds-button label={this.buttonSecondaryLabel} type="secondary" url={this.buttonSecondaryUrl} blank={this.buttonSecondaryBlank ? true : false}></gwds-button>
+                  ) : null}
+                  {this.buttonTertiaryLabel && this.buttonTertiaryUrl ? (
+                    <gwds-button label={this.buttonTertiaryLabel} type="tertiary" url={this.buttonTertiaryUrl} blank={this.buttonTertiaryBlank ? true : false}></gwds-button>
+                  ) : null}
                 </div>
               </div>
             </div>

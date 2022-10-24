@@ -17,6 +17,19 @@ export class GwdsVideoSection {
   @Prop() source: 'youtube' | 'vimeo';
   @Prop() fullWidth: boolean = true;
 
+  //Button Primary
+  @Prop() buttonPrimaryLabel: string = null;
+  @Prop() buttonPrimaryUrl: string = null;
+  @Prop() buttonPrimaryBlank: boolean = false;
+  //Button Secondary
+  @Prop() buttonSecondaryLabel: string = null;
+  @Prop() buttonSecondaryUrl: string = null;
+  @Prop() buttonSecondaryBlank: boolean = false;
+  //Button Tertiary
+  @Prop() buttonTertiaryLabel: string = null;
+  @Prop() buttonTertiaryUrl: string = null;
+  @Prop() buttonTertiaryBlank: boolean = false;
+
   @State() rowClasses: string = null;
   @State() leftColClasses: string = null;
   @State() rightColClasses: string = null;
@@ -44,7 +57,7 @@ export class GwdsVideoSection {
   render() {
     return (
       <Host
-        class={{ 'gwds-video-section': true }}
+        class={{ 'gwds-video-section': true, 'section': true }}
         style={{
           backgroundColor: `var(--gwds__color--${this.bgColor})`,
           color: `var(${this.textColor})`,
@@ -61,6 +74,15 @@ export class GwdsVideoSection {
                 >
                   {this.mainTitle ? <h2 class="h3 mt-0">{this.mainTitle}</h2> : null}
                   <slot></slot>
+                  {this.buttonPrimaryLabel && this.buttonPrimaryUrl ? (
+                    <gwds-button label={this.buttonPrimaryLabel} type="primary" url={this.buttonPrimaryUrl} blank={this.buttonPrimaryBlank ? true : false}></gwds-button>
+                  ) : null}
+                  {this.buttonSecondaryLabel && this.buttonSecondaryUrl ? (
+                    <gwds-button label={this.buttonSecondaryLabel} type="secondary" url={this.buttonSecondaryUrl} blank={this.buttonSecondaryBlank ? true : false}></gwds-button>
+                  ) : null}
+                  {this.buttonTertiaryLabel && this.buttonTertiaryUrl ? (
+                    <gwds-button label={this.buttonTertiaryLabel} type="tertiary" url={this.buttonTertiaryUrl} blank={this.buttonTertiaryBlank ? true : false}></gwds-button>
+                  ) : null}
                 </div>
               </div>
               <div class={this.rightColClasses}>

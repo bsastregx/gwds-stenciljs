@@ -4,6 +4,7 @@ body {
   font-family: var(--gwds__font-family--body);
   font-weight: var(--gwds__font-wight--regular);
   font-size: var(--gwds__font-size--m);
+  line-height: var(--gwds__line-height--spaced);
 }
 
 //selection
@@ -23,7 +24,7 @@ img {
 }
 
 //section
-section {
+.section {
   padding-top: var(--gwds__space--l);
   padding-bottom: var(--gwds__space--l);
   /* RESPONSIVE */
@@ -75,9 +76,11 @@ ul {
 a {
   color: inherit;
   text-decoration: none;
+  line-height: var(--gwds__line-height--regular);
 
   &:hover {
     text-decoration: underline;
+    cursor: pointer;
   }
 }
 
@@ -166,5 +169,5 @@ blockquote,
 q,
 body,
 small {
-  line-height: var(--gwds__line-height--spaced);
+  line-height: var(--gwds__line-height--regular);
 }

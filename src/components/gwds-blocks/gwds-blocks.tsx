@@ -10,8 +10,19 @@ export class GwdsBlocks {
   @Prop() bgColor: string = 'dark-100';
   @Prop() mainTitle: string = null;
   @Prop() description: string = null;
-  @Prop() buttonLabel: string = null;
-  @Prop() buttonUrl: string = null;
+  //Button Primary
+  @Prop() buttonPrimaryLabel: string = null;
+  @Prop() buttonPrimaryUrl: string = null;
+  @Prop() buttonPrimaryBlank: boolean = false;
+  //Button Secondary
+  @Prop() buttonSecondaryLabel: string = null;
+  @Prop() buttonSecondaryUrl: string = null;
+  @Prop() buttonSecondaryBlank: boolean = false;
+  //Button Tertiary
+  @Prop() buttonTertiaryLabel: string = null;
+  @Prop() buttonTertiaryUrl: string = null;
+  @Prop() buttonTertiaryBlank: boolean = false;
+
   @Prop() linkUrl: string = null;
   @Prop() linkLabel: string = null;
   @Prop() linkTarget: '_blank' | '_self' = '_self';
@@ -33,10 +44,6 @@ export class GwdsBlocks {
     }
   }
 
-  slottedContent() {
-    return <slot></slot>;
-  }
-
   render() {
     return (
       <Host
@@ -51,19 +58,24 @@ export class GwdsBlocks {
           color: `var(${this.textColor})`,
         }}
       >
-        <section>
+        <section class="section">
           <div class={{ 'container': true, 'container--main': true }}>
             <div class={{ 'gwds-blocks__wrapper': true }}>
               {this.mainTitle ? <h2 class="h2">{this.mainTitle}</h2> : null}
               {this.description ? <p class={{ 'gwds-blocks__description': true }}>{this.description}</p> : null}
-              {this.linkLabel && this.linkTarget && this.display === 'grid-aside' ? (
-                <gwds-button label={this.linkLabel} url={this.linkUrl} blank={this.linkTarget === '_blank'} class="mt-xs mb-0"></gwds-button>
+              {this.buttonPrimaryLabel && this.buttonPrimaryUrl ? (
+                <gwds-button label={this.buttonPrimaryLabel} type="primary" url={this.buttonPrimaryUrl} blank={this.buttonPrimaryBlank ? true : false}></gwds-button>
+              ) : null}
+              {this.buttonSecondaryLabel && this.buttonSecondaryUrl ? (
+                <gwds-button label={this.buttonSecondaryLabel} type="secondary" url={this.buttonSecondaryUrl} blank={this.buttonSecondaryBlank ? true : false}></gwds-button>
+              ) : null}
+              {this.buttonTertiaryLabel && this.buttonTertiaryUrl ? (
+                <gwds-button label={this.buttonTertiaryLabel} type="tertiary" url={this.buttonTertiaryUrl} blank={this.buttonTertiaryBlank ? true : false}></gwds-button>
               ) : null}
             </div>
-            <gwds-grid perRow={this.perRow()}>{this.slottedContent()}</gwds-grid>
-            {this.linkLabel && this.linkTarget && this.display !== 'grid-aside' ? (
-              <gwds-button label={this.linkLabel} url={this.linkUrl} blank={this.linkTarget === '_blank'} class="mt-l mb-0"></gwds-button>
-            ) : null}
+            <gwds-grid perRow={this.perRow()}>
+              <slot></slot>
+            </gwds-grid>
           </div>
         </section>
       </Host>

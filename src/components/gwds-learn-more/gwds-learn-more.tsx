@@ -12,13 +12,17 @@ export class GwdsLearnMore {
   @Prop() pt0: boolean = false; //padding-top:0
   @Prop() pb0: boolean = false; //padding-bottom:0
   //Button Primary
-  @Prop() bpLabel: string = null;
-  @Prop() bpUrl: string = null;
-  @Prop() bpBlank: boolean = false;
+  @Prop() buttonPrimaryLabel: string = null;
+  @Prop() buttonPrimaryUrl: string = null;
+  @Prop() buttonPrimaryBlank: boolean = false;
   //Button Secondary
-  @Prop() bsLabel: string = null;
-  @Prop() bsUrl: string = null;
-  @Prop() bsBlank: boolean = false;
+  @Prop() buttonSecondaryLabel: string = null;
+  @Prop() buttonSecondaryUrl: string = null;
+  @Prop() buttonSecondaryBlank: boolean = false;
+  //Button Tertiary
+  @Prop() buttonTertiaryLabel: string = null;
+  @Prop() buttonTertiaryUrl: string = null;
+  @Prop() buttonTertiaryBlank: boolean = false;
 
   @State() rowClasses: string = null;
   @State() colClasses: string = null;
@@ -33,6 +37,7 @@ export class GwdsLearnMore {
     return (
       <Host class={{ 'gwds-learn-more': true }}>
         <section
+          class="section"
           style={{
             backgroundColor: `var(--gwds__color--${this.bgColor})`,
             color: `var(${this.textColor})`,
@@ -60,8 +65,15 @@ export class GwdsLearnMore {
                 <slot></slot>
               </div>
               <div class={{ 'col col-12 col-lg-6 d-lg-flex justify-content-lg-end': true }}>
-                {this.bpLabel && this.bpUrl ? <gwds-button label={this.bpLabel} type="primary" blank={this.bpBlank ? true : false}></gwds-button> : null}
-                {this.bsLabel && this.bsUrl ? <gwds-button label={this.bsLabel} type="secondary" blank={this.bsBlank ? true : false}></gwds-button> : null}
+                {this.buttonPrimaryLabel && this.buttonPrimaryUrl ? (
+                  <gwds-button label={this.buttonPrimaryLabel} type="primary" url={this.buttonPrimaryUrl} blank={this.buttonPrimaryBlank ? true : false}></gwds-button>
+                ) : null}
+                {this.buttonSecondaryLabel && this.buttonSecondaryUrl ? (
+                  <gwds-button label={this.buttonSecondaryLabel} type="secondary" url={this.buttonSecondaryUrl} blank={this.buttonSecondaryBlank ? true : false}></gwds-button>
+                ) : null}
+                {this.buttonTertiaryLabel && this.buttonTertiaryUrl ? (
+                  <gwds-button label={this.buttonTertiaryLabel} type="tertiary" url={this.buttonTertiaryUrl} blank={this.buttonTertiaryBlank ? true : false}></gwds-button>
+                ) : null}
               </div>
             </div>
           </div>

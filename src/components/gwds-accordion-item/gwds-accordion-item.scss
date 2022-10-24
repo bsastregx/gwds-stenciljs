@@ -51,7 +51,7 @@
       position: absolute;
       width: 0%;
       height: 1px;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid var(--gwds__color--fuchsia-500);
       left: 0;
       bottom: 0;
       transition: width 0.25s;
@@ -115,5 +115,8 @@
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     position: relative;
+  }
+
+  &:hover {
   }
 }

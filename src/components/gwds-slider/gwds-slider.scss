@@ -67,4 +67,7 @@
       left: 0;
     }
   }
+  &--dark {
+    background-color: var(--gwds__color--black);
+  }
 }

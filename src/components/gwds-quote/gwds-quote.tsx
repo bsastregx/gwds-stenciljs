@@ -32,7 +32,7 @@ export class GwdsQuote {
           color: `var(${this.textColor})`,
         }}
       >
-        <section>
+        <section class="section">
           <div class="container">
             <div class="row">
               <div class="col d-flex">

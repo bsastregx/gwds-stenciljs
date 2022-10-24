@@ -1,0 +1,95 @@
+:host {
+  display: block;
+}
+.gwds-tooltip {
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    .gwds-tooltip__slot--content {
+      display: inline-block;
+      opacity: 1;
+    }
+  }
+
+  &__slot--content {
+    //display: none;
+    background-color: var(--gwds__color--dark-900);
+    color: var(--gwds__color--white);
+    font-size: var(--gwds__font-size--s);
+    padding: var(--gwds__space--s) var(--gwds__space--s);
+    border-radius: var(--gwds__radius--xs);
+    position: absolute;
+    opacity: 0;
+    transition: var(--gwds__transition--super-fast) all;
+    line-height: var(--gwds__line-height--spaced);
+    pointer-events: none;
+
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+
+    :first-child {
+      margin-top: 0;
+    }
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &--top {
+    .gwds-tooltip__slot--content {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%) translateY(calc(-100% - 16px)) scale(0.75);
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: var(--gwds__space--s);
+        bottom: 0;
+        left: 0;
+        transform: translateY(100%);
+      }
+      &:after {
+        content: '';
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid var(--gwds__color--dark-900);
+        position: absolute;
+        left: 50%;
+        bottom: 1px;
+        transform: translateX(-50%) translateY(100%);
+      }
+    }
+    &:hover {
+      .gwds-tooltip__slot--content {
+        transform: translateX(-50%) translateY(calc(-100% - 16px)) scale(1);
+      }
+    }
+  }
+  &--right {
+    .gwds-tooltip__slot--content {
+      top: 0;
+    }
+  }
+  &--bottom {
+    .gwds-tooltip__slot--content {
+      top: 0;
+    }
+  }
+  &--left {
+    .gwds-tooltip__slot--content {
+      top: 0;
+    }
+  }
+  &--pointer-events-auto {
+    .gwds-tooltip__slot--content {
+      pointer-events: auto;
+    }
+  }
+}

@@ -15,6 +15,18 @@ export class GwShowAndTell {
   @Prop() alignContent: 'left' | 'right' = 'left';
   @Prop() imageUrl: string = null;
   @Prop() imageAlt: string = null;
+  //Button Primary
+  @Prop() buttonPrimaryLabel: string = null;
+  @Prop() buttonPrimaryUrl: string = null;
+  @Prop() buttonPrimaryBlank: boolean = false;
+  //Button Secondary
+  @Prop() buttonSecondaryLabel: string = null;
+  @Prop() buttonSecondaryUrl: string = null;
+  @Prop() buttonSecondaryBlank: boolean = false;
+  //Button Tertiary
+  @Prop() buttonTertiaryLabel: string = null;
+  @Prop() buttonTertiaryUrl: string = null;
+  @Prop() buttonTertiaryBlank: boolean = false;
 
   @State() rowClasses: string = null;
   @State() leftColClasses: string = null;
@@ -49,7 +61,7 @@ export class GwShowAndTell {
         }}
         class={{ 'gwds-show-and-tell': true }}
       >
-        <section class={{ 'pt-0': this.pt0, 'pb-0': this.pb0 }}>
+        <section class={{ 'pt-0': this.pt0, 'pb-0': this.pb0, 'section': true }}>
           <div class={{ container: true }}>
             <div class={this.rowClasses}>
               <div class={this.leftColClasses}>
@@ -70,6 +82,15 @@ export class GwShowAndTell {
                     </h2>
                   ) : null}
                   <slot></slot>
+                  {this.buttonPrimaryLabel && this.buttonPrimaryUrl ? (
+                    <gwds-button label={this.buttonPrimaryLabel} type="primary" url={this.buttonPrimaryUrl} blank={this.buttonPrimaryBlank ? true : false}></gwds-button>
+                  ) : null}
+                  {this.buttonSecondaryLabel && this.buttonSecondaryUrl ? (
+                    <gwds-button label={this.buttonSecondaryLabel} type="secondary" url={this.buttonSecondaryUrl} blank={this.buttonSecondaryBlank ? true : false}></gwds-button>
+                  ) : null}
+                  {this.buttonTertiaryLabel && this.buttonTertiaryUrl ? (
+                    <gwds-button label={this.buttonTertiaryLabel} type="tertiary" url={this.buttonTertiaryUrl} blank={this.buttonTertiaryBlank ? true : false}></gwds-button>
+                  ) : null}
                 </div>
               </div>
               <div class={this.rightColClasses}>{this.imageUrl ? <img class="gwds-show-and-tell__image" src={this.imageUrl} alt={this.imageAlt} loading="lazy"></img> : null}</div>

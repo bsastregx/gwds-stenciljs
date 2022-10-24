@@ -20,16 +20,32 @@ export namespace Components {
         "pb0": boolean;
         "pt0": boolean;
     }
+    interface GwdsAvatar {
+        "imgAlt": string;
+        "imgUrl": string;
+        "line": boolean;
+        "size": 'm' | 'l' | 'xl' | 'xxl';
+    }
     interface GwdsBlocks {
         "bgColor": string;
-        "buttonLabel": string;
-        "buttonUrl": string;
+        "buttonPrimaryBlank": boolean;
+        "buttonPrimaryLabel": string;
+        "buttonPrimaryUrl": string;
+        "buttonSecondaryBlank": boolean;
+        "buttonSecondaryLabel": string;
+        "buttonSecondaryUrl": string;
+        "buttonTertiaryBlank": boolean;
+        "buttonTertiaryLabel": string;
+        "buttonTertiaryUrl": string;
         "description": string;
         "display": 'grid-2' | 'grid-3' | 'grid-aside';
         "linkLabel": string;
         "linkTarget": '_blank' | '_self';
         "linkUrl": string;
         "mainTitle": string;
+    }
+    interface GwdsBreadcrumbs {
+        "url": string;
     }
     interface GwdsButton {
         "blank": boolean;
@@ -52,6 +68,25 @@ export namespace Components {
     }
     interface GwdsComponentTitle {
         "experimental": boolean;
+        "label": string;
+    }
+    interface GwdsGoodNews {
+        "authorAvatarAlt": string;
+        "authorAvatarUrl": string;
+        "authorName": string;
+        "category": string;
+        "date": string;
+        "imgAlt": string;
+        "imgUrl": string;
+        "layout": 'l1' | 'l2';
+        "newsTitle": string;
+        "url": string;
+    }
+    interface GwdsGoodNewsSection {
+        "data": Array<Object> | undefined;
+        "layout": 'l1' | 'l2';
+        "sectionTitle": string;
+        "test": string;
     }
     interface GwdsGradientTitle {
         "center": boolean;
@@ -63,12 +98,15 @@ export namespace Components {
     }
     interface GwdsLearnMore {
         "bgColor": string;
-        "bpBlank": boolean;
-        "bpLabel": string;
-        "bpUrl": string;
-        "bsBlank": boolean;
-        "bsLabel": string;
-        "bsUrl": string;
+        "buttonPrimaryBlank": boolean;
+        "buttonPrimaryLabel": string;
+        "buttonPrimaryUrl": string;
+        "buttonSecondaryBlank": boolean;
+        "buttonSecondaryLabel": string;
+        "buttonSecondaryUrl": string;
+        "buttonTertiaryBlank": boolean;
+        "buttonTertiaryLabel": string;
+        "buttonTertiaryUrl": string;
         "mainTitle": string;
         "pb0": boolean;
         "pt0": boolean;
@@ -89,15 +127,15 @@ export namespace Components {
         "bgColor": string;
         "bgImage": string;
         "bgSize": string;
-        "bpBlank": boolean;
-        "bpLabel": string;
-        "bpUrl": string;
-        "bsBlank": boolean;
-        "bsLabel": string;
-        "bsUrl": string;
-        "btBlank": boolean;
-        "btLabel": string;
-        "btUrl": string;
+        "buttonPrimaryBlank": boolean;
+        "buttonPrimaryLabel": string;
+        "buttonPrimaryUrl": string;
+        "buttonSecondaryBlank": boolean;
+        "buttonSecondaryLabel": string;
+        "buttonSecondaryUrl": string;
+        "buttonTertiaryBlank": boolean;
+        "buttonTertiaryLabel": string;
+        "buttonTertiaryUrl": string;
         "mainTitle": string;
         "pb0": boolean;
         "preTitle": string;
@@ -120,6 +158,15 @@ export namespace Components {
     interface GwdsShowAndTell {
         "alignContent": 'left' | 'right';
         "bgColor": string;
+        "buttonPrimaryBlank": boolean;
+        "buttonPrimaryLabel": string;
+        "buttonPrimaryUrl": string;
+        "buttonSecondaryBlank": boolean;
+        "buttonSecondaryLabel": string;
+        "buttonSecondaryUrl": string;
+        "buttonTertiaryBlank": boolean;
+        "buttonTertiaryLabel": string;
+        "buttonTertiaryUrl": string;
         "imageAlt": string;
         "imageUrl": string;
         "mainTitle": string;
@@ -130,14 +177,33 @@ export namespace Components {
     interface GwdsSlider {
         "cards": boolean;
         "cover": boolean;
+        "dark": boolean;
         "gap": boolean;
+        "individual": boolean;
         "orientation": 'landscape' | 'portrait';
         "padding": boolean;
-        "slideId": string;
+        "sliderId": string;
+    }
+    interface GwdsStack {
+        "bgColor": string;
+        "description": string;
+        "mainTitle": string;
+    }
+    interface GwdsStackItem {
+        "buttonBlank": boolean;
+        "buttonLabel": string;
+        "buttonUrl": string;
+        "mainTitle": string;
     }
     interface GwdsTag {
-        "bgColor": 'violet-50';
+        "bgColor": string;
         "label": string;
+        "url": string;
+    }
+    interface GwdsTooltip {
+        "label": string;
+        "position": 'top' | 'right' | 'bottom' | 'left';
+        "width": string;
     }
     interface GwdsVideo {
         "fullWidth": boolean;
@@ -148,6 +214,15 @@ export namespace Components {
         "alignContent": 'left' | 'right';
         "alignTop": boolean;
         "bgColor": string;
+        "buttonPrimaryBlank": boolean;
+        "buttonPrimaryLabel": string;
+        "buttonPrimaryUrl": string;
+        "buttonSecondaryBlank": boolean;
+        "buttonSecondaryLabel": string;
+        "buttonSecondaryUrl": string;
+        "buttonTertiaryBlank": boolean;
+        "buttonTertiaryLabel": string;
+        "buttonTertiaryUrl": string;
         "fullWidth": boolean;
         "mainTitle": string;
         "pb0": boolean;
@@ -179,11 +254,23 @@ declare global {
         prototype: HTMLGwdsAccordionSectionElement;
         new (): HTMLGwdsAccordionSectionElement;
     };
+    interface HTMLGwdsAvatarElement extends Components.GwdsAvatar, HTMLStencilElement {
+    }
+    var HTMLGwdsAvatarElement: {
+        prototype: HTMLGwdsAvatarElement;
+        new (): HTMLGwdsAvatarElement;
+    };
     interface HTMLGwdsBlocksElement extends Components.GwdsBlocks, HTMLStencilElement {
     }
     var HTMLGwdsBlocksElement: {
         prototype: HTMLGwdsBlocksElement;
         new (): HTMLGwdsBlocksElement;
+    };
+    interface HTMLGwdsBreadcrumbsElement extends Components.GwdsBreadcrumbs, HTMLStencilElement {
+    }
+    var HTMLGwdsBreadcrumbsElement: {
+        prototype: HTMLGwdsBreadcrumbsElement;
+        new (): HTMLGwdsBreadcrumbsElement;
     };
     interface HTMLGwdsButtonElement extends Components.GwdsButton, HTMLStencilElement {
     }
@@ -202,6 +289,18 @@ declare global {
     var HTMLGwdsComponentTitleElement: {
         prototype: HTMLGwdsComponentTitleElement;
         new (): HTMLGwdsComponentTitleElement;
+    };
+    interface HTMLGwdsGoodNewsElement extends Components.GwdsGoodNews, HTMLStencilElement {
+    }
+    var HTMLGwdsGoodNewsElement: {
+        prototype: HTMLGwdsGoodNewsElement;
+        new (): HTMLGwdsGoodNewsElement;
+    };
+    interface HTMLGwdsGoodNewsSectionElement extends Components.GwdsGoodNewsSection, HTMLStencilElement {
+    }
+    var HTMLGwdsGoodNewsSectionElement: {
+        prototype: HTMLGwdsGoodNewsSectionElement;
+        new (): HTMLGwdsGoodNewsSectionElement;
     };
     interface HTMLGwdsGradientTitleElement extends Components.GwdsGradientTitle, HTMLStencilElement {
     }
@@ -269,11 +368,29 @@ declare global {
         prototype: HTMLGwdsSliderElement;
         new (): HTMLGwdsSliderElement;
     };
+    interface HTMLGwdsStackElement extends Components.GwdsStack, HTMLStencilElement {
+    }
+    var HTMLGwdsStackElement: {
+        prototype: HTMLGwdsStackElement;
+        new (): HTMLGwdsStackElement;
+    };
+    interface HTMLGwdsStackItemElement extends Components.GwdsStackItem, HTMLStencilElement {
+    }
+    var HTMLGwdsStackItemElement: {
+        prototype: HTMLGwdsStackItemElement;
+        new (): HTMLGwdsStackItemElement;
+    };
     interface HTMLGwdsTagElement extends Components.GwdsTag, HTMLStencilElement {
     }
     var HTMLGwdsTagElement: {
         prototype: HTMLGwdsTagElement;
         new (): HTMLGwdsTagElement;
+    };
+    interface HTMLGwdsTooltipElement extends Components.GwdsTooltip, HTMLStencilElement {
+    }
+    var HTMLGwdsTooltipElement: {
+        prototype: HTMLGwdsTooltipElement;
+        new (): HTMLGwdsTooltipElement;
     };
     interface HTMLGwdsVideoElement extends Components.GwdsVideo, HTMLStencilElement {
     }
@@ -291,10 +408,14 @@ declare global {
         "gwds-accordion": HTMLGwdsAccordionElement;
         "gwds-accordion-item": HTMLGwdsAccordionItemElement;
         "gwds-accordion-section": HTMLGwdsAccordionSectionElement;
+        "gwds-avatar": HTMLGwdsAvatarElement;
         "gwds-blocks": HTMLGwdsBlocksElement;
+        "gwds-breadcrumbs": HTMLGwdsBreadcrumbsElement;
         "gwds-button": HTMLGwdsButtonElement;
         "gwds-card": HTMLGwdsCardElement;
         "gwds-component-title": HTMLGwdsComponentTitleElement;
+        "gwds-good-news": HTMLGwdsGoodNewsElement;
+        "gwds-good-news-section": HTMLGwdsGoodNewsSectionElement;
         "gwds-gradient-title": HTMLGwdsGradientTitleElement;
         "gwds-grid": HTMLGwdsGridElement;
         "gwds-learn-more": HTMLGwdsLearnMoreElement;
@@ -306,7 +427,10 @@ declare global {
         "gwds-quote": HTMLGwdsQuoteElement;
         "gwds-show-and-tell": HTMLGwdsShowAndTellElement;
         "gwds-slider": HTMLGwdsSliderElement;
+        "gwds-stack": HTMLGwdsStackElement;
+        "gwds-stack-item": HTMLGwdsStackItemElement;
         "gwds-tag": HTMLGwdsTagElement;
+        "gwds-tooltip": HTMLGwdsTooltipElement;
         "gwds-video": HTMLGwdsVideoElement;
         "gwds-video-section": HTMLGwdsVideoSectionElement;
     }
@@ -327,16 +451,32 @@ declare namespace LocalJSX {
         "pb0"?: boolean;
         "pt0"?: boolean;
     }
+    interface GwdsAvatar {
+        "imgAlt"?: string;
+        "imgUrl"?: string;
+        "line"?: boolean;
+        "size"?: 'm' | 'l' | 'xl' | 'xxl';
+    }
     interface GwdsBlocks {
         "bgColor"?: string;
-        "buttonLabel"?: string;
-        "buttonUrl"?: string;
+        "buttonPrimaryBlank"?: boolean;
+        "buttonPrimaryLabel"?: string;
+        "buttonPrimaryUrl"?: string;
+        "buttonSecondaryBlank"?: boolean;
+        "buttonSecondaryLabel"?: string;
+        "buttonSecondaryUrl"?: string;
+        "buttonTertiaryBlank"?: boolean;
+        "buttonTertiaryLabel"?: string;
+        "buttonTertiaryUrl"?: string;
         "description"?: string;
         "display"?: 'grid-2' | 'grid-3' | 'grid-aside';
         "linkLabel"?: string;
         "linkTarget"?: '_blank' | '_self';
         "linkUrl"?: string;
         "mainTitle"?: string;
+    }
+    interface GwdsBreadcrumbs {
+        "url"?: string;
     }
     interface GwdsButton {
         "blank"?: boolean;
@@ -359,6 +499,25 @@ declare namespace LocalJSX {
     }
     interface GwdsComponentTitle {
         "experimental"?: boolean;
+        "label"?: string;
+    }
+    interface GwdsGoodNews {
+        "authorAvatarAlt"?: string;
+        "authorAvatarUrl"?: string;
+        "authorName"?: string;
+        "category"?: string;
+        "date"?: string;
+        "imgAlt"?: string;
+        "imgUrl"?: string;
+        "layout"?: 'l1' | 'l2';
+        "newsTitle"?: string;
+        "url"?: string;
+    }
+    interface GwdsGoodNewsSection {
+        "data"?: Array<Object> | undefined;
+        "layout"?: 'l1' | 'l2';
+        "sectionTitle"?: string;
+        "test"?: string;
     }
     interface GwdsGradientTitle {
         "center"?: boolean;
@@ -370,12 +529,15 @@ declare namespace LocalJSX {
     }
     interface GwdsLearnMore {
         "bgColor"?: string;
-        "bpBlank"?: boolean;
-        "bpLabel"?: string;
-        "bpUrl"?: string;
-        "bsBlank"?: boolean;
-        "bsLabel"?: string;
-        "bsUrl"?: string;
+        "buttonPrimaryBlank"?: boolean;
+        "buttonPrimaryLabel"?: string;
+        "buttonPrimaryUrl"?: string;
+        "buttonSecondaryBlank"?: boolean;
+        "buttonSecondaryLabel"?: string;
+        "buttonSecondaryUrl"?: string;
+        "buttonTertiaryBlank"?: boolean;
+        "buttonTertiaryLabel"?: string;
+        "buttonTertiaryUrl"?: string;
         "mainTitle"?: string;
         "pb0"?: boolean;
         "pt0"?: boolean;
@@ -396,15 +558,15 @@ declare namespace LocalJSX {
         "bgColor"?: string;
         "bgImage"?: string;
         "bgSize"?: string;
-        "bpBlank"?: boolean;
-        "bpLabel"?: string;
-        "bpUrl"?: string;
-        "bsBlank"?: boolean;
-        "bsLabel"?: string;
-        "bsUrl"?: string;
-        "btBlank"?: boolean;
-        "btLabel"?: string;
-        "btUrl"?: string;
+        "buttonPrimaryBlank"?: boolean;
+        "buttonPrimaryLabel"?: string;
+        "buttonPrimaryUrl"?: string;
+        "buttonSecondaryBlank"?: boolean;
+        "buttonSecondaryLabel"?: string;
+        "buttonSecondaryUrl"?: string;
+        "buttonTertiaryBlank"?: boolean;
+        "buttonTertiaryLabel"?: string;
+        "buttonTertiaryUrl"?: string;
         "mainTitle"?: string;
         "pb0"?: boolean;
         "preTitle"?: string;
@@ -427,6 +589,15 @@ declare namespace LocalJSX {
     interface GwdsShowAndTell {
         "alignContent"?: 'left' | 'right';
         "bgColor"?: string;
+        "buttonPrimaryBlank"?: boolean;
+        "buttonPrimaryLabel"?: string;
+        "buttonPrimaryUrl"?: string;
+        "buttonSecondaryBlank"?: boolean;
+        "buttonSecondaryLabel"?: string;
+        "buttonSecondaryUrl"?: string;
+        "buttonTertiaryBlank"?: boolean;
+        "buttonTertiaryLabel"?: string;
+        "buttonTertiaryUrl"?: string;
         "imageAlt"?: string;
         "imageUrl"?: string;
         "mainTitle"?: string;
@@ -437,14 +608,33 @@ declare namespace LocalJSX {
     interface GwdsSlider {
         "cards"?: boolean;
         "cover"?: boolean;
+        "dark"?: boolean;
         "gap"?: boolean;
+        "individual"?: boolean;
         "orientation"?: 'landscape' | 'portrait';
         "padding"?: boolean;
-        "slideId"?: string;
+        "sliderId"?: string;
+    }
+    interface GwdsStack {
+        "bgColor"?: string;
+        "description"?: string;
+        "mainTitle"?: string;
+    }
+    interface GwdsStackItem {
+        "buttonBlank"?: boolean;
+        "buttonLabel"?: string;
+        "buttonUrl"?: string;
+        "mainTitle"?: string;
     }
     interface GwdsTag {
-        "bgColor"?: 'violet-50';
+        "bgColor"?: string;
         "label"?: string;
+        "url"?: string;
+    }
+    interface GwdsTooltip {
+        "label"?: string;
+        "position"?: 'top' | 'right' | 'bottom' | 'left';
+        "width"?: string;
     }
     interface GwdsVideo {
         "fullWidth"?: boolean;
@@ -455,6 +645,15 @@ declare namespace LocalJSX {
         "alignContent"?: 'left' | 'right';
         "alignTop"?: boolean;
         "bgColor"?: string;
+        "buttonPrimaryBlank"?: boolean;
+        "buttonPrimaryLabel"?: string;
+        "buttonPrimaryUrl"?: string;
+        "buttonSecondaryBlank"?: boolean;
+        "buttonSecondaryLabel"?: string;
+        "buttonSecondaryUrl"?: string;
+        "buttonTertiaryBlank"?: boolean;
+        "buttonTertiaryLabel"?: string;
+        "buttonTertiaryUrl"?: string;
         "fullWidth"?: boolean;
         "mainTitle"?: string;
         "pb0"?: boolean;
@@ -466,10 +665,14 @@ declare namespace LocalJSX {
         "gwds-accordion": GwdsAccordion;
         "gwds-accordion-item": GwdsAccordionItem;
         "gwds-accordion-section": GwdsAccordionSection;
+        "gwds-avatar": GwdsAvatar;
         "gwds-blocks": GwdsBlocks;
+        "gwds-breadcrumbs": GwdsBreadcrumbs;
         "gwds-button": GwdsButton;
         "gwds-card": GwdsCard;
         "gwds-component-title": GwdsComponentTitle;
+        "gwds-good-news": GwdsGoodNews;
+        "gwds-good-news-section": GwdsGoodNewsSection;
         "gwds-gradient-title": GwdsGradientTitle;
         "gwds-grid": GwdsGrid;
         "gwds-learn-more": GwdsLearnMore;
@@ -481,7 +684,10 @@ declare namespace LocalJSX {
         "gwds-quote": GwdsQuote;
         "gwds-show-and-tell": GwdsShowAndTell;
         "gwds-slider": GwdsSlider;
+        "gwds-stack": GwdsStack;
+        "gwds-stack-item": GwdsStackItem;
         "gwds-tag": GwdsTag;
+        "gwds-tooltip": GwdsTooltip;
         "gwds-video": GwdsVideo;
         "gwds-video-section": GwdsVideoSection;
     }
@@ -493,10 +699,14 @@ declare module "@stencil/core" {
             "gwds-accordion": LocalJSX.GwdsAccordion & JSXBase.HTMLAttributes<HTMLGwdsAccordionElement>;
             "gwds-accordion-item": LocalJSX.GwdsAccordionItem & JSXBase.HTMLAttributes<HTMLGwdsAccordionItemElement>;
             "gwds-accordion-section": LocalJSX.GwdsAccordionSection & JSXBase.HTMLAttributes<HTMLGwdsAccordionSectionElement>;
+            "gwds-avatar": LocalJSX.GwdsAvatar & JSXBase.HTMLAttributes<HTMLGwdsAvatarElement>;
             "gwds-blocks": LocalJSX.GwdsBlocks & JSXBase.HTMLAttributes<HTMLGwdsBlocksElement>;
+            "gwds-breadcrumbs": LocalJSX.GwdsBreadcrumbs & JSXBase.HTMLAttributes<HTMLGwdsBreadcrumbsElement>;
             "gwds-button": LocalJSX.GwdsButton & JSXBase.HTMLAttributes<HTMLGwdsButtonElement>;
             "gwds-card": LocalJSX.GwdsCard & JSXBase.HTMLAttributes<HTMLGwdsCardElement>;
             "gwds-component-title": LocalJSX.GwdsComponentTitle & JSXBase.HTMLAttributes<HTMLGwdsComponentTitleElement>;
+            "gwds-good-news": LocalJSX.GwdsGoodNews & JSXBase.HTMLAttributes<HTMLGwdsGoodNewsElement>;
+            "gwds-good-news-section": LocalJSX.GwdsGoodNewsSection & JSXBase.HTMLAttributes<HTMLGwdsGoodNewsSectionElement>;
             "gwds-gradient-title": LocalJSX.GwdsGradientTitle & JSXBase.HTMLAttributes<HTMLGwdsGradientTitleElement>;
             "gwds-grid": LocalJSX.GwdsGrid & JSXBase.HTMLAttributes<HTMLGwdsGridElement>;
             "gwds-learn-more": LocalJSX.GwdsLearnMore & JSXBase.HTMLAttributes<HTMLGwdsLearnMoreElement>;
@@ -508,7 +718,10 @@ declare module "@stencil/core" {
             "gwds-quote": LocalJSX.GwdsQuote & JSXBase.HTMLAttributes<HTMLGwdsQuoteElement>;
             "gwds-show-and-tell": LocalJSX.GwdsShowAndTell & JSXBase.HTMLAttributes<HTMLGwdsShowAndTellElement>;
             "gwds-slider": LocalJSX.GwdsSlider & JSXBase.HTMLAttributes<HTMLGwdsSliderElement>;
+            "gwds-stack": LocalJSX.GwdsStack & JSXBase.HTMLAttributes<HTMLGwdsStackElement>;
+            "gwds-stack-item": LocalJSX.GwdsStackItem & JSXBase.HTMLAttributes<HTMLGwdsStackItemElement>;
             "gwds-tag": LocalJSX.GwdsTag & JSXBase.HTMLAttributes<HTMLGwdsTagElement>;
+            "gwds-tooltip": LocalJSX.GwdsTooltip & JSXBase.HTMLAttributes<HTMLGwdsTooltipElement>;
             "gwds-video": LocalJSX.GwdsVideo & JSXBase.HTMLAttributes<HTMLGwdsVideoElement>;
             "gwds-video-section": LocalJSX.GwdsVideoSection & JSXBase.HTMLAttributes<HTMLGwdsVideoSectionElement>;
         }

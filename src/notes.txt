@@ -11,3 +11,6 @@ Swiper: https://swiperjs.com/demos
 
 padding top y bottom de los componentes queda en : 96px
 cuando dos componentes con el mismo color quedan la lado, uno de ellos la mitas del padding. 
+
+------------------------------------
+
