@@ -1,3 +1,25 @@
-:host {
-  display: block;
+.gwds-stack {
+  &__item {
+    border: 1px solid var(--gwds__color--black);
+    border-radius: var(--gwds__radius--xxs);
+    padding: var(--gwds__space--s);
+    cursor: pointer;
+    margin-bottom: var(--gwds__space--s);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__col-left {
+    margin-bottom: var(--gwds__space--m);
+  }
+  /*md*/
+  @media (min-width: 768px) {
+    &__col-left {
+      ul {
+        padding-right: var(--gwds__space--m);
+      }
+      margin-bottom: 0;
+    }
+  }
 }

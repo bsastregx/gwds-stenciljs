@@ -193,7 +193,9 @@ export namespace Components {
         "buttonBlank": boolean;
         "buttonLabel": string;
         "buttonUrl": string;
+        "iconUrl": string;
         "mainTitle": string;
+        "visible": boolean;
     }
     interface GwdsTag {
         "bgColor": string;
@@ -624,7 +626,9 @@ declare namespace LocalJSX {
         "buttonBlank"?: boolean;
         "buttonLabel"?: string;
         "buttonUrl"?: string;
+        "iconUrl"?: string;
         "mainTitle"?: string;
+        "visible"?: boolean;
     }
     interface GwdsTag {
         "bgColor"?: string;
