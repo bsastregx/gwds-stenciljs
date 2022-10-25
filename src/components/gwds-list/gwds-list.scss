@@ -1,0 +1,9 @@
+.gwds-list {
+  &__title {
+    margin-bottom: var();
+  }
+
+  &__container {
+    margin-bottom: calc(var(--gwds__space--m) * -1);
+  }
+}

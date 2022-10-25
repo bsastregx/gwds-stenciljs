@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+.gwds-list-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--gwds__space--m);
+
+  &__icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 60px;
+    margin-right: var(--gwds__space--m);
+  }
+}

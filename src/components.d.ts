@@ -111,6 +111,15 @@ export namespace Components {
         "pb0": boolean;
         "pt0": boolean;
     }
+    interface GwdsList {
+        "bgColor": string;
+        "description": string;
+        "mainTitle": string;
+    }
+    interface GwdsListItem {
+        "iconAlt": string;
+        "iconUrl": string;
+    }
     interface GwdsLogo {
         "imgAlt": string;
         "imgSrc": string;
@@ -322,6 +331,18 @@ declare global {
         prototype: HTMLGwdsLearnMoreElement;
         new (): HTMLGwdsLearnMoreElement;
     };
+    interface HTMLGwdsListElement extends Components.GwdsList, HTMLStencilElement {
+    }
+    var HTMLGwdsListElement: {
+        prototype: HTMLGwdsListElement;
+        new (): HTMLGwdsListElement;
+    };
+    interface HTMLGwdsListItemElement extends Components.GwdsListItem, HTMLStencilElement {
+    }
+    var HTMLGwdsListItemElement: {
+        prototype: HTMLGwdsListItemElement;
+        new (): HTMLGwdsListItemElement;
+    };
     interface HTMLGwdsLogoElement extends Components.GwdsLogo, HTMLStencilElement {
     }
     var HTMLGwdsLogoElement: {
@@ -421,6 +442,8 @@ declare global {
         "gwds-gradient-title": HTMLGwdsGradientTitleElement;
         "gwds-grid": HTMLGwdsGridElement;
         "gwds-learn-more": HTMLGwdsLearnMoreElement;
+        "gwds-list": HTMLGwdsListElement;
+        "gwds-list-item": HTMLGwdsListItemElement;
         "gwds-logo": HTMLGwdsLogoElement;
         "gwds-logos": HTMLGwdsLogosElement;
         "gwds-look-at-me": HTMLGwdsLookAtMeElement;
@@ -543,6 +566,15 @@ declare namespace LocalJSX {
         "mainTitle"?: string;
         "pb0"?: boolean;
         "pt0"?: boolean;
+    }
+    interface GwdsList {
+        "bgColor"?: string;
+        "description"?: string;
+        "mainTitle"?: string;
+    }
+    interface GwdsListItem {
+        "iconAlt"?: string;
+        "iconUrl"?: string;
     }
     interface GwdsLogo {
         "imgAlt"?: string;
@@ -680,6 +712,8 @@ declare namespace LocalJSX {
         "gwds-gradient-title": GwdsGradientTitle;
         "gwds-grid": GwdsGrid;
         "gwds-learn-more": GwdsLearnMore;
+        "gwds-list": GwdsList;
+        "gwds-list-item": GwdsListItem;
         "gwds-logo": GwdsLogo;
         "gwds-logos": GwdsLogos;
         "gwds-look-at-me": GwdsLookAtMe;
@@ -714,6 +748,8 @@ declare module "@stencil/core" {
             "gwds-gradient-title": LocalJSX.GwdsGradientTitle & JSXBase.HTMLAttributes<HTMLGwdsGradientTitleElement>;
             "gwds-grid": LocalJSX.GwdsGrid & JSXBase.HTMLAttributes<HTMLGwdsGridElement>;
             "gwds-learn-more": LocalJSX.GwdsLearnMore & JSXBase.HTMLAttributes<HTMLGwdsLearnMoreElement>;
+            "gwds-list": LocalJSX.GwdsList & JSXBase.HTMLAttributes<HTMLGwdsListElement>;
+            "gwds-list-item": LocalJSX.GwdsListItem & JSXBase.HTMLAttributes<HTMLGwdsListItemElement>;
             "gwds-logo": LocalJSX.GwdsLogo & JSXBase.HTMLAttributes<HTMLGwdsLogoElement>;
             "gwds-logos": LocalJSX.GwdsLogos & JSXBase.HTMLAttributes<HTMLGwdsLogosElement>;
             "gwds-look-at-me": LocalJSX.GwdsLookAtMe & JSXBase.HTMLAttributes<HTMLGwdsLookAtMeElement>;
