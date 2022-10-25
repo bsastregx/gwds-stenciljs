@@ -17,6 +17,11 @@ export class GwdsStack {
 
   @Element() el: HTMLElement;
 
+  componentWillLoad() {
+    //define text color based on contrast with the background
+    this.textColor = textContrast(this.bgColor);
+  }
+
   slottedItems() {
     const buffer = [];
     this.slottedContent = this.el.querySelectorAll('*');
