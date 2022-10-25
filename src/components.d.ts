@@ -151,6 +151,8 @@ export namespace Components {
         "pt0": boolean;
     }
     interface GwdsMessage {
+        "bgColor": string;
+        "fixed": boolean;
     }
     interface GwdsProgressBar {
     }
@@ -607,6 +609,8 @@ declare namespace LocalJSX {
         "pt0"?: boolean;
     }
     interface GwdsMessage {
+        "bgColor"?: string;
+        "fixed"?: boolean;
     }
     interface GwdsProgressBar {
     }

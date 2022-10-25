@@ -4,15 +4,14 @@
 :host {
   display: block;
 }
-.gwds-alert {
+.gwds-message {
   font-size: var(--gwds__font-size--s);
-  display: block;
+  display: flex;
   overflow: hidden;
   transition: var(--gwds-message-speed) height;
+  justify-content: center;
   &__container {
     display: flex;
-    justify-content: space-between;
-    background-color: var(--gwds__color--red-50);
   }
   &__message {
     padding: var(--gwds__space--xs) var(--gwds__space--s);
@@ -43,12 +42,16 @@
   }
 
   &--opacity-0 {
-    .gwds-alert__message,
-    .gwds-alert__close {
+    .gwds-message__message,
+    .gwds-message__close {
       opacity: 0;
     }
   }
   &--height-0 {
     height: 0 !important;
+  }
+  &--fixed {
+    position: fixed;
+    bottom: 0;
   }
 }
