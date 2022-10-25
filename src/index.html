@@ -31,15 +31,31 @@
 
 
     <!-- STACK -->
+    <gwds-component-title label="gwds-stack">
+      <strong>gwds-stack</strong><br>
+      @Prop() bgColor: string = 'dark-100';<br>
+      @Prop() mainTitle: string = null;<br>
+      @Prop() description: string = null;<br>
+      <strong>gwds-stack-item</strong><br>
+      @Prop() iconUrl: string = null;<br>
+      @Prop() mainTitle: string = null;<br>
+      @Prop() buttonLabel: string = null;<br>
+      @Prop() buttonUrl: string = null;<br>
+      @Prop() buttonBlank: boolean = false;<br>
+      @Prop() visible: boolean = false;
+    </gwds-component-title>
     <gwds-stack main-title="What's new in GeneXus 18?" description="GeneXus 18 accompanies technological advances to provide the best experience in Web and Mobile platforms to companies, developers and end users.">
       <gwds-stack-item visible main-title="GeneXus Training" icon-url="../assets/images/stack/stack-gx18-all-canal-beta.svg" button-label="Start now" button-url="www.google.com">
         Training portal with self-study options and teaching support. Here you will also find the worldwide calendar of courses and certifications.
       </gwds-stack-item>
-      <gwds-stack-item main-title="GeneXus Training" icon-url="../assets/images/stack/stack-gx18-all-canal-beta.svg" button-label="Start now" button-url="www.google.com">
+      <gwds-stack-item main-title="GeneXus Webinars" icon-url="../assets/images/stack/stack-gx18-all-webinars.svg" button-label="Start now" button-url="www.google.com">
+        Online sessions on technology and current topics, led by GeneXus Community experts and partners.
+      </gwds-stack-item>
+      <gwds-stack-item main-title="GeneXus Community Wiki" icon-url="../assets/images/stack/stack-gx18-all-wiki.svg" button-label="Start now" button-url="www.google.com">
         Training portal with self-study options and teaching support. Here you will also find the worldwide calendar of courses and certifications.
       </gwds-stack-item>
-      <gwds-stack-item main-title="GeneXus Training" icon-url="../assets/images/stack/stack-gx18-all-canal-beta.svg" button-label="Start now" button-url="www.google.com">
-        Training portal with self-study options and teaching support. Here you will also find the worldwide calendar of courses and certifications.
+      <gwds-stack-item main-title="GeneXus Beta Channel" icon-url="../assets/images/stack/stack-gx18-all-canal-beta.svg" button-label="Start now" button-url="www.google.com">
+        Test GeneXus features, products and all new technologies before they are released.
       </gwds-stack-item>
     </gwds-stack>
 

@@ -9,6 +9,10 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    &:hover {
+      border-color: var(--gwds__color--fuchsia-500);
+    }
   }
   &__col-left {
     margin-bottom: var(--gwds__space--m);
