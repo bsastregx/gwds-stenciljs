@@ -1,6 +1,6 @@
 .gwds-list {
   &__title {
-    margin-bottom: var();
+    margin-bottom: var(--gwds__space--l) !important;
   }
 
   &__container {

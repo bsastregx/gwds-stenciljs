@@ -29,6 +29,16 @@
     </gwds-message>
 
     <!-- LIST -->
+    <gwds-component-title label="gwds-list">
+      <strong>gwds-list</strong><br>
+      @Prop() mainTitle: string = null;<br>
+      @Prop() description: string = null;<br>
+      @Prop() bgColor: string = null;<br>
+      <strong>gwds-list-item</strong><br>
+      @Prop() iconUrl: string = null;<br>
+      @Prop() iconAlt: string = null;<br>
+      + slotted content
+    </gwds-component-title>
     <gwds-list bg-color="black" main-title="Super Powers with GeneXus" description="In a fast-paced world with volatile realities, GeneXus offers state-of-the-art technology to build and evolve complex, mission-critical solutions simply, quickly, and future-proof.">
       <gwds-list-item icon-url="../assets/images/list/list-creamos-codigo-nativo.svg">
         We protect business knowledge from technological changes, adding new generators that cover emerging platforms, allowing solutions to evolve with agility.
