@@ -8,7 +8,7 @@ import textContrast from '../../utils/utils';
 })
 export class GwdsMessage {
   @Prop() bgColor: string = 'red-50';
-  @Prop() fixed: boolean = true;
+  @Prop() fixed: boolean = false;
 
   @Element() el: HTMLElement;
   container!: HTMLDivElement;
