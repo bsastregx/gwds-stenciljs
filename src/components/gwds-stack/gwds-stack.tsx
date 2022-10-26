@@ -11,6 +11,8 @@ export class GwdsStack {
   @Prop() bgColor: string = 'dark-100';
   @Prop() mainTitle: string = null;
   @Prop() description: string = null;
+  @Prop() pt0: boolean = false;
+  @Prop() pb0: boolean = false;
 
   @State() textColor: string = null;
   @State() slottedContent: NodeList = null;
@@ -59,7 +61,7 @@ export class GwdsStack {
           color: `var(${this.textColor})`,
         }}
       >
-        <section class="section">
+        <section class={{ 'section': true, 'pt-0': this.pt0, 'pb-0': this.pb0 }}>
           <div class={{ 'container': true, 'container--main': true }}>
             <div class="row">
               <div class="gwds-stack__col-left col-12 col-md-6 col-lg-5">

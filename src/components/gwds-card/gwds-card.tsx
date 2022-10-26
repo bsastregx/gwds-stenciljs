@@ -49,7 +49,7 @@ export class GwdsCard {
 
           <div class={{ 'gwds-card__content-container': true }}>
             {this.tagLabel ? <gwds-tag class={{ 'gwds-card__tag': true }} label={this.tagLabel}></gwds-tag> : null}
-            {this.titleLabel ? <h1 class={{ 'gwds-card__title': true, 'h4': true }}>{this.titleLabel}</h1> : null}
+            {this.titleLabel ? <h1 class={{ 'gwds-card__title': true, 'h4': true, 'mt-0': true }}>{this.titleLabel}</h1> : null}
             <slot></slot>
             {this.linkUrl && this.linkLabel ? (
               <a class={{ 'gwds-card__link': true }} href={this.linkUrl} target={`"${this.linkTarget}"`}>

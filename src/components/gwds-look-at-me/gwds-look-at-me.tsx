@@ -37,7 +37,7 @@ export class GwLookAtMe {
     //define this.rowClasses and this.colClasses css classes.
     if (this.alignContent === 'center') {
       this.rowClasses = 'row justify-content-md-center tac-md';
-      this.colClasses = 'col-12 col-lg-7 col-xl-6';
+      this.colClasses = 'col-12 col-lg-8';
     } else if (this.alignContent === 'right') {
       this.rowClasses = 'row justify-content-md-end';
       this.colClasses = 'col-12 col-lg-7 col-xl-6';
@@ -70,12 +70,10 @@ export class GwLookAtMe {
           color: `var(${this.textColor})`,
         }}
       >
-        <section class="section">
+        <section class={{ 'section': true, 'pt-0': this.pt0, 'pb-0': this.pb0 }}>
           <div
             class={{
-              'container': true,
-              'pt-0': this.pt0,
-              'pb-0': this.pb0,
+              container: true,
             }}
           >
             <div class={this.rowClasses}>

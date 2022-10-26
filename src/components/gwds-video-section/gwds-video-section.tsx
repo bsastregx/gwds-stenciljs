@@ -57,7 +57,7 @@ export class GwdsVideoSection {
   render() {
     return (
       <Host
-        class={{ 'gwds-video-section': true, 'section': true }}
+        class={{ 'gwds-video-section': true, 'section': true, 'pt-0': this.pt0, 'pb-0': this.pb0 }}
         style={{
           backgroundColor: `var(--gwds__color--${this.bgColor})`,
           color: `var(${this.textColor})`,

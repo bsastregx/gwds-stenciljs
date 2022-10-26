@@ -115,6 +115,8 @@ export namespace Components {
         "bgColor": string;
         "description": string;
         "mainTitle": string;
+        "pb0": boolean;
+        "pt0": boolean;
     }
     interface GwdsListItem {
         "iconAlt": string;
@@ -199,6 +201,15 @@ export namespace Components {
         "bgColor": string;
         "description": string;
         "mainTitle": string;
+        "pb0": boolean;
+        "pt0": boolean;
+    }
+    interface GwdsStack2 {
+        "bgColor": string;
+        "description": string;
+        "mainTitle": string;
+        "pb0": boolean;
+        "pt0": boolean;
     }
     interface GwdsStackItem {
         "buttonBlank": boolean;
@@ -399,6 +410,12 @@ declare global {
         prototype: HTMLGwdsStackElement;
         new (): HTMLGwdsStackElement;
     };
+    interface HTMLGwdsStack2Element extends Components.GwdsStack2, HTMLStencilElement {
+    }
+    var HTMLGwdsStack2Element: {
+        prototype: HTMLGwdsStack2Element;
+        new (): HTMLGwdsStack2Element;
+    };
     interface HTMLGwdsStackItemElement extends Components.GwdsStackItem, HTMLStencilElement {
     }
     var HTMLGwdsStackItemElement: {
@@ -455,6 +472,7 @@ declare global {
         "gwds-show-and-tell": HTMLGwdsShowAndTellElement;
         "gwds-slider": HTMLGwdsSliderElement;
         "gwds-stack": HTMLGwdsStackElement;
+        "gwds-stack-2": HTMLGwdsStack2Element;
         "gwds-stack-item": HTMLGwdsStackItemElement;
         "gwds-tag": HTMLGwdsTagElement;
         "gwds-tooltip": HTMLGwdsTooltipElement;
@@ -573,6 +591,8 @@ declare namespace LocalJSX {
         "bgColor"?: string;
         "description"?: string;
         "mainTitle"?: string;
+        "pb0"?: boolean;
+        "pt0"?: boolean;
     }
     interface GwdsListItem {
         "iconAlt"?: string;
@@ -657,6 +677,15 @@ declare namespace LocalJSX {
         "bgColor"?: string;
         "description"?: string;
         "mainTitle"?: string;
+        "pb0"?: boolean;
+        "pt0"?: boolean;
+    }
+    interface GwdsStack2 {
+        "bgColor"?: string;
+        "description"?: string;
+        "mainTitle"?: string;
+        "pb0"?: boolean;
+        "pt0"?: boolean;
     }
     interface GwdsStackItem {
         "buttonBlank"?: boolean;
@@ -727,6 +756,7 @@ declare namespace LocalJSX {
         "gwds-show-and-tell": GwdsShowAndTell;
         "gwds-slider": GwdsSlider;
         "gwds-stack": GwdsStack;
+        "gwds-stack-2": GwdsStack2;
         "gwds-stack-item": GwdsStackItem;
         "gwds-tag": GwdsTag;
         "gwds-tooltip": GwdsTooltip;
@@ -763,6 +793,7 @@ declare module "@stencil/core" {
             "gwds-show-and-tell": LocalJSX.GwdsShowAndTell & JSXBase.HTMLAttributes<HTMLGwdsShowAndTellElement>;
             "gwds-slider": LocalJSX.GwdsSlider & JSXBase.HTMLAttributes<HTMLGwdsSliderElement>;
             "gwds-stack": LocalJSX.GwdsStack & JSXBase.HTMLAttributes<HTMLGwdsStackElement>;
+            "gwds-stack-2": LocalJSX.GwdsStack2 & JSXBase.HTMLAttributes<HTMLGwdsStack2Element>;
             "gwds-stack-item": LocalJSX.GwdsStackItem & JSXBase.HTMLAttributes<HTMLGwdsStackItemElement>;
             "gwds-tag": LocalJSX.GwdsTag & JSXBase.HTMLAttributes<HTMLGwdsTagElement>;
             "gwds-tooltip": LocalJSX.GwdsTooltip & JSXBase.HTMLAttributes<HTMLGwdsTooltipElement>;

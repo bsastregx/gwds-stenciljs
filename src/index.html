@@ -28,6 +28,12 @@
       GeneXus is now Powered by Globant <a href="#">Read the full story here</a>
     </gwds-message>
 
+
+    <!-- STACK 2 -->
+    <gwds-stack-2 bg-color="black">
+
+    </gwds-stack-2>
+
     <!-- LIST -->
     <gwds-component-title label="gwds-list">
       <strong>gwds-list</strong><br>
@@ -796,6 +802,88 @@
               Peafowl is a common name for three bird species in the genera Pavo and Afropavo within the tribe Pavonini of the family Phasianidae, the pheasants and their allies.
             </p>
           </gwds-card>
+        </gwds-grid>
+      </div>
+    </section>
+
+    <!-- REGULAR CARDS -->
+    <gwds-component-title label="gwds-card (with grid)">
+      <strong>gwds-card</strong><br>
+      @Prop() bgColor: string = 'white';<br>
+      @Prop() imgSrc: string = null;<br>
+      @Prop() imgAlt: string = null;<br>
+      @Prop() tagLabel: string = null;<br>
+      @Prop() titleLabel: string = null;<br>
+      @Prop() linkUrl: string = null;<br>
+      @Prop() linkLabel: string = null;<br>
+      @Prop() linkTarget: string = '_self';<br>
+      @Prop() noShadow: boolean = false;
+    </gwds-component-title>
+    <section class="section">
+      <div class="container">
+        <gwds-grid per-row="3">
+
+        <gwds-card
+        title-label="Collaboration and versioning"
+        link-label="Teams & DevOps"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+        bg-color="violet-500"
+        >
+        <p>Coordinate your team’s activity in developing GeneXus applications.</p>
+        </gwds-card>
+
+        <gwds-card
+        title-label="Business Process Management"
+        link-label="Digital Process Automation"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+        bg-color="blue-400"
+        >
+        <p>Model, automate, manage and optimize your business processes.</p>
+        </gwds-card>
+
+        <gwds-card
+        title-label="Reporting and analysis"
+        link-label="Business Analysis Tools"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+        bg-color="purple-400"
+        >
+        <p>Create reports from operational databases.</p>
+        </gwds-card>
+
+        <gwds-card
+        title-label="Testing and quality assurance"
+        link-label="Testing Automation"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+        bg-color="red-400"
+        >
+        <p>Automatize functional tests in GeneXus applications.</p>
+        </gwds-card>
+
+        <gwds-card
+        title-label="Low-Code for SAP® Systems"
+        link-label="Accelerate innovation"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+        bg-color="orange-400"
+        >
+        <p>Extend SAP Systems swiftly yet cost effectively with GeneXus.</p>
+        </gwds-card>
+
+        <gwds-card
+        title-label="Applications Security"
+        link-label="GeneXus Access Manager (GAM)"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+        bg-color="black"
+        >
+        <p>Solve the authentication and authorization management of your applications.</p>
+        </gwds-card>
+  
+          
         </gwds-grid>
       </div>
     </section>

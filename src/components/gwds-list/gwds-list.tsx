@@ -10,6 +10,8 @@ export class GwdsList {
   @Prop() mainTitle: string = null;
   @Prop() description: string = null;
   @Prop() bgColor: string = null;
+  @Prop() pt0: boolean = false;
+  @Prop() pb0: boolean = false;
 
   @State() textColor: string = null;
 
@@ -26,7 +28,7 @@ export class GwdsList {
         }}
       >
         <section
-          class="section"
+          class={{ 'section': true, 'pt-0': this.pt0, 'pb-0': this.pb0 }}
           style={{
             backgroundColor: `var(--gwds__color--${this.bgColor})`,
             color: `var(${this.textColor})`,

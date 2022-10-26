@@ -38,7 +38,7 @@ const textContrast = bgColor => {
       textColor = '--gwds__color--white';
       break;
     case 'orange-400':
-      textColor = '--gwds__color--black';
+      textColor = '--gwds__color--white';
       break;
     case 'violet-500':
       textColor = '--gwds__color--white';
@@ -47,7 +47,7 @@ const textContrast = bgColor => {
       textColor = '--gwds__color--black';
       break;
     case 'blue-400':
-      textColor = '--gwds__color--black';
+      textColor = '--gwds__color--white';
       break;
     case 'blue-900':
       textColor = '--gwds__color--white';
@@ -65,7 +65,7 @@ const textContrast = bgColor => {
       textColor = '--gwds__color--black';
       break;
     case 'red-400':
-      textColor = '--gwds__color--black';
+      textColor = '--gwds__color--white';
       break;
     case 'red-50':
       textColor = '--gwds__color--black';
