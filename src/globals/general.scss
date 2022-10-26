@@ -75,8 +75,8 @@ ul {
 //links
 a {
   color: inherit;
-  text-decoration: none;
-  line-height: var(--gwds__line-height--regular);
+  text-decoration: underline;
+  //line-height: var(--gwds__line-height--regular);
 
   &:hover {
     text-decoration: underline;
@@ -105,6 +105,7 @@ a {
   &--light {
     font-weight: var(--gwds__font-weight--light);
   }
+  line-height: var(--gwds__line-height--tight);
 }
 .h1 {
   font-size: var(--gwds__font-size--l);
