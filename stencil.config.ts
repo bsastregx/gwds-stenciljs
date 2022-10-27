@@ -2,6 +2,17 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
+  buildEs5: true,
+  extras: {
+    cssVarsShim: true,
+    dynamicImportShim: true,
+    shadowDomShim: true,
+    safari10: true,
+    scriptDataOpts: true,
+    appendChildSlotFix: true,
+    cloneNodeFix: true,
+    slotChildNodesFix: true,
+  },
   namespace: 'gwds',
   globalStyle: 'src/globals/styles.scss',
   invisiblePrehydration: true,
