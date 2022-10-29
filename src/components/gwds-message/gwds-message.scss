@@ -5,7 +5,7 @@
   display: block;
 }
 .gwds-message {
-  font-size: var(--gwds__font-size--s);
+  font-size: var(--gwds__font-size--m);
   display: flex;
   overflow: hidden;
   transition: var(--gwds-message-speed) height;
@@ -14,7 +14,7 @@
     display: flex;
   }
   &__message {
-    padding: var(--gwds__space--xs) var(--gwds__space--s);
+    padding: var(--gwds__space--s) var(--gwds__space--s);
     padding-right: 0;
     transition: var(--gwds-message-speed) all;
     display: flex;
@@ -22,6 +22,8 @@
     gap: var(--gwds__space--xs);
   }
   &__close {
+    display: flex;
+    align-items: center;
     &-cross-container {
       height: 45px;
       width: 45px;

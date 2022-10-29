@@ -96,6 +96,12 @@ export namespace Components {
     interface GwdsGrid {
         "perRow": '2' | '3' | '4' | '6';
     }
+    interface GwdsLanguageSwitcher {
+        "enUrl": string;
+        "esUrl": string;
+        "ptUrl": string;
+        "selectedLang": 'en' | 'es' | 'pt';
+    }
     interface GwdsLearnMore {
         "bgColor": string;
         "buttonPrimaryBlank": boolean;
@@ -155,8 +161,6 @@ export namespace Components {
     interface GwdsMessage {
         "bgColor": string;
         "fixed": boolean;
-    }
-    interface GwdsProgressBar {
     }
     interface GwdsQuote {
         "bgColor": string;
@@ -338,6 +342,12 @@ declare global {
         prototype: HTMLGwdsGridElement;
         new (): HTMLGwdsGridElement;
     };
+    interface HTMLGwdsLanguageSwitcherElement extends Components.GwdsLanguageSwitcher, HTMLStencilElement {
+    }
+    var HTMLGwdsLanguageSwitcherElement: {
+        prototype: HTMLGwdsLanguageSwitcherElement;
+        new (): HTMLGwdsLanguageSwitcherElement;
+    };
     interface HTMLGwdsLearnMoreElement extends Components.GwdsLearnMore, HTMLStencilElement {
     }
     var HTMLGwdsLearnMoreElement: {
@@ -379,12 +389,6 @@ declare global {
     var HTMLGwdsMessageElement: {
         prototype: HTMLGwdsMessageElement;
         new (): HTMLGwdsMessageElement;
-    };
-    interface HTMLGwdsProgressBarElement extends Components.GwdsProgressBar, HTMLStencilElement {
-    }
-    var HTMLGwdsProgressBarElement: {
-        prototype: HTMLGwdsProgressBarElement;
-        new (): HTMLGwdsProgressBarElement;
     };
     interface HTMLGwdsQuoteElement extends Components.GwdsQuote, HTMLStencilElement {
     }
@@ -460,6 +464,7 @@ declare global {
         "gwds-good-news-section": HTMLGwdsGoodNewsSectionElement;
         "gwds-gradient-title": HTMLGwdsGradientTitleElement;
         "gwds-grid": HTMLGwdsGridElement;
+        "gwds-language-switcher": HTMLGwdsLanguageSwitcherElement;
         "gwds-learn-more": HTMLGwdsLearnMoreElement;
         "gwds-list": HTMLGwdsListElement;
         "gwds-list-item": HTMLGwdsListItemElement;
@@ -467,7 +472,6 @@ declare global {
         "gwds-logos": HTMLGwdsLogosElement;
         "gwds-look-at-me": HTMLGwdsLookAtMeElement;
         "gwds-message": HTMLGwdsMessageElement;
-        "gwds-progress-bar": HTMLGwdsProgressBarElement;
         "gwds-quote": HTMLGwdsQuoteElement;
         "gwds-show-and-tell": HTMLGwdsShowAndTellElement;
         "gwds-slider": HTMLGwdsSliderElement;
@@ -572,6 +576,12 @@ declare namespace LocalJSX {
     interface GwdsGrid {
         "perRow"?: '2' | '3' | '4' | '6';
     }
+    interface GwdsLanguageSwitcher {
+        "enUrl"?: string;
+        "esUrl"?: string;
+        "ptUrl"?: string;
+        "selectedLang"?: 'en' | 'es' | 'pt';
+    }
     interface GwdsLearnMore {
         "bgColor"?: string;
         "buttonPrimaryBlank"?: boolean;
@@ -631,8 +641,6 @@ declare namespace LocalJSX {
     interface GwdsMessage {
         "bgColor"?: string;
         "fixed"?: boolean;
-    }
-    interface GwdsProgressBar {
     }
     interface GwdsQuote {
         "bgColor"?: string;
@@ -744,6 +752,7 @@ declare namespace LocalJSX {
         "gwds-good-news-section": GwdsGoodNewsSection;
         "gwds-gradient-title": GwdsGradientTitle;
         "gwds-grid": GwdsGrid;
+        "gwds-language-switcher": GwdsLanguageSwitcher;
         "gwds-learn-more": GwdsLearnMore;
         "gwds-list": GwdsList;
         "gwds-list-item": GwdsListItem;
@@ -751,7 +760,6 @@ declare namespace LocalJSX {
         "gwds-logos": GwdsLogos;
         "gwds-look-at-me": GwdsLookAtMe;
         "gwds-message": GwdsMessage;
-        "gwds-progress-bar": GwdsProgressBar;
         "gwds-quote": GwdsQuote;
         "gwds-show-and-tell": GwdsShowAndTell;
         "gwds-slider": GwdsSlider;
@@ -781,6 +789,7 @@ declare module "@stencil/core" {
             "gwds-good-news-section": LocalJSX.GwdsGoodNewsSection & JSXBase.HTMLAttributes<HTMLGwdsGoodNewsSectionElement>;
             "gwds-gradient-title": LocalJSX.GwdsGradientTitle & JSXBase.HTMLAttributes<HTMLGwdsGradientTitleElement>;
             "gwds-grid": LocalJSX.GwdsGrid & JSXBase.HTMLAttributes<HTMLGwdsGridElement>;
+            "gwds-language-switcher": LocalJSX.GwdsLanguageSwitcher & JSXBase.HTMLAttributes<HTMLGwdsLanguageSwitcherElement>;
             "gwds-learn-more": LocalJSX.GwdsLearnMore & JSXBase.HTMLAttributes<HTMLGwdsLearnMoreElement>;
             "gwds-list": LocalJSX.GwdsList & JSXBase.HTMLAttributes<HTMLGwdsListElement>;
             "gwds-list-item": LocalJSX.GwdsListItem & JSXBase.HTMLAttributes<HTMLGwdsListItemElement>;
@@ -788,7 +797,6 @@ declare module "@stencil/core" {
             "gwds-logos": LocalJSX.GwdsLogos & JSXBase.HTMLAttributes<HTMLGwdsLogosElement>;
             "gwds-look-at-me": LocalJSX.GwdsLookAtMe & JSXBase.HTMLAttributes<HTMLGwdsLookAtMeElement>;
             "gwds-message": LocalJSX.GwdsMessage & JSXBase.HTMLAttributes<HTMLGwdsMessageElement>;
-            "gwds-progress-bar": LocalJSX.GwdsProgressBar & JSXBase.HTMLAttributes<HTMLGwdsProgressBarElement>;
             "gwds-quote": LocalJSX.GwdsQuote & JSXBase.HTMLAttributes<HTMLGwdsQuoteElement>;
             "gwds-show-and-tell": LocalJSX.GwdsShowAndTell & JSXBase.HTMLAttributes<HTMLGwdsShowAndTellElement>;
             "gwds-slider": LocalJSX.GwdsSlider & JSXBase.HTMLAttributes<HTMLGwdsSliderElement>;

@@ -40,7 +40,7 @@ export class GwdsMessage {
       <Host
         class={{ 'gwds-message': true, 'gwds-message--opacity-0': this.opacity0, 'gwds-message--height-0': this.height0, 'gwds-message--fixed': this.fixed }}
         style={{
-          backgroundColor: 'var(--gwds__color--black)',
+          backgroundColor: `var(--gwds__color--${this.bgColor})`,
           color: `var(${this.textColor})`,
         }}
       >
