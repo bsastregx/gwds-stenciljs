@@ -14,7 +14,6 @@ export class GwdsAccordionItem {
   @Prop() itemTitle: string = null;
   @Prop({ reflect: true }) itemId: string = null; //for internal use
   @Prop({ reflect: true }) active: boolean = false;
-  @Prop({ reflect: true }) transition: boolean = false; //for internal use
 
   @State() accordionCollapseHeight: string = '0';
 
@@ -54,7 +53,7 @@ export class GwdsAccordionItem {
 
   render() {
     return (
-      <Host class={{ 'gwds-accordion-item': true, 'gwds-accordion-item--active': this.active, 'gwds-accordion-item--transition': this.transition }}>
+      <Host class={{ 'gwds-accordion-item': true, 'gwds-accordion-item--active': this.active }}>
         <header class={{ 'gwds-accordion-item__header': true }}>
           <button class={{ 'gwds-accordion-item__button': true }} onClick={this.toggleAccordion.bind(this)}>
             {this.itemTitle}

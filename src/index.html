@@ -22,7 +22,14 @@
 
     <!-- MESSAGE -->
     <gwds-component-title label="gwds-message">
-      slotted content only
+      @Prop() bgColor: string = 'red-50';<br>
+      @Prop() fixed: boolean = false;<br>
+      @Prop() linkLabel: string = null;<br>
+      @Prop() linkUrl: string = null;<br>
+      @Prop() linkTarget: '_blank' | '_self' = '_self';<br>
+      @Prop() buttonLabel: string = null;<br>
+      @Prop() buttonUrl: string = null;<br>
+      @Prop() buttonTarget: '_blank' | '_self' = '_self';<br>
     </gwds-component-title>
     <gwds-message>
       GeneXus is now Powered by Globant <a href="#">Read the full story here</a>
@@ -31,11 +38,34 @@
       GeneXus is now Powered by Globant <a href="#">Read the full story here</a>
     </gwds-message>
 
+    <!-- ACCORDION -->
+    <gwds-component-title label="gwds-accordion">
+      <strong>gwds-accordion</strong><br>
+      slotted content only<br>
+      <strong>gwds-accordion-item</strong><br>
+      @Prop() itemTitle: string = null;<br>
+      @Prop({ reflect: true }) active: boolean = false;
+    </gwds-component-title>
+    <gwds-accordion main-title="GeneXus™ FAQ">
+      <gwds-accordion-item active item-title="What is GeneXus™?">
+        GeneXus™ is a Software Development Suite that simplifies and automates the tasks of creating and maintaining enterprise applications and IT systems.
+      </gwds-accordion-item>
+      <gwds-accordion-item item-title="What problem do you solve?">
+        We think that software development has become increasingly complex over the years. Apps are easier to use than ever, however creating them requires more knowledge and skills every day as new programming languages, databases and platforms are constantly created. We work every day to solve that problem, making software development easier.
+      </gwds-accordion-item>
+      <gwds-accordion-item item-title="Why automate?">
+        This one is a tough question, faced by every industry since the invention of the steam engine. Yet, again and again, craftsmanship is automated, productivity is increased and our quality of life improved. Why should the software industry be different? It shouldn’t! Not with the ever growing demand for software. Craftsmanship is nice, but not in tune with the speed the world we live in requires. There’s a more efficient way of producing software than by hand: It’s automation, and GeneXus™ leads in that path.
+      </gwds-accordion-item>
+      <gwds-accordion-item item-title="What kind of applications can be made with GeneXus™?">
+        We like to say: “Mission Critical Applications,” meaning, literally, built for the information, processes and technologies, most critical to your business’ main mission. GeneXus applications are not just data-driven; they are built to harness your most important business data, e.g. Core Banking, ERPs, CRMs.
+      </gwds-accordion-item>
+      <gwds-accordion-item item-title="Is GeneXus™ Model-Driven Development (MDD)?">
+        It is, and it isn’t. GeneXus™ has its own way of “Modeling”, using its own descriptive programming language. In addition, these “models” are created based on the user’s Business Knowledge and needs. This approach allows users to focus on "What" they need technology to do while GeneXus™ automatically handles the technical side of the “How”. The benefits are clear: easier to learn, easier to create apps, and easier to switch between platforms and technologies when technology and market evolve. It’s a “Describe once, deploy everywhere” model, and much, much more.
+      </gwds-accordion-item>
+    </gwds-accordion>
 
     <!-- STACK 2 -->
-    <gwds-stack-2 bg-color="black">
-
-    </gwds-stack-2>
+    <gwds-stack-2 bg-color="black"></gwds-stack-2>
 
     <!-- LIST -->
     <gwds-component-title label="gwds-list">
@@ -97,28 +127,6 @@
         Test GeneXus features, products and all new technologies before they are released.
       </gwds-stack-item>
     </gwds-stack>
-
-    <!-- ACCORDION -->
-    <gwds-component-title label="gwds-accordion">
-      <strong>gwds-accordion</strong><br>
-      slotted content only<br>
-      <strong>gwds-accordion-item</strong><br>
-      @Prop() itemTitle: string = null;<br>
-      @Prop({ reflect: true }) active: boolean = false;
-    </gwds-component-title>
-    <gwds-accordion-section main-title="This is a title">
-      <gwds-accordion>
-        <gwds-accordion-item active item-title="title 01">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam veritatis nesciunt rem eligendi iste asperiores voluptatum itaque laboriosam. Laboriosam exercitationem est repellat! Facilis officia quisquam pariatur ex id inventore aliquid.
-        </gwds-accordion-item>
-        <gwds-accordion-item item-title="title 02">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam veritatis nesciunt rem eligendi iste asperiores voluptatum itaque laboriosam. Laboriosam exercitationem est repellat! Facilis officia quisquam pariatur ex id inventore aliquid.
-        </gwds-accordion-item>
-        <gwds-accordion-item item-title="title 03">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam veritatis nesciunt rem eligendi iste asperiores voluptatum itaque laboriosam. Laboriosam exercitationem est repellat! Facilis officia quisquam pariatur ex id inventore aliquid.
-        </gwds-accordion-item>
-      </gwds-accordion>
-    </gwds-accordion-section>
 
      <!-- AVATAR -->
      <gwds-component-title label="gwds-avatar (default)">
@@ -1018,11 +1026,8 @@
       button-secondary-url="/label"
       button-tertiary-label="Get a Refund"
       button-tertiary-url="/label"
+      description='My name is Bruno'
     >
-      <p>
-        Lorem <strong>Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has beenLorem Ipsum is simply dummy text of the printing and
-        typesetting industry. Lorem Ipsum has been
-      </p>
     </gwds-look-at-me>
 
     <!-- LOOK AT ME (CENTER) -->
@@ -1039,17 +1044,17 @@
       button-tertiary-label="Get a Refund"
       button-tertiary-url="/label"
     >
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has beenLorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been
-      </p>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has beenLorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been
+    </p>
     </gwds-look-at-me>
 
     <!-- LOOK AT ME (RIGHT) -->
     <gwds-look-at-me
       pre-title="Pre-title"
-      main-title="Meet Our Academic Program Partner"
-      bg-color="blue-50"
+      main-title="Meet Our Aca Partner"
+      bg-color="blue-50"demic Program
       align-content="right"
       white-text
       bg-image="../assets/images/gwds__look-at-me-left-img.svg"

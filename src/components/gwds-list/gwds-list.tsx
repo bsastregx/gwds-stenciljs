@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, State } from '@stencil/core';
+import { Component, Host, h, Prop, State, Element } from '@stencil/core';
 import textContrast from '../../utils/utils';
 
 @Component({
@@ -14,10 +14,14 @@ export class GwdsList {
   @Prop() pb0: boolean = false;
 
   @State() textColor: string = null;
+  @State() hasDescriptionSlot: boolean = false;
+
+  @Element() el: HTMLElement;
 
   componentWillLoad() {
     //define text color based on contrast with the background
     this.textColor = textContrast(this.bgColor);
+    this.hasDescriptionSlot = !!this.el.querySelector('[slot="description"]');
   }
 
   render() {
@@ -36,6 +40,7 @@ export class GwdsList {
         >
           <div class="gwds-list__container container">
             {this.mainTitle ? <h1 class="gwds-list__title h2 mt-0 tac">{this.mainTitle}</h1> : null}
+            <slot name="description"></slot>
             <gwds-grid per-row="2">
               <slot></slot>
             </gwds-grid>

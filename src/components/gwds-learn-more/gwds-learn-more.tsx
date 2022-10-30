@@ -11,18 +11,21 @@ export class GwdsLearnMore {
   @Prop() mainTitle: string = null;
   @Prop() pt0: boolean = false; //padding-top:0
   @Prop() pb0: boolean = false; //padding-bottom:0
-  //Button Primary
-  @Prop() buttonPrimaryLabel: string = null;
-  @Prop() buttonPrimaryUrl: string = null;
-  @Prop() buttonPrimaryBlank: boolean = false;
-  //Button Secondary
-  @Prop() buttonSecondaryLabel: string = null;
-  @Prop() buttonSecondaryUrl: string = null;
-  @Prop() buttonSecondaryBlank: boolean = false;
-  //Button Tertiary
-  @Prop() buttonTertiaryLabel: string = null;
-  @Prop() buttonTertiaryUrl: string = null;
-  @Prop() buttonTertiaryBlank: boolean = false;
+  //First Button
+  @Prop() firstButtonLabel: string = null;
+  @Prop() firstButtonUrl: string = null;
+  @Prop() firstButtonType: 'primary' | 'secondary' | 'tertiary' = 'primary';
+  @Prop() firstButtonTarget: '_blank' | '_self' = '_self';
+  //Second Button
+  @Prop() secondButtonLabel: string = null;
+  @Prop() secondButtonUrl: string = null;
+  @Prop() secondButtonType: 'primary' | 'secondary' | 'tertiary' = 'primary';
+  @Prop() secondButtonTarget: '_blank' | '_self' = '_self';
+  //Third Button
+  @Prop() thirdButtonLabel: string = null;
+  @Prop() thirdButtonUrl: string = null;
+  @Prop() thirdButtonType: 'primary' | 'secondary' | 'tertiary' = 'primary';
+  @Prop() thirdButtonTarget: '_blank' | '_self' = '_self';
 
   @State() rowClasses: string = null;
   @State() colClasses: string = null;
@@ -65,14 +68,14 @@ export class GwdsLearnMore {
                 <slot></slot>
               </div>
               <div class={{ 'col col-12 col-lg-6 d-lg-flex justify-content-lg-end': true }}>
-                {this.buttonPrimaryLabel && this.buttonPrimaryUrl ? (
-                  <gwds-button label={this.buttonPrimaryLabel} type="primary" url={this.buttonPrimaryUrl} blank={this.buttonPrimaryBlank ? true : false}></gwds-button>
+                {this.firstButtonLabel && this.firstButtonUrl ? (
+                  <gwds-button label={this.firstButtonLabel} type={this.firstButtonType} url={this.firstButtonUrl} target={this.firstButtonTarget}></gwds-button>
                 ) : null}
-                {this.buttonSecondaryLabel && this.buttonSecondaryUrl ? (
-                  <gwds-button label={this.buttonSecondaryLabel} type="secondary" url={this.buttonSecondaryUrl} blank={this.buttonSecondaryBlank ? true : false}></gwds-button>
+                {this.secondButtonLabel && this.secondButtonUrl ? (
+                  <gwds-button label={this.secondButtonLabel} type={this.secondButtonType} url={this.secondButtonUrl} target={this.secondButtonTarget}></gwds-button>
                 ) : null}
-                {this.buttonTertiaryLabel && this.buttonTertiaryUrl ? (
-                  <gwds-button label={this.buttonTertiaryLabel} type="tertiary" url={this.buttonTertiaryUrl} blank={this.buttonTertiaryBlank ? true : false}></gwds-button>
+                {this.thirdButtonLabel && this.thirdButtonUrl ? (
+                  <gwds-button label={this.thirdButtonLabel} type={this.thirdButtonType} url={this.thirdButtonUrl} target={this.thirdButtonTarget}></gwds-button>
                 ) : null}
               </div>
             </div>

@@ -1,15 +1,22 @@
-import { Component, Host, h, State, Listen, Element } from '@stencil/core';
+import { Component, Host, h, State, Listen, Element, Prop } from '@stencil/core';
 import { GwdsAccordionItem } from '../gwds-accordion-item/gwds-accordion-item';
+import textContrast from '../../utils/utils';
 
 @Component({
   tag: 'gwds-accordion',
   styleUrl: 'gwds-accordion.scss',
-  shadow: true,
+  shadow: false,
 })
 export class GwdsAccordion {
+  @Prop() bgColor: string = null;
+  @Prop() mainTitle: string = null;
+  @Prop() pt0: boolean = false; //padding-top:0
+  @Prop() pb0: boolean = false; //padding-bottom:0
+
+  @State() textColor: string = null;
+
   @Element() el: HTMLElement;
   @State() pageJustLoaded: boolean = true;
-  @State() transition: boolean = false;
 
   @Listen('accordionOpened')
   accordionOpenedHandler(event: CustomEvent<object>) {
@@ -29,14 +36,15 @@ export class GwdsAccordion {
 
   componentWillLoad() {
     this.resizeObserver();
+
+    //define text color based on contrast with the background
+    this.textColor = textContrast(this.bgColor);
+    //define --accordion-text-color var equal to this.textColor, for styling the "+/-" color.
+    this.el.style.setProperty('--accordion-text-color', `var(${this.textColor})`);
   }
 
   componentDidLoad() {
     const accordionItems = this.el.querySelectorAll('gwds-accordion-item');
-
-    accordionItems.forEach(item => {
-      (item as unknown as GwdsAccordionItem).transition = true;
-    });
   }
 
   resizeObserver() {
@@ -61,7 +69,6 @@ export class GwdsAccordion {
 
   closeAccordions() {
     const accordionItems = this.el.querySelectorAll('gwds-accordion-item');
-
     accordionItems.forEach(item => {
       if ((item as unknown as GwdsAccordionItem).active) {
         (item as unknown as GwdsAccordionItem).active = false;
@@ -71,8 +78,23 @@ export class GwdsAccordion {
 
   render() {
     return (
-      <Host class={{ 'gwds-accordion': true }}>
-        <slot></slot>
+      <Host
+        class={{ 'gwds-accordion': true }}
+        style={{
+          backgroundColor: `var(--gwds__color--${this.bgColor})`,
+          color: `var(${this.textColor})`,
+        }}
+      >
+        <section class="section">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-6">{this.mainTitle ? <h2 class="h2">{this.mainTitle}</h2> : null}</div>
+              <div class="col-12 col-lg-6">
+                <slot></slot>
+              </div>
+            </div>
+          </div>
+        </section>
       </Host>
     );
   }

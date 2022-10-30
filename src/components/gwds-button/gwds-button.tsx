@@ -10,7 +10,7 @@ export class GwButton {
   @Prop() type: 'primary' | 'secondary' | 'tertiary' = 'primary';
   @Prop() size: 'small' | 'regular' = 'regular';
   @Prop() url: string = null;
-  @Prop() blank: boolean = false;
+  @Prop() target: '_blank' | '_self' = '_self';
   @Prop() m0: boolean = false;
 
   render() {
@@ -26,7 +26,7 @@ export class GwButton {
           'm-0': this.m0,
         }}
       >
-        <a tabindex="0" class={{ 'gwds-button__button': true }} href={this.url} target={this.blank ? '_blank' : '_self'}>
+        <a tabindex="0" class={{ 'gwds-button__button': true }} href={this.url} target={this.target}>
           {this.label}
         </a>
       </Host>

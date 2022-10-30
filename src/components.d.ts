@@ -7,12 +7,15 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface GwdsAccordion {
+        "bgColor": string;
+        "mainTitle": string;
+        "pb0": boolean;
+        "pt0": boolean;
     }
     interface GwdsAccordionItem {
         "active": boolean;
         "itemId": string;
         "itemTitle": string;
-        "transition": boolean;
     }
     interface GwdsAccordionSection {
         "bgColor": string;
@@ -28,30 +31,33 @@ export namespace Components {
     }
     interface GwdsBlocks {
         "bgColor": string;
-        "buttonPrimaryBlank": boolean;
-        "buttonPrimaryLabel": string;
-        "buttonPrimaryUrl": string;
-        "buttonSecondaryBlank": boolean;
-        "buttonSecondaryLabel": string;
-        "buttonSecondaryUrl": string;
-        "buttonTertiaryBlank": boolean;
-        "buttonTertiaryLabel": string;
-        "buttonTertiaryUrl": string;
         "description": string;
         "display": 'grid-2' | 'grid-3' | 'grid-aside';
+        "firstButtonLabel": string;
+        "firstButtonTarget": '_blank' | '_self';
+        "firstButtonType": 'primary' | 'secondary' | 'tertiary';
+        "firstButtonUrl": string;
         "linkLabel": string;
         "linkTarget": '_blank' | '_self';
         "linkUrl": string;
         "mainTitle": string;
+        "secondButtonLabel": string;
+        "secondButtonTarget": '_blank' | '_self';
+        "secondButtonType": 'primary' | 'secondary' | 'tertiary';
+        "secondButtonUrl": string;
+        "thirdButtonLabel": string;
+        "thirdButtonTarget": '_blank' | '_self';
+        "thirdButtonType": 'primary' | 'secondary' | 'tertiary';
+        "thirdButtonUrl": string;
     }
     interface GwdsBreadcrumbs {
         "url": string;
     }
     interface GwdsButton {
-        "blank": boolean;
         "label": string;
         "m0": boolean;
         "size": 'small' | 'regular';
+        "target": '_blank' | '_self';
         "type": 'primary' | 'secondary' | 'tertiary';
         "url": string;
     }
@@ -104,18 +110,21 @@ export namespace Components {
     }
     interface GwdsLearnMore {
         "bgColor": string;
-        "buttonPrimaryBlank": boolean;
-        "buttonPrimaryLabel": string;
-        "buttonPrimaryUrl": string;
-        "buttonSecondaryBlank": boolean;
-        "buttonSecondaryLabel": string;
-        "buttonSecondaryUrl": string;
-        "buttonTertiaryBlank": boolean;
-        "buttonTertiaryLabel": string;
-        "buttonTertiaryUrl": string;
+        "firstButtonLabel": string;
+        "firstButtonTarget": '_blank' | '_self';
+        "firstButtonType": 'primary' | 'secondary' | 'tertiary';
+        "firstButtonUrl": string;
         "mainTitle": string;
         "pb0": boolean;
         "pt0": boolean;
+        "secondButtonLabel": string;
+        "secondButtonTarget": '_blank' | '_self';
+        "secondButtonType": 'primary' | 'secondary' | 'tertiary';
+        "secondButtonUrl": string;
+        "thirdButtonLabel": string;
+        "thirdButtonTarget": '_blank' | '_self';
+        "thirdButtonType": 'primary' | 'secondary' | 'tertiary';
+        "thirdButtonUrl": string;
     }
     interface GwdsList {
         "bgColor": string;
@@ -144,23 +153,33 @@ export namespace Components {
         "bgColor": string;
         "bgImage": string;
         "bgSize": string;
-        "buttonPrimaryBlank": boolean;
-        "buttonPrimaryLabel": string;
-        "buttonPrimaryUrl": string;
-        "buttonSecondaryBlank": boolean;
-        "buttonSecondaryLabel": string;
-        "buttonSecondaryUrl": string;
-        "buttonTertiaryBlank": boolean;
-        "buttonTertiaryLabel": string;
-        "buttonTertiaryUrl": string;
+        "description": string;
+        "firstButtonLabel": string;
+        "firstButtonTarget": '_blank' | '_self';
+        "firstButtonType": 'primary' | 'secondary' | 'tertiary';
+        "firstButtonUrl": string;
         "mainTitle": string;
         "pb0": boolean;
         "preTitle": string;
         "pt0": boolean;
+        "secondButtonLabel": string;
+        "secondButtonTarget": '_blank' | '_self';
+        "secondButtonType": 'primary' | 'secondary' | 'tertiary';
+        "secondButtonUrl": string;
+        "thirdButtonLabel": string;
+        "thirdButtonTarget": '_blank' | '_self';
+        "thirdButtonType": 'primary' | 'secondary' | 'tertiary';
+        "thirdButtonUrl": string;
     }
     interface GwdsMessage {
         "bgColor": string;
+        "buttonLabel": string;
+        "buttonTarget": '_blank' | '_self';
+        "buttonUrl": string;
         "fixed": boolean;
+        "linkLabel": string;
+        "linkTarget": '_blank' | '_self';
+        "linkUrl": string;
     }
     interface GwdsQuote {
         "bgColor": string;
@@ -175,21 +194,24 @@ export namespace Components {
     interface GwdsShowAndTell {
         "alignContent": 'left' | 'right';
         "bgColor": string;
-        "buttonPrimaryBlank": boolean;
-        "buttonPrimaryLabel": string;
-        "buttonPrimaryUrl": string;
-        "buttonSecondaryBlank": boolean;
-        "buttonSecondaryLabel": string;
-        "buttonSecondaryUrl": string;
-        "buttonTertiaryBlank": boolean;
-        "buttonTertiaryLabel": string;
-        "buttonTertiaryUrl": string;
+        "firstButtonLabel": string;
+        "firstButtonTarget": '_blank' | '_self';
+        "firstButtonType": 'primary' | 'secondary' | 'tertiary';
+        "firstButtonUrl": string;
         "imageAlt": string;
         "imageUrl": string;
         "mainTitle": string;
         "pb0": boolean;
         "preTitle": string;
         "pt0": boolean;
+        "secondButtonLabel": string;
+        "secondButtonTarget": '_blank' | '_self';
+        "secondButtonType": 'primary' | 'secondary' | 'tertiary';
+        "secondButtonUrl": string;
+        "thirdButtonLabel": string;
+        "thirdButtonTarget": '_blank' | '_self';
+        "thirdButtonType": 'primary' | 'secondary' | 'tertiary';
+        "thirdButtonUrl": string;
     }
     interface GwdsSlider {
         "cards": boolean;
@@ -242,20 +264,23 @@ export namespace Components {
         "alignContent": 'left' | 'right';
         "alignTop": boolean;
         "bgColor": string;
-        "buttonPrimaryBlank": boolean;
-        "buttonPrimaryLabel": string;
-        "buttonPrimaryUrl": string;
-        "buttonSecondaryBlank": boolean;
-        "buttonSecondaryLabel": string;
-        "buttonSecondaryUrl": string;
-        "buttonTertiaryBlank": boolean;
-        "buttonTertiaryLabel": string;
-        "buttonTertiaryUrl": string;
+        "firstButtonLabel": string;
+        "firstButtonTarget": '_blank' | '_self';
+        "firstButtonType": 'primary' | 'secondary' | 'tertiary';
+        "firstButtonUrl": string;
         "fullWidth": boolean;
         "mainTitle": string;
         "pb0": boolean;
         "pt0": boolean;
+        "secondButtonLabel": string;
+        "secondButtonTarget": '_blank' | '_self';
+        "secondButtonType": 'primary' | 'secondary' | 'tertiary';
+        "secondButtonUrl": string;
         "source": 'youtube' | 'vimeo';
+        "thirdButtonLabel": string;
+        "thirdButtonTarget": '_blank' | '_self';
+        "thirdButtonType": 'primary' | 'secondary' | 'tertiary';
+        "thirdButtonUrl": string;
         "url": string;
     }
 }
@@ -486,13 +511,16 @@ declare global {
 }
 declare namespace LocalJSX {
     interface GwdsAccordion {
+        "bgColor"?: string;
+        "mainTitle"?: string;
+        "pb0"?: boolean;
+        "pt0"?: boolean;
     }
     interface GwdsAccordionItem {
         "active"?: boolean;
         "itemId"?: string;
         "itemTitle"?: string;
         "onAccordionOpened"?: (event: GwdsAccordionItemCustomEvent<object>) => void;
-        "transition"?: boolean;
     }
     interface GwdsAccordionSection {
         "bgColor"?: string;
@@ -508,30 +536,33 @@ declare namespace LocalJSX {
     }
     interface GwdsBlocks {
         "bgColor"?: string;
-        "buttonPrimaryBlank"?: boolean;
-        "buttonPrimaryLabel"?: string;
-        "buttonPrimaryUrl"?: string;
-        "buttonSecondaryBlank"?: boolean;
-        "buttonSecondaryLabel"?: string;
-        "buttonSecondaryUrl"?: string;
-        "buttonTertiaryBlank"?: boolean;
-        "buttonTertiaryLabel"?: string;
-        "buttonTertiaryUrl"?: string;
         "description"?: string;
         "display"?: 'grid-2' | 'grid-3' | 'grid-aside';
+        "firstButtonLabel"?: string;
+        "firstButtonTarget"?: '_blank' | '_self';
+        "firstButtonType"?: 'primary' | 'secondary' | 'tertiary';
+        "firstButtonUrl"?: string;
         "linkLabel"?: string;
         "linkTarget"?: '_blank' | '_self';
         "linkUrl"?: string;
         "mainTitle"?: string;
+        "secondButtonLabel"?: string;
+        "secondButtonTarget"?: '_blank' | '_self';
+        "secondButtonType"?: 'primary' | 'secondary' | 'tertiary';
+        "secondButtonUrl"?: string;
+        "thirdButtonLabel"?: string;
+        "thirdButtonTarget"?: '_blank' | '_self';
+        "thirdButtonType"?: 'primary' | 'secondary' | 'tertiary';
+        "thirdButtonUrl"?: string;
     }
     interface GwdsBreadcrumbs {
         "url"?: string;
     }
     interface GwdsButton {
-        "blank"?: boolean;
         "label"?: string;
         "m0"?: boolean;
         "size"?: 'small' | 'regular';
+        "target"?: '_blank' | '_self';
         "type"?: 'primary' | 'secondary' | 'tertiary';
         "url"?: string;
     }
@@ -584,18 +615,21 @@ declare namespace LocalJSX {
     }
     interface GwdsLearnMore {
         "bgColor"?: string;
-        "buttonPrimaryBlank"?: boolean;
-        "buttonPrimaryLabel"?: string;
-        "buttonPrimaryUrl"?: string;
-        "buttonSecondaryBlank"?: boolean;
-        "buttonSecondaryLabel"?: string;
-        "buttonSecondaryUrl"?: string;
-        "buttonTertiaryBlank"?: boolean;
-        "buttonTertiaryLabel"?: string;
-        "buttonTertiaryUrl"?: string;
+        "firstButtonLabel"?: string;
+        "firstButtonTarget"?: '_blank' | '_self';
+        "firstButtonType"?: 'primary' | 'secondary' | 'tertiary';
+        "firstButtonUrl"?: string;
         "mainTitle"?: string;
         "pb0"?: boolean;
         "pt0"?: boolean;
+        "secondButtonLabel"?: string;
+        "secondButtonTarget"?: '_blank' | '_self';
+        "secondButtonType"?: 'primary' | 'secondary' | 'tertiary';
+        "secondButtonUrl"?: string;
+        "thirdButtonLabel"?: string;
+        "thirdButtonTarget"?: '_blank' | '_self';
+        "thirdButtonType"?: 'primary' | 'secondary' | 'tertiary';
+        "thirdButtonUrl"?: string;
     }
     interface GwdsList {
         "bgColor"?: string;
@@ -624,23 +658,33 @@ declare namespace LocalJSX {
         "bgColor"?: string;
         "bgImage"?: string;
         "bgSize"?: string;
-        "buttonPrimaryBlank"?: boolean;
-        "buttonPrimaryLabel"?: string;
-        "buttonPrimaryUrl"?: string;
-        "buttonSecondaryBlank"?: boolean;
-        "buttonSecondaryLabel"?: string;
-        "buttonSecondaryUrl"?: string;
-        "buttonTertiaryBlank"?: boolean;
-        "buttonTertiaryLabel"?: string;
-        "buttonTertiaryUrl"?: string;
+        "description"?: string;
+        "firstButtonLabel"?: string;
+        "firstButtonTarget"?: '_blank' | '_self';
+        "firstButtonType"?: 'primary' | 'secondary' | 'tertiary';
+        "firstButtonUrl"?: string;
         "mainTitle"?: string;
         "pb0"?: boolean;
         "preTitle"?: string;
         "pt0"?: boolean;
+        "secondButtonLabel"?: string;
+        "secondButtonTarget"?: '_blank' | '_self';
+        "secondButtonType"?: 'primary' | 'secondary' | 'tertiary';
+        "secondButtonUrl"?: string;
+        "thirdButtonLabel"?: string;
+        "thirdButtonTarget"?: '_blank' | '_self';
+        "thirdButtonType"?: 'primary' | 'secondary' | 'tertiary';
+        "thirdButtonUrl"?: string;
     }
     interface GwdsMessage {
         "bgColor"?: string;
+        "buttonLabel"?: string;
+        "buttonTarget"?: '_blank' | '_self';
+        "buttonUrl"?: string;
         "fixed"?: boolean;
+        "linkLabel"?: string;
+        "linkTarget"?: '_blank' | '_self';
+        "linkUrl"?: string;
     }
     interface GwdsQuote {
         "bgColor"?: string;
@@ -655,21 +699,24 @@ declare namespace LocalJSX {
     interface GwdsShowAndTell {
         "alignContent"?: 'left' | 'right';
         "bgColor"?: string;
-        "buttonPrimaryBlank"?: boolean;
-        "buttonPrimaryLabel"?: string;
-        "buttonPrimaryUrl"?: string;
-        "buttonSecondaryBlank"?: boolean;
-        "buttonSecondaryLabel"?: string;
-        "buttonSecondaryUrl"?: string;
-        "buttonTertiaryBlank"?: boolean;
-        "buttonTertiaryLabel"?: string;
-        "buttonTertiaryUrl"?: string;
+        "firstButtonLabel"?: string;
+        "firstButtonTarget"?: '_blank' | '_self';
+        "firstButtonType"?: 'primary' | 'secondary' | 'tertiary';
+        "firstButtonUrl"?: string;
         "imageAlt"?: string;
         "imageUrl"?: string;
         "mainTitle"?: string;
         "pb0"?: boolean;
         "preTitle"?: string;
         "pt0"?: boolean;
+        "secondButtonLabel"?: string;
+        "secondButtonTarget"?: '_blank' | '_self';
+        "secondButtonType"?: 'primary' | 'secondary' | 'tertiary';
+        "secondButtonUrl"?: string;
+        "thirdButtonLabel"?: string;
+        "thirdButtonTarget"?: '_blank' | '_self';
+        "thirdButtonType"?: 'primary' | 'secondary' | 'tertiary';
+        "thirdButtonUrl"?: string;
     }
     interface GwdsSlider {
         "cards"?: boolean;
@@ -722,20 +769,23 @@ declare namespace LocalJSX {
         "alignContent"?: 'left' | 'right';
         "alignTop"?: boolean;
         "bgColor"?: string;
-        "buttonPrimaryBlank"?: boolean;
-        "buttonPrimaryLabel"?: string;
-        "buttonPrimaryUrl"?: string;
-        "buttonSecondaryBlank"?: boolean;
-        "buttonSecondaryLabel"?: string;
-        "buttonSecondaryUrl"?: string;
-        "buttonTertiaryBlank"?: boolean;
-        "buttonTertiaryLabel"?: string;
-        "buttonTertiaryUrl"?: string;
+        "firstButtonLabel"?: string;
+        "firstButtonTarget"?: '_blank' | '_self';
+        "firstButtonType"?: 'primary' | 'secondary' | 'tertiary';
+        "firstButtonUrl"?: string;
         "fullWidth"?: boolean;
         "mainTitle"?: string;
         "pb0"?: boolean;
         "pt0"?: boolean;
+        "secondButtonLabel"?: string;
+        "secondButtonTarget"?: '_blank' | '_self';
+        "secondButtonType"?: 'primary' | 'secondary' | 'tertiary';
+        "secondButtonUrl"?: string;
         "source"?: 'youtube' | 'vimeo';
+        "thirdButtonLabel"?: string;
+        "thirdButtonTarget"?: '_blank' | '_self';
+        "thirdButtonType"?: 'primary' | 'secondary' | 'tertiary';
+        "thirdButtonUrl"?: string;
         "url"?: string;
     }
     interface IntrinsicElements {

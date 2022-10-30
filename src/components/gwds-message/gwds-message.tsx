@@ -9,6 +9,12 @@ import textContrast from '../../utils/utils';
 export class GwdsMessage {
   @Prop() bgColor: string = 'red-50';
   @Prop() fixed: boolean = false;
+  @Prop() linkLabel: string = null;
+  @Prop() linkUrl: string = null;
+  @Prop() linkTarget: '_blank' | '_self' = '_self';
+  @Prop() buttonLabel: string = null;
+  @Prop() buttonUrl: string = null;
+  @Prop() buttonTarget: '_blank' | '_self' = '_self';
 
   @Element() el: HTMLElement;
   container!: HTMLDivElement;
@@ -47,6 +53,7 @@ export class GwdsMessage {
         <div ref={el => (this.container = el as HTMLDivElement)} class={{ 'gwds-message__container': true }}>
           <p class={{ 'gwds-message__message m-0': true }}>
             <slot />
+            {this.linkUrl && this.linkLabel ? <a href={this.linkUrl}>{this.linkLabel}</a> : null}
           </p>
 
           <span class={{ 'gwds-message__close': true }}>
