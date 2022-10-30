@@ -41,10 +41,14 @@
     <!-- ACCORDION -->
     <gwds-component-title label="gwds-accordion">
       <strong>gwds-accordion</strong><br>
-      slotted content only<br>
+      @Prop() bgColor: string = null;<br>
+      @Prop() mainTitle: string = null;<br>
+      @Prop() pt0: boolean = false; //padding-top:0<br>
+      @Prop() pb0: boolean = false; //padding-bottom:0<br>
       <strong>gwds-accordion-item</strong><br>
-      @Prop() itemTitle: string = null;<br>
       @Prop({ reflect: true }) active: boolean = false;
+      @Prop({ reflect: true }) itemId: string = null; //for internal use
+      @Prop() itemTitle: string = null;
     </gwds-component-title>
     <gwds-accordion main-title="GeneXus™ FAQ">
       <gwds-accordion-item active item-title="What is GeneXus™?">

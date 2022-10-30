@@ -13,10 +13,10 @@ export class GwdsAccordion {
   @Prop() pt0: boolean = false; //padding-top:0
   @Prop() pb0: boolean = false; //padding-bottom:0
 
-  @State() textColor: string = null;
-
   @Element() el: HTMLElement;
-  @State() pageJustLoaded: boolean = true;
+
+  @State() textColor: string = null;
+  @State() pageJustLoaded: boolean = true; //This will prevent the accordion to collapse when resizeObserver is called on page load.
 
   @Listen('accordionOpened')
   accordionOpenedHandler(event: CustomEvent<object>) {

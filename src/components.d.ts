@@ -17,12 +17,6 @@ export namespace Components {
         "itemId": string;
         "itemTitle": string;
     }
-    interface GwdsAccordionSection {
-        "bgColor": string;
-        "mainTitle": string;
-        "pb0": boolean;
-        "pt0": boolean;
-    }
     interface GwdsAvatar {
         "imgAlt": string;
         "imgUrl": string;
@@ -301,12 +295,6 @@ declare global {
         prototype: HTMLGwdsAccordionItemElement;
         new (): HTMLGwdsAccordionItemElement;
     };
-    interface HTMLGwdsAccordionSectionElement extends Components.GwdsAccordionSection, HTMLStencilElement {
-    }
-    var HTMLGwdsAccordionSectionElement: {
-        prototype: HTMLGwdsAccordionSectionElement;
-        new (): HTMLGwdsAccordionSectionElement;
-    };
     interface HTMLGwdsAvatarElement extends Components.GwdsAvatar, HTMLStencilElement {
     }
     var HTMLGwdsAvatarElement: {
@@ -478,7 +466,6 @@ declare global {
     interface HTMLElementTagNameMap {
         "gwds-accordion": HTMLGwdsAccordionElement;
         "gwds-accordion-item": HTMLGwdsAccordionItemElement;
-        "gwds-accordion-section": HTMLGwdsAccordionSectionElement;
         "gwds-avatar": HTMLGwdsAvatarElement;
         "gwds-blocks": HTMLGwdsBlocksElement;
         "gwds-breadcrumbs": HTMLGwdsBreadcrumbsElement;
@@ -521,12 +508,6 @@ declare namespace LocalJSX {
         "itemId"?: string;
         "itemTitle"?: string;
         "onAccordionOpened"?: (event: GwdsAccordionItemCustomEvent<object>) => void;
-    }
-    interface GwdsAccordionSection {
-        "bgColor"?: string;
-        "mainTitle"?: string;
-        "pb0"?: boolean;
-        "pt0"?: boolean;
     }
     interface GwdsAvatar {
         "imgAlt"?: string;
@@ -791,7 +772,6 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "gwds-accordion": GwdsAccordion;
         "gwds-accordion-item": GwdsAccordionItem;
-        "gwds-accordion-section": GwdsAccordionSection;
         "gwds-avatar": GwdsAvatar;
         "gwds-blocks": GwdsBlocks;
         "gwds-breadcrumbs": GwdsBreadcrumbs;
@@ -828,7 +808,6 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "gwds-accordion": LocalJSX.GwdsAccordion & JSXBase.HTMLAttributes<HTMLGwdsAccordionElement>;
             "gwds-accordion-item": LocalJSX.GwdsAccordionItem & JSXBase.HTMLAttributes<HTMLGwdsAccordionItemElement>;
-            "gwds-accordion-section": LocalJSX.GwdsAccordionSection & JSXBase.HTMLAttributes<HTMLGwdsAccordionSectionElement>;
             "gwds-avatar": LocalJSX.GwdsAvatar & JSXBase.HTMLAttributes<HTMLGwdsAvatarElement>;
             "gwds-blocks": LocalJSX.GwdsBlocks & JSXBase.HTMLAttributes<HTMLGwdsBlocksElement>;
             "gwds-breadcrumbs": LocalJSX.GwdsBreadcrumbs & JSXBase.HTMLAttributes<HTMLGwdsBreadcrumbsElement>;
