@@ -43,9 +43,7 @@ export class GwdsAccordion {
     this.el.style.setProperty('--accordion-text-color', `var(${this.textColor})`);
   }
 
-  componentDidLoad() {
-    const accordionItems = this.el.querySelectorAll('gwds-accordion-item');
-  }
+  componentDidLoad() {}
 
   resizeObserver() {
     let prevWidth = 0;

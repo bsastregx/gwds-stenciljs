@@ -7,12 +7,11 @@
 
 ## Properties
 
-| Property     | Attribute    | Description | Type      | Default |
-| ------------ | ------------ | ----------- | --------- | ------- |
-| `active`     | `active`     |             | `boolean` | `false` |
-| `itemId`     | `item-id`    |             | `string`  | `null`  |
-| `itemTitle`  | `item-title` |             | `string`  | `null`  |
-| `transition` | `transition` |             | `boolean` | `false` |
+| Property    | Attribute    | Description | Type      | Default |
+| ----------- | ------------ | ----------- | --------- | ------- |
+| `active`    | `active`     |             | `boolean` | `false` |
+| `itemId`    | `item-id`    |             | `string`  | `null`  |
+| `itemTitle` | `item-title` |             | `string`  | `null`  |
 
 
 ## Events

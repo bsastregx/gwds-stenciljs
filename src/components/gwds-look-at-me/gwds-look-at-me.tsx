@@ -1,6 +1,6 @@
 import { Component, Host, h, Prop, State, Element } from '@stencil/core';
-import textContrast from '../../utils/utils';
 import { marked } from 'marked';
+import textContrast from '../../utils/utils';
 
 @Component({
   tag: 'gwds-look-at-me',

@@ -11,10 +11,12 @@
 | ------------- | ------------- | ----------- | --------------------------- | ------------- |
 | `cards`       | `cards`       |             | `boolean`                   | `false`       |
 | `cover`       | `cover`       |             | `boolean`                   | `false`       |
+| `dark`        | `dark`        |             | `boolean`                   | `false`       |
 | `gap`         | `gap`         |             | `boolean`                   | `false`       |
+| `individual`  | `individual`  |             | `boolean`                   | `false`       |
 | `orientation` | `orientation` |             | `"landscape" \| "portrait"` | `'landscape'` |
 | `padding`     | `padding`     |             | `boolean`                   | `false`       |
-| `slideId`     | `slide-id`    |             | `string`                    | `null`        |
+| `sliderId`    | `slider-id`   |             | `string`                    | `null`        |
 
 
 ----------------------------------------------

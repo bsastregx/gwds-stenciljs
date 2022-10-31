@@ -100,7 +100,7 @@ a {
 .h5,
 .h6 {
   font-family: var(--gwds__font-family--headings);
-  font-weight: 600;
+  font-weight: var(--gwds__font-weight--semibold);
   margin: var(--gwds__space--s) 0 var(--gwds__space--s) 0;
   &--light {
     font-weight: var(--gwds__font-weight--light);

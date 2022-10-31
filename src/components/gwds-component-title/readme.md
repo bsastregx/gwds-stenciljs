@@ -10,6 +10,7 @@
 | Property       | Attribute      | Description | Type      | Default |
 | -------------- | -------------- | ----------- | --------- | ------- |
 | `experimental` | `experimental` |             | `boolean` | `false` |
+| `label`        | `label`        |             | `string`  | `null`  |
 
 
 ----------------------------------------------
