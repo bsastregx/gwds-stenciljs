@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop, State } from '@stencil/core';
+import { marked } from 'marked';
 import textContrast from '../../utils/utils';
 
 @Component({
@@ -12,6 +13,7 @@ export class GwdsCard {
   @Prop() imgAlt: string = null;
   @Prop() tagLabel: string = null;
   @Prop() titleLabel: string = null;
+  @Prop() description: string = null;
   @Prop() linkUrl: string = null;
   @Prop() linkLabel: string = null;
   @Prop() linkTarget: string = '_self';
@@ -50,7 +52,7 @@ export class GwdsCard {
           <div class={{ 'gwds-card__content-container': true }}>
             {this.tagLabel ? <gwds-tag class={{ 'gwds-card__tag': true }} label={this.tagLabel}></gwds-tag> : null}
             {this.titleLabel ? <h1 class={{ 'gwds-card__title': true, 'h4': true, 'mt-0': true }}>{this.titleLabel}</h1> : null}
-            <slot></slot>
+            {this.description ? <div innerHTML={marked.parse(this.description)}></div> : <slot></slot>}
             {this.linkUrl && this.linkLabel ? (
               <a class={{ 'gwds-card__link': true }} href={this.linkUrl} target={`"${this.linkTarget}"`}>
                 {this.linkLabel}

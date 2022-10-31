@@ -57,6 +57,7 @@ export namespace Components {
     }
     interface GwdsCard {
         "bgColor": string;
+        "description": string;
         "imgAlt": string;
         "imgSrc": string;
         "linkLabel": string;
@@ -549,6 +550,7 @@ declare namespace LocalJSX {
     }
     interface GwdsCard {
         "bgColor"?: string;
+        "description"?: string;
         "imgAlt"?: string;
         "imgSrc"?: string;
         "linkLabel"?: string;

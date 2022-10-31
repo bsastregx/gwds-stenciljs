@@ -6,14 +6,6 @@
   gwds-grid {
     margin-top: var(--gwds__space--l);
   }
-  &__wrapper {
-    :first-child {
-      margin-top: 0;
-    }
-  }
-  &__description {
-    max-width: 640px;
-  }
 
   /* RESPONSIVE */
   /*sm*/
@@ -41,6 +33,9 @@
       }
       .gwds-blocks__wrapper {
         padding-right: var(--gwds__space--l);
+      }
+      .gwds-blocks__main-wrapper {
+        width: 50%;
       }
     }
   }

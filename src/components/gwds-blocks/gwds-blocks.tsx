@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop, State } from '@stencil/core';
+import { marked } from 'marked';
 import textContrast from '../../utils/utils';
 
 @Component({
@@ -32,10 +33,15 @@ export class GwdsBlocks {
   @Prop() display: 'grid-2' | 'grid-3' | 'grid-aside' = 'grid-2';
 
   @State() textColor: string = null;
+  @State() colClasses: string = 'col-12 col-lg-8';
 
   componentWillLoad() {
     //define text color based on contrast with the background
     this.textColor = textContrast(this.bgColor);
+
+    if (this.display === 'grid-aside') {
+      this.colClasses = 'col-12';
+    }
   }
 
   perRow() {
@@ -63,18 +69,24 @@ export class GwdsBlocks {
       >
         <section class="section">
           <div class={{ 'container': true, 'container--main': true }}>
-            <div class={{ 'gwds-blocks__wrapper': true }}>
-              {this.mainTitle ? <h2 class="h2">{this.mainTitle}</h2> : null}
-              {this.description ? <p class={{ 'gwds-blocks__description': true }}>{this.description}</p> : null}
-              {this.firstButtonLabel && this.firstButtonUrl ? (
-                <gwds-button label={this.firstButtonLabel} type={this.firstButtonType} url={this.firstButtonUrl} target={this.firstButtonTarget}></gwds-button>
-              ) : null}
-              {this.secondButtonLabel && this.secondButtonUrl ? (
-                <gwds-button label={this.secondButtonLabel} type={this.secondButtonType} url={this.secondButtonUrl} target={this.secondButtonTarget}></gwds-button>
-              ) : null}
-              {this.thirdButtonLabel && this.thirdButtonUrl ? (
-                <gwds-button label={this.thirdButtonLabel} type={this.thirdButtonType} url={this.thirdButtonUrl} target={this.thirdButtonTarget}></gwds-button>
-              ) : null}
+            <div class="gwds-blocks__main-wrapper">
+              <div class="row">
+                <div class={this.colClasses}>
+                  {this.mainTitle ? <h2 class="h2">{this.mainTitle}</h2> : null}
+                  {this.description ? <div innerHTML={marked.parse(this.description)}></div> : null}
+                </div>
+              </div>
+              <div class="gwds-blocks__buttons-wrapper">
+                {this.firstButtonLabel && this.firstButtonUrl ? (
+                  <gwds-button label={this.firstButtonLabel} type={this.firstButtonType} url={this.firstButtonUrl} target={this.firstButtonTarget}></gwds-button>
+                ) : null}
+                {this.secondButtonLabel && this.secondButtonUrl ? (
+                  <gwds-button label={this.secondButtonLabel} type={this.secondButtonType} url={this.secondButtonUrl} target={this.secondButtonTarget}></gwds-button>
+                ) : null}
+                {this.thirdButtonLabel && this.thirdButtonUrl ? (
+                  <gwds-button label={this.thirdButtonLabel} type={this.thirdButtonType} url={this.thirdButtonUrl} target={this.thirdButtonTarget}></gwds-button>
+                ) : null}
+              </div>
             </div>
             <gwds-grid perRow={this.perRow()}>
               <slot></slot>

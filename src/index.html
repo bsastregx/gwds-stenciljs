@@ -68,6 +68,256 @@
       </gwds-accordion-item>
     </gwds-accordion>
 
+    <!-- AVATAR -->
+    <gwds-component-title label="gwds-avatar (default)">
+      @Prop() imgUrl: string = getAssetPath(`./assets/images/avatar-placeholder.svg`);<br>
+      @Prop() imgAlt: string = null;<br>
+      @Prop() size: 'm' | 'l' | 'xl' | 'xxl' = 'm';<br>
+      @Prop() line: boolean = false;
+    </gwds-component-title>
+    <section class="section">
+      <div class="container">
+        <gwds-grid per-row="4">
+          <div>
+            <gwds-avatar slot="children" size="m" img-url="../assets/images/elvis.jpg"></gwds-avatar>
+        </div>
+        <div>
+          <gwds-avatar slot="children" size="l" img-url="../assets/images/elvis.jpg"></gwds-avatar>
+        </div>
+        <div>
+          <gwds-avatar slot="children" size="xl" img-url="../assets/images/elvis.jpg"></gwds-avatar>
+        </gwds-grid>
+      </div>
+      <div>
+        <gwds-avatar slot="children" size="xxl" img-url="../assets/images/elvis.jpg"></gwds-avatar>
+      </gwds-grid>
+      </div>
+      </div>
+    </section>
+
+    <!-- AVATAR -->
+    <gwds-component-title label="gwds-avatar (with line)">
+      @Prop() imgUrl: string = getAssetPath(`./assets/images/avatar-placeholder.svg`);<br>
+      @Prop() imgAlt: string = null;<br>
+      @Prop() size: 'm' | 'l' | 'xl' | 'xxl' = 'm';<br>
+      @Prop() line: boolean = false;
+    </gwds-component-title>
+    <section class="section">
+      <div class="container">
+        <gwds-grid per-row="4">
+          <div>
+            <gwds-avatar slot="children" line size="m" img-url="../assets/images/elvis.jpg"></gwds-avatar>
+        </div>
+        <div>
+          <gwds-avatar slot="children" line size="l" img-url="../assets/images/elvis.jpg"></gwds-avatar>
+        </div>
+        <div>
+          <gwds-avatar slot="children" line size="xl" img-url="../assets/images/elvis.jpg"></gwds-avatar>
+        </gwds-grid>
+      </div>
+      <div>
+        <gwds-avatar slot="children" line size="xxl" img-url="../assets/images/elvis.jpg"></gwds-avatar>
+      </gwds-grid>
+      </div>
+      </div>
+    </section>
+
+    <!-- BLOCKS 3 -->
+    <gwds-component-title label="gwds-blocks 3">
+      todo
+    </gwds-component-title>
+    <gwds-blocks
+      bg-color="red-400"
+      display="grid-3"
+      main-title="Our Values"
+      description="Company values are the central, underlying philosophies that guide a business and its employees. These beliefs also influence the way a company interacts with partners, clients, and shareholders. **A company’s culture must align with its core values** in order to create a shared, enduring, and positive environment for all these parties."
+      first-button-label="Primary Button"
+      first-button-url="/label"
+      first-button-type="primary"
+      second-button-label="Secondary Button"
+      second-button-url="/label"
+      second-button-type="secondary"
+      third-button-label="Teritary Button"
+      third-button-url="/label"
+      third-button-type="tertiary"
+    >
+
+      <gwds-card
+        bg-color="black-opacity"
+        title-label="Freedom & Accountability"
+        description="We interconnect with responsibility and freedom. Every day we seek to be flexible and integrate the interests, objectives and needs of our people and our company. We are professionals and we believe that a context of freedom and responsibility inspires creativity, fosters a good environment and generates great results."
+        link-label="more info"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+      >
+      </gwds-card>
+      <gwds-card
+        bg-color="black-opacity"
+        title-label="Respect & Trust"
+        description="The foundations of our organizational culture are based on the pillars of respect and trust. Respect for our differences, styles and opinions allows us to make better decisions. Trust in our teammates allows us to better align our interests, to execute decisions more efficiently."
+        link-label="more info"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+      >
+      </gwds-card>
+      <gwds-card
+      bg-color="black-opacity"
+      title-label="Diversity & Tolerance"
+      description="At GeneXus we promote diversity of ideas and people, as well as of styles and thoughts. The different ways of understanding and living the world and the multiple experiences of each one, allow us to generate more and better ideas and solutions. Diversity, tolerance and respect for our differences are fundamental to working successfully on projects that require constant innovation."
+      link-label="more info"
+      link-url="https://en.wikipedia.org/wiki/Owl"
+      link-target="_blank"
+      >
+      </gwds-card>
+    </gwds-blocks>
+
+    <!-- BLOCKS 2 -->
+    <gwds-component-title label="gwds-blocks 2">
+      todo
+    </gwds-component-title>
+    <gwds-blocks
+      bg-color="red-400"
+      display="grid-2"
+      main-title="This is the title"
+      description="Company values are the central, underlying philosophies that guide a business and its employees. These beliefs also influence the way a company interacts with partners, clients, and shareholders. **A company’s culture must align with its core values** in order to create a shared, enduring, and positive environment for all these parties."
+      first-button-label="Label"
+      first-button-url="/label"
+      first-button-type="primary"
+      second-button-label="Buy GeneXus"
+      second-button-url="/label"
+      second-button-type="secondary"
+      third-button-label="Get a Refund"
+      third-button-url="/label"
+      third-button-type="tertiary"
+    >
+      <gwds-card
+        bg-color="black-opacity"
+        title-label="Freedom & Accountability"
+        description="We interconnect with responsibility and freedom. Every day we seek to be flexible and integrate the interests, objectives and needs of our people and our company. We are professionals and we believe that a context of freedom and responsibility inspires creativity, fosters a good environment and generates great results."
+        link-label="more info"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+      >
+      </gwds-card>
+      <gwds-card
+        bg-color="black-opacity"
+        title-label="Respect & Trust"
+        description="The foundations of our organizational culture are based on the pillars of respect and trust. Respect for our differences, styles and opinions allows us to make better decisions. Trust in our teammates allows us to better align our interests, to execute decisions more efficiently."
+        link-label="more info"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+      >
+      </gwds-card>
+    </gwds-blocks>
+
+    <!-- BLOCKS ASIDE-->
+    <gwds-component-title label="gwds-blocks aside">
+      todo
+    </gwds-component-title>
+    <gwds-blocks
+      bg-color="red-400"
+      display="grid-aside"
+      main-title="This is the title"
+      description=""
+      first-button-label="Label"
+      first-button-url="/label"
+      first-button-type="primary"
+      second-button-label="Buy GeneXus"
+      second-button-url="/label"
+      second-button-type="secondary"
+      third-button-label="Get a Refund"
+      third-button-url="/label"
+      third-button-type="tertiary"
+    >
+      <gwds-card
+        bg-color="black-opacity"
+        title-label="Freedom & Accountability"
+        description="We interconnect with responsibility and freedom. Every day we seek to be flexible and integrate the interests, objectives and needs of our people and our company. We are professionals and we believe that a context of freedom and responsibility inspires creativity, fosters a good environment and generates great results."
+        link-label="more info"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+      >
+      </gwds-card>
+      <gwds-card
+        bg-color="black-opacity"
+        title-label="Respect & Trust"
+        description="The foundations of our organizational culture are based on the pillars of respect and trust. Respect for our differences, styles and opinions allows us to make better decisions. Trust in our teammates allows us to better align our interests, to execute decisions more efficiently."
+        link-label="more info"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+      >
+      </gwds-card>
+      <gwds-card
+        bg-color="black-opacity"
+        title-label="Diversity & Tolerance"
+        description="At GeneXus we promote diversity of ideas and people, as well as of styles and thoughts. The different ways of understanding and living the world and the multiple experiences of each one, allow us to generate more and better ideas and solutions. Diversity, tolerance and respect for our differences are fundamental to working successfully on projects that require constant innovation."
+        link-label="more info"
+        link-url="https://en.wikipedia.org/wiki/Owl"
+        link-target="_blank"
+      >
+      </gwds-card>
+    </gwds-blocks>
+
+    <!-- TOOLTIP -->
+    <gwds-component-title label="gwds-tooltip">
+      todo
+    </gwds-component-title>
+    <section class="section">
+      <div class="container">
+        <gwds-grid per-row="4">
+          <div>
+          <gwds-tooltip width="200px" label="" position="top">
+            <div slot="content">
+              <i class="fa-brands fa-linkedin"></i>
+              <h4 class="h6 mb-xs">Elvis Presley</h4>
+              <p class="mt-xs"> <em>Singer</em></p>
+              <p> <small> Dubbed the "King of Rock and Roll", he is regarded as one of the most significant cultural figures of the 20th century. </small></p>
+              <a href="https://en.wikipedia.org/wiki/Elvis_Presley" target="_blank" style="text-decoration: underline">View more</a>
+            </div>
+            <gwds-avatar slot="children" line size="m" img-url="../assets/images/elvis.jpg"></gwds-avatar>
+          </gwds-tooltip>
+        </div>
+        <div>
+          <gwds-tooltip width="200px" label="" position="top">
+            <div slot="content">
+              <i class="fa-brands fa-linkedin"></i>
+              <h4 class="h6 mb-xs">Elvis Presley</h4>
+              <p class="mt-xs"> <em>Singer</em></p>
+              <p> <small> Dubbed the "King of Rock and Roll", he is regarded as one of the most significant cultural figures of the 20th century. </small></p>
+              <a href="https://en.wikipedia.org/wiki/Elvis_Presley" target="_blank" style="text-decoration: underline">View more</a>
+            </div>
+            <gwds-avatar slot="children" line size="l" img-url="../assets/images/elvis.jpg"></gwds-avatar>
+          </gwds-tooltip>
+        </div>
+        <div>
+          <gwds-tooltip width="200px" label="" position="top">
+            <div slot="content">
+              <i class="fa-brands fa-linkedin"></i>
+              <h4 class="h6 mb-xs">Elvis Presley</h4>
+              <p class="mt-xs"> <em>Singer</em></p>
+              <p> <small> Dubbed the "King of Rock and Roll", he is regarded as one of the most significant cultural figures of the 20th century. </small></p>
+              <a href="https://en.wikipedia.org/wiki/Elvis_Presley" target="_blank" style="text-decoration: underline">View more</a>
+            </div>
+            <gwds-avatar slot="children" line size="xl" img-url="../assets/images/elvis.jpg"></gwds-avatar>
+          </gwds-tooltip>
+        </gwds-grid>
+      </div>
+      <div>
+        <gwds-tooltip width="200px" label="" position="top">
+          <div slot="content">
+            <i class="fa-brands fa-linkedin"></i>
+            <h4 class="h6 mb-xs">Elvis Presley</h4>
+            <p class="mt-xs"> <em>Singer</em></p>
+            <p> <small> Dubbed the "King of Rock and Roll", he is regarded as one of the most significant cultural figures of the 20th century. </small></p>
+            <a href="https://en.wikipedia.org/wiki/Elvis_Presley" target="_blank" style="text-decoration: underline">View more</a>
+          </div>
+          <gwds-avatar slot="children" line size="xxl" img-url="../assets/images/elvis.jpg"></gwds-avatar>
+        </gwds-tooltip>
+      </gwds-grid>
+      </div>
+      </div>
+    </section>
+
     <!-- STACK 2 -->
     <gwds-stack-2 bg-color="black"></gwds-stack-2>
 
@@ -131,262 +381,6 @@
         Test GeneXus features, products and all new technologies before they are released.
       </gwds-stack-item>
     </gwds-stack>
-
-     <!-- AVATAR -->
-     <gwds-component-title label="gwds-avatar (default)">
-      @Prop() imgUrl: string = getAssetPath(`./assets/images/avatar-placeholder.svg`);<br>
-      @Prop() imgAlt: string = null;<br>
-      @Prop() size: 'm' | 'l' | 'xl' | 'xxl' = 'm';<br>
-      @Prop() line: boolean = false;
-    </gwds-component-title>
-    <section class="section">
-      <div class="container">
-        <gwds-grid per-row="4">
-          <div>
-            <gwds-avatar slot="children" size="m" img-url="../assets/images/elvis.jpg"></gwds-avatar>
-        </div>
-        <div>
-          <gwds-avatar slot="children" size="l" img-url="../assets/images/elvis.jpg"></gwds-avatar>
-        </div>
-        <div>
-          <gwds-avatar slot="children" size="xl" img-url="../assets/images/elvis.jpg"></gwds-avatar>
-        </gwds-grid>
-      </div>
-      <div>
-        <gwds-avatar slot="children" size="xxl" img-url="../assets/images/elvis.jpg"></gwds-avatar>
-      </gwds-grid>
-      </div>
-      </div>
-    </section>
-
-    <!-- AVATAR -->
-    <gwds-component-title label="gwds-avatar (with line)">
-      @Prop() imgUrl: string = getAssetPath(`./assets/images/avatar-placeholder.svg`);<br>
-      @Prop() imgAlt: string = null;<br>
-      @Prop() size: 'm' | 'l' | 'xl' | 'xxl' = 'm';<br>
-      @Prop() line: boolean = false;
-    </gwds-component-title>
-    <section class="section">
-      <div class="container">
-        <gwds-grid per-row="4">
-          <div>
-            <gwds-avatar slot="children" line size="m" img-url="../assets/images/elvis.jpg"></gwds-avatar>
-        </div>
-        <div>
-          <gwds-avatar slot="children" line size="l" img-url="../assets/images/elvis.jpg"></gwds-avatar>
-        </div>
-        <div>
-          <gwds-avatar slot="children" line size="xl" img-url="../assets/images/elvis.jpg"></gwds-avatar>
-        </gwds-grid>
-      </div>
-      <div>
-        <gwds-avatar slot="children" line size="xxl" img-url="../assets/images/elvis.jpg"></gwds-avatar>
-      </gwds-grid>
-      </div>
-      </div>
-    </section>
-
-    <!-- AVATAR WITH TOOLTIP-->
-    <gwds-component-title label="gwds-avatar (with tooltip)">
-      @Prop() imgUrl: string = getAssetPath(`./assets/images/avatar-placeholder.svg`);<br>
-      @Prop() imgAlt: string = null;<br>
-      @Prop() size: 'm' | 'l' | 'xl' | 'xxl' = 'm';<br>
-      @Prop() line: boolean = false;
-    </gwds-component-title>
-    <section class="section">
-      <div class="container">
-        <gwds-grid per-row="4">
-          <div>
-          <gwds-tooltip width="200px" label="" position="top">
-            <div slot="content">
-              <i class="fa-brands fa-linkedin"></i>
-              <h4 class="h6 mb-xs">Elvis Presley</h4>
-              <p class="mt-xs"> <em>Singer</em></p>
-              <p> <small> Dubbed the "King of Rock and Roll", he is regarded as one of the most significant cultural figures of the 20th century. </small></p>
-              <a href="https://en.wikipedia.org/wiki/Elvis_Presley" target="_blank" style="text-decoration: underline">View more</a>
-            </div>
-            <gwds-avatar slot="children" line size="m" img-url="../assets/images/elvis.jpg"></gwds-avatar>
-          </gwds-tooltip>
-        </div>
-        <div>
-          <gwds-tooltip width="200px" label="" position="top">
-            <div slot="content">
-              <i class="fa-brands fa-linkedin"></i>
-              <h4 class="h6 mb-xs">Elvis Presley</h4>
-              <p class="mt-xs"> <em>Singer</em></p>
-              <p> <small> Dubbed the "King of Rock and Roll", he is regarded as one of the most significant cultural figures of the 20th century. </small></p>
-              <a href="https://en.wikipedia.org/wiki/Elvis_Presley" target="_blank" style="text-decoration: underline">View more</a>
-            </div>
-            <gwds-avatar slot="children" line size="l" img-url="../assets/images/elvis.jpg"></gwds-avatar>
-          </gwds-tooltip>
-        </div>
-        <div>
-          <gwds-tooltip width="200px" label="" position="top">
-            <div slot="content">
-              <i class="fa-brands fa-linkedin"></i>
-              <h4 class="h6 mb-xs">Elvis Presley</h4>
-              <p class="mt-xs"> <em>Singer</em></p>
-              <p> <small> Dubbed the "King of Rock and Roll", he is regarded as one of the most significant cultural figures of the 20th century. </small></p>
-              <a href="https://en.wikipedia.org/wiki/Elvis_Presley" target="_blank" style="text-decoration: underline">View more</a>
-            </div>
-            <gwds-avatar slot="children" line size="xl" img-url="../assets/images/elvis.jpg"></gwds-avatar>
-          </gwds-tooltip>
-        </gwds-grid>
-      </div>
-      <div>
-        <gwds-tooltip width="200px" label="" position="top">
-          <div slot="content">
-            <i class="fa-brands fa-linkedin"></i>
-            <h4 class="h6 mb-xs">Elvis Presley</h4>
-            <p class="mt-xs"> <em>Singer</em></p>
-            <p> <small> Dubbed the "King of Rock and Roll", he is regarded as one of the most significant cultural figures of the 20th century. </small></p>
-            <a href="https://en.wikipedia.org/wiki/Elvis_Presley" target="_blank" style="text-decoration: underline">View more</a>
-          </div>
-          <gwds-avatar slot="children" line size="xxl" img-url="../assets/images/elvis.jpg"></gwds-avatar>
-        </gwds-tooltip>
-      </gwds-grid>
-      </div>
-      </div>
-    </section>
-
-    <!-- BLOCKS 3 -->
-    <gwds-component-title label="gwds-blocks 3">
-      @Prop() bgColor: string = 'dark-100';<br>
-      @Prop() mainTitle: string = null;<br>
-      @Prop() description: string = null;<br>
-      @Prop() display: 'grid-2' | 'grid-3' | 'grid-aside' = 'grid-2';
-      //Button Primary<br>
-      @Prop() buttonPrimaryLabel: string = null;<br>
-      @Prop() buttonPrimaryUrl: string = null;<br>
-      @Prop() buttonPrimaryBlank: boolean = false;<br>
-      //Button Secondary<br>
-      @Prop() buttonSecondaryLabel: string = null;<br>
-      @Prop() buttonSecondaryUrl: string = null;<br>
-      @Prop() buttonSecondaryBlank: boolean = false;<br>
-      //Button Tertiary<br>
-      @Prop() buttonTertiaryLabel: string = null;<br>
-      @Prop() buttonTertiaryUrl: string = null;<br>
-      @Prop() buttonTertiaryBlank: boolean = false;
-      
-    </gwds-component-title>
-    <gwds-blocks bg-color="red-400" display="grid-3" main-title="This is the title" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto." button-primary-label="Label" button-primary-url="/label" button-secondary-label="Buy GeneXus" button-secondary-url="/label" button-tertiary-label="Get a Refund" button-tertiary-url="/label">
-      <gwds-card
-        bg-color="black-opacity"
-        title-label="Title"
-        link-label="more info"
-        link-url="https://en.wikipedia.org/wiki/Owl"
-        link-target="_blank"
-      >
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
-      </gwds-card>
-      <gwds-card
-        bg-color="black-opacity"
-        title-label="Title"
-        link-label="more info"
-        link-url="https://en.wikipedia.org/wiki/Owl"
-        link-target="_blank"
-      >
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
-      </gwds-card>
-      <gwds-card
-      bg-color="black-opacity"
-      title-label="Title"
-      link-label="more info"
-      link-url="https://en.wikipedia.org/wiki/Owl"
-      link-target="_blank"
-      >
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
-      </gwds-card>
-    </gwds-blocks>
-
-    <!-- BLOCKS 2 -->
-    <gwds-component-title label="gwds-blocks 2">
-      @Prop() bgColor: string = 'dark-100';<br>
-      @Prop() mainTitle: string = null;<br>
-      @Prop() description: string = null;<br>
-      @Prop() display: 'grid-2' | 'grid-3' | 'grid-aside' = 'grid-2';
-      //Button Primary<br>
-      @Prop() buttonPrimaryLabel: string = null;<br>
-      @Prop() buttonPrimaryUrl: string = null;<br>
-      @Prop() buttonPrimaryBlank: boolean = false;<br>
-      //Button Secondary<br>
-      @Prop() buttonSecondaryLabel: string = null;<br>
-      @Prop() buttonSecondaryUrl: string = null;<br>
-      @Prop() buttonSecondaryBlank: boolean = false;<br>
-      //Button Tertiary<br>
-      @Prop() buttonTertiaryLabel: string = null;<br>
-      @Prop() buttonTertiaryUrl: string = null;<br>
-      @Prop() buttonTertiaryBlank: boolean = false;
-    </gwds-component-title>
-    <gwds-blocks bg-color="red-400" display="grid-2" main-title="This is the title" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto." button-primary-label="Label" button-primary-url="/label" button-secondary-label="Buy GeneXus" button-secondary-url="/label" button-tertiary-label="Get a Refund" button-tertiary-url="/label">
-      <gwds-card
-        bg-color="black-opacity"
-        title-label="Title"
-        link-label="more info"
-        link-url="https://en.wikipedia.org/wiki/Owl"
-        link-target="_blank"
-      >
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
-      </gwds-card>
-      <gwds-card
-        bg-color="black-opacity"
-        title-label="Title"
-        link-label="more info"
-        link-url="https://en.wikipedia.org/wiki/Owl"
-        link-target="_blank"
-      >
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
-      </gwds-card>
-    </gwds-blocks>
-
-    <!-- BLOCKS ASIDE-->
-    <gwds-component-title label="gwds-blocks aside">
-      @Prop() bgColor: string = 'dark-100';<br>
-      @Prop() mainTitle: string = null;<br>
-      @Prop() description: string = null;<br>
-      @Prop() display: 'grid-2' | 'grid-3' | 'grid-aside' = 'grid-2';
-      //Button Primary<br>
-      @Prop() buttonPrimaryLabel: string = null;<br>
-      @Prop() buttonPrimaryUrl: string = null;<br>
-      @Prop() buttonPrimaryBlank: boolean = false;<br>
-      //Button Secondary<br>
-      @Prop() buttonSecondaryLabel: string = null;<br>
-      @Prop() buttonSecondaryUrl: string = null;<br>
-      @Prop() buttonSecondaryBlank: boolean = false;<br>
-      //Button Tertiary<br>
-      @Prop() buttonTertiaryLabel: string = null;<br>
-      @Prop() buttonTertiaryUrl: string = null;<br>
-      @Prop() buttonTertiaryBlank: boolean = false;
-    </gwds-component-title>
-    <gwds-blocks bg-color="red-400" display="grid-aside" main-title="This is the title" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto." button-primary-label="Label" button-primary-url="/label" button-secondary-label="Buy GeneXus" button-secondary-url="/label" button-tertiary-label="Get a Refund" button-tertiary-url="/label">
-      <gwds-card
-        bg-color="black-opacity"
-        title-label="Title"
-        link-label="more info"
-        link-url="https://en.wikipedia.org/wiki/Owl"
-        link-target="_blank"
-      >
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
-      </gwds-card>
-      <gwds-card
-        bg-color="black-opacity"
-        title-label="Title"
-        link-label="more info"
-        link-url="https://en.wikipedia.org/wiki/Owl"
-        link-target="_blank"
-      >
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
-      </gwds-card>
-      <gwds-card
-      bg-color="black-opacity"
-      title-label="Title"
-      link-label="more info"
-      link-url="https://en.wikipedia.org/wiki/Owl"
-      link-target="_blank"
-      >
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel esse ratione voluptates numquam dicta quas laborum veniam facere minima similique quis, quia corporis exercitationem pariatur ipsum adipisci temporibus amet architecto.</p>
-      </gwds-card>
-    </gwds-blocks>
 
     <!-- BREADCRUMBS -->
     <gwds-component-title label="gwds-breadcrumbs">
@@ -988,7 +982,7 @@
       @Prop() buttonSecondaryBlank: boolean = false;<br>
     </gwds-component-title>
     <!-- LEARN MORE -->
-    <gwds-learn-more main-title="Comience a crear aplicaciones. Comience con GeneXus" button-primary-label="More depth for this" button-primary-url="/label" button-secondary-label="Download doc" button-secondary-url="/label" button-tertiary-label="Download doc" button-tertiary-url="/label">
+    <gwds-learn-more main-title="Comience a crear aplicaciones. Comience con GeneXus" first-button-label="More depth for this" first-button-url="/label" second-button-label="Download doc" second-button-url="/label" third-button-label="Download doc" third-button-url="/label">
       <p>
         There is much depth to GeneXus Products and Technology, please take your time to visit our Products page to learn more about what makes us so different to the competition.
       </p>
@@ -1024,12 +1018,12 @@
       align-content="left"
       white-text
       bg-image="../assets/images/gwds__look-at-me-right-img.svg"
-      button-primary-label="Label"
-      button-primary-url="/label"
-      button-secondary-label="Buy GeneXus"
-      button-secondary-url="/label"
-      button-tertiary-label="Get a Refund"
-      button-tertiary-url="/label"
+      first-button-label="Label"
+      first-button-url="/label"
+      second-button-label="Buy GeneXus"
+      second-button-url="/label"
+      third-button-label="Get a Refund"
+      third-button-url="/label"
       description='My name is Bruno'
     >
     </gwds-look-at-me>
@@ -1041,12 +1035,12 @@
       bg-color="green-900"
       align-content="center"
       white-text
-      button-primary-label="Label"
-      button-primary-url="/label"
-      button-secondary-label="Buy GeneXus"
-      button-secondary-url="/label"
-      button-tertiary-label="Get a Refund"
-      button-tertiary-url="/label"
+      first-button-label="Label"
+      first-button-url="/label"
+      second-button-label="Buy GeneXus"
+      second-button-url="/label"
+      third-button-label="Get a Refund"
+      third-button-url="/label"
     >
     <p>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has beenLorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -1062,12 +1056,12 @@
       align-content="right"
       white-text
       bg-image="../assets/images/gwds__look-at-me-left-img.svg"
-      button-primary-label="Label"
-      button-primary-url="/label"
-      button-secondary-label="Buy GeneXus"
-      button-secondary-url="/label"
-      button-tertiary-label="Get a Refund"
-      button-tertiary-url="/label"
+      first-button-label="Label"
+      first-button-url="/label"
+      second-button-label="Buy GeneXus"
+      second-button-url="/label"
+      third-button-label="Get a Refund"
+      third-button-url="/label"
     >
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has beenLorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -1111,12 +1105,12 @@
       pre-title="Save the date"
       main-title="Enterprise Low-Code 2022"
       image-url="../assets/images/gwds__show-and-tell-img.svg"
-      button-primary-label="Label"
-      button-primary-url="/label"
-      button-secondary-label="Buy GeneXus"
-      button-secondary-url="/label"
-      button-tertiary-label="Get a Refund"
-      button-tertiary-url="/label">
+      first-button-label="Label"
+      first-button-url="/label"
+      second-button-label="Buy GeneXus"
+      second-button-url="/label"
+      third-button-label="Get a Refund"
+      third-button-url="/label">
       <p>
         ¡Presentaremos lo que se viene en <strong>GeneXus 18</strong>! Descubre todas las novedades de la nueva versión de la Plataforma de Desarrollo de Software que ayuda a las
         empresas a mejorar la vida de las personas.
@@ -1135,12 +1129,12 @@
       align-content="right"
       bg-color="green-900"
       white-text
-      button-primary-label="Label"
-      button-primary-url="/label"
-      button-secondary-label="Buy GeneXus"
-      button-secondary-url="/label"
-      button-tertiary-label="Get a Refund"
-      button-tertiary-url="/label">
+      first-button-label="Label"
+      first-button-url="/label"
+      second-button-label="Buy GeneXus"
+      second-button-url="/label"
+      third-button-label="Get a Refund"
+      third-button-url="/label">
     >
       <p>
         ¡Presentaremos lo que se viene en <strong>GeneXus 18</strong>! Descubre todas las novedades de la nueva versión de la Plataforma de Desarrollo de Software que ayuda a las
@@ -1169,12 +1163,12 @@
       source="youtube"
       url="https://www.youtube.com/embed/GvBaetmqyH8"
       full-width
-      button-primary-label="Label"
-      button-primary-url="/label"
-      button-secondary-label="Buy GeneXus"
-      button-secondary-url="/label"
-      button-tertiary-label="Get a Refund"
-      button-tertiary-url="/label">
+      first-button-label="Label"
+      first-button-url="/label"
+      second-button-label="Buy GeneXus"
+      second-button-url="/label"
+      third-button-label="Get a Refund"
+      third-button-url="/label">
       <p>GeneXus, la solución Low Code para el Desarrollo de Software.</p></gwds-video-section
     >
 
@@ -1187,12 +1181,12 @@
       source="youtube"
       url="https://www.youtube.com/embed/TNZZjNa7qDY"
       full-width
-      button-primary-label="Label"
-      button-primary-url="/label"
-      button-secondary-label="Buy GeneXus"
-      button-secondary-url="/label"
-      button-tertiary-label="Get a Refund"
-      button-tertiary-url="/label">
+      first-button-label="Label"
+      first-button-url="/label"
+      second-button-label="Buy GeneXus"
+      second-button-url="/label"
+      third-button-label="Get a Refund"
+      third-button-url="/label">
       <p>GeneXus, la solución Low Code para el Desarrollo de Software.</p></gwds-video-section
     >
 
