@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Color, Size } from "./components/gwds-icon/gwds-icon";
 export namespace Components {
     interface GwdsAccordion {
         "bgColor": string;
@@ -96,6 +97,24 @@ export namespace Components {
     }
     interface GwdsGrid {
         "perRow": '2' | '3' | '4' | '6';
+    }
+    interface GwdsIcon {
+        /**
+          * The color of the icon.
+         */
+        "color": Color;
+        /**
+          * If enabled, the icon will be loaded lazily when it's visible in the viewport.
+         */
+        "lazy": boolean;
+        /**
+          * The size of the icon. Possible values: small, medium, large.
+         */
+        "size": Size;
+        /**
+          * The URL of the icon.
+         */
+        "src": string;
     }
     interface GwdsLanguageSwitcher {
         "enUrl": string;
@@ -356,6 +375,12 @@ declare global {
         prototype: HTMLGwdsGridElement;
         new (): HTMLGwdsGridElement;
     };
+    interface HTMLGwdsIconElement extends Components.GwdsIcon, HTMLStencilElement {
+    }
+    var HTMLGwdsIconElement: {
+        prototype: HTMLGwdsIconElement;
+        new (): HTMLGwdsIconElement;
+    };
     interface HTMLGwdsLanguageSwitcherElement extends Components.GwdsLanguageSwitcher, HTMLStencilElement {
     }
     var HTMLGwdsLanguageSwitcherElement: {
@@ -477,6 +502,7 @@ declare global {
         "gwds-good-news-section": HTMLGwdsGoodNewsSectionElement;
         "gwds-gradient-title": HTMLGwdsGradientTitleElement;
         "gwds-grid": HTMLGwdsGridElement;
+        "gwds-icon": HTMLGwdsIconElement;
         "gwds-language-switcher": HTMLGwdsLanguageSwitcherElement;
         "gwds-learn-more": HTMLGwdsLearnMoreElement;
         "gwds-list": HTMLGwdsListElement;
@@ -589,6 +615,24 @@ declare namespace LocalJSX {
     }
     interface GwdsGrid {
         "perRow"?: '2' | '3' | '4' | '6';
+    }
+    interface GwdsIcon {
+        /**
+          * The color of the icon.
+         */
+        "color"?: Color;
+        /**
+          * If enabled, the icon will be loaded lazily when it's visible in the viewport.
+         */
+        "lazy"?: boolean;
+        /**
+          * The size of the icon. Possible values: small, medium, large.
+         */
+        "size"?: Size;
+        /**
+          * The URL of the icon.
+         */
+        "src"?: string;
     }
     interface GwdsLanguageSwitcher {
         "enUrl"?: string;
@@ -784,6 +828,7 @@ declare namespace LocalJSX {
         "gwds-good-news-section": GwdsGoodNewsSection;
         "gwds-gradient-title": GwdsGradientTitle;
         "gwds-grid": GwdsGrid;
+        "gwds-icon": GwdsIcon;
         "gwds-language-switcher": GwdsLanguageSwitcher;
         "gwds-learn-more": GwdsLearnMore;
         "gwds-list": GwdsList;
@@ -820,6 +865,7 @@ declare module "@stencil/core" {
             "gwds-good-news-section": LocalJSX.GwdsGoodNewsSection & JSXBase.HTMLAttributes<HTMLGwdsGoodNewsSectionElement>;
             "gwds-gradient-title": LocalJSX.GwdsGradientTitle & JSXBase.HTMLAttributes<HTMLGwdsGradientTitleElement>;
             "gwds-grid": LocalJSX.GwdsGrid & JSXBase.HTMLAttributes<HTMLGwdsGridElement>;
+            "gwds-icon": LocalJSX.GwdsIcon & JSXBase.HTMLAttributes<HTMLGwdsIconElement>;
             "gwds-language-switcher": LocalJSX.GwdsLanguageSwitcher & JSXBase.HTMLAttributes<HTMLGwdsLanguageSwitcherElement>;
             "gwds-learn-more": LocalJSX.GwdsLearnMore & JSXBase.HTMLAttributes<HTMLGwdsLearnMoreElement>;
             "gwds-list": LocalJSX.GwdsList & JSXBase.HTMLAttributes<HTMLGwdsListElement>;

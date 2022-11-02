@@ -25,6 +25,8 @@ export class GwdsLanguageSwitcher {
     }
   }
 
+  componentWillLoad() {}
+
   render() {
     return (
       <Host class={{ 'gwds-language-switcher': true }}>

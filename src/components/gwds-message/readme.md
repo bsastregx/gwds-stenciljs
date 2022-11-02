@@ -19,6 +19,19 @@
 | `linkUrl`      | `link-url`      |             | `string`              | `null`     |
 
 
+## Dependencies
+
+### Depends on
+
+- [gwds-icon](../gwds-icon)
+
+### Graph
+```mermaid
+graph TD;
+  gwds-message --> gwds-icon
+  style gwds-message fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

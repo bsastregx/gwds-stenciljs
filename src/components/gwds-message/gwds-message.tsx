@@ -5,7 +5,6 @@ import textContrast from '../../utils/utils';
   tag: 'gwds-message',
   styleUrl: 'gwds-message.scss',
   shadow: false,
-  assetsDirs: ['assets'],
 })
 export class GwdsMessage {
   @Prop() bgColor: string = 'red-50';
@@ -40,7 +39,8 @@ export class GwdsMessage {
   componentWillLoad() {
     //define text color based on contrast with the background
     this.textColor = textContrast(this.bgColor);
-    console.log('this.textColor', this.textColor);
+
+    console.log("getAssetPath('')", getAssetPath(''));
   }
 
   render() {
@@ -61,7 +61,8 @@ export class GwdsMessage {
           <span class={{ 'gwds-message__close': true }}>
             <div onClick={this.close.bind(this)} class={{ 'gwds-message__close-cross-container': true }}>
               <span class={{ 'gwds-message__close-cross': true }}>
-                <img class={{ 'gwds-icon': true, 'gwds-icon--invert': this.textColor === '--gwds__color--white' }} src={getAssetPath('../assets/icons/times.svg')}></img>
+                {/* <gwds-icon src={getAssetPath('icon-assets/times.svg')}></gwds-icon> */}
+                <gwds-icon src="/assets/icons/times.svg"></gwds-icon>
               </span>
             </div>
           </span>
