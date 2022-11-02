@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, getAssetPath } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'gwds-language-switcher',
@@ -31,7 +31,7 @@ export class GwdsLanguageSwitcher {
     return (
       <Host class={{ 'gwds-language-switcher': true }}>
         <span class="gwds-language-switcher__selected-lang">
-          <img class="gwds-icon" src={getAssetPath('../assets/icons/globe.svg')}></img> {this.renderSelectedLang()}
+          <gwds-icon src="/assets/icons/globe.svg"></gwds-icon> {this.renderSelectedLang()}
           <ul class="gwds-language-switcher__list unstyled gwds__shadow--tiny">
             {this.selectedLang !== 'en' ? (
               <li class="gwds-language-switcher__list-item">

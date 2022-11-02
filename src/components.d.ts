@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Color, Size } from "./components/gwds-icon/gwds-icon";
+import { Size } from "./components/gwds-icon/gwds-icon";
 export namespace Components {
     interface GwdsAccordion {
         "bgColor": string;
@@ -102,7 +102,7 @@ export namespace Components {
         /**
           * The color of the icon.
          */
-        "color": Color;
+        "color": string;
         /**
           * If enabled, the icon will be loaded lazily when it's visible in the viewport.
          */
@@ -620,7 +620,7 @@ declare namespace LocalJSX {
         /**
           * The color of the icon.
          */
-        "color"?: Color;
+        "color"?: string;
         /**
           * If enabled, the icon will be loaded lazily when it's visible in the viewport.
          */

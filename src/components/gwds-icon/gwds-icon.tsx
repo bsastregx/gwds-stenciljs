@@ -1,4 +1,4 @@
-import { Component, Element, h, State, Watch, Prop } from '@stencil/core';
+import { Component, Element, Host, h, State, Watch, Prop } from '@stencil/core';
 import { getSvgContent, iconContent } from './requests';
 
 @Component({
@@ -15,7 +15,7 @@ export class GwdsIcon {
   /**
    * The color of the icon.
    */
-  @Prop() color: Color;
+  @Prop({ mutable: true }) color: string = null;
 
   /**
    * If enabled, the icon will be loaded lazily when it's visible in the viewport.
@@ -25,7 +25,7 @@ export class GwdsIcon {
   /**
    * The size of the icon. Possible values: small, medium, large.
    */
-  @Prop() size: Size = 'small';
+  @Prop() size: Size = 's';
 
   /**
    * The URL of the icon.
@@ -43,6 +43,13 @@ export class GwdsIcon {
       this.isVisible = true;
       this.getIcon();
     });
+  }
+
+  componentWillLoad() {
+    if (this.color === null) {
+      //If color is not defined, set color equal to inherited color
+      this.color = window.getComputedStyle(this.element, null).getPropertyValue('color');
+    }
   }
 
   disconnectedCallback() {
@@ -90,22 +97,12 @@ export class GwdsIcon {
   }
 
   render() {
-    return <div innerHTML={this.svgContent} />;
+    return (
+      <Host class="gwds-icon">
+        <div class="gwds-icon__div" style={{ 'width': `var(--gwds__space--${this.size}, )`, '--gwds__icon-color': this.color }} innerHTML={this.svgContent} />
+      </Host>
+    );
   }
 }
 
-export type Color =
-  | 'primary-enabled'
-  | 'primary-active'
-  | 'primary-hover'
-  | 'onbackground'
-  | 'negative'
-  | 'disabled'
-  | 'ondisabled'
-  | 'error'
-  | 'success'
-  | 'warning'
-  | 'alwaysblack'
-  | 'auto';
-
-export type Size = 'small' | 'medium' | 'large';
+export type Size = 'xs' | 's' | 'm';

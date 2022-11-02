@@ -1,4 +1,4 @@
-import { Component, Host, h, State, Prop, Element, getAssetPath } from '@stencil/core';
+import { Component, Host, h, State, Prop, Element } from '@stencil/core';
 import textContrast from '../../utils/utils';
 
 @Component({
@@ -39,8 +39,6 @@ export class GwdsMessage {
   componentWillLoad() {
     //define text color based on contrast with the background
     this.textColor = textContrast(this.bgColor);
-
-    console.log("getAssetPath('')", getAssetPath(''));
   }
 
   render() {

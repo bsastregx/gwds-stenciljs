@@ -172,16 +172,3 @@ body,
 small {
   line-height: var(--gwds__line-height--regular);
 }
-
-//icon
-.gwds-icon {
-  height: 20px;
-
-  &:hover {
-    //filter: invert(1) sepia(1) saturate(100) hue-rotate(180deg);
-  }
-
-  &--invert {
-    filter: invert(1);
-  }
-}

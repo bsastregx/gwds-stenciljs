@@ -105,21 +105,31 @@ export class GwdsStack2 {
                 <gwds-stack-item
                   visible
                   main-title="GeneXus Training"
-                  icon-url="../assets/images/stack/stack-gx18-all-canal-beta.svg"
+                  icon-url="/assets/images/showcase/stack/stack-gx18-all-canal-beta.svg"
                   button-label="Start now"
                   button-url="www.google.com"
                 >
                   Training portal with self-study options and teaching support. Here you will also find the worldwide calendar of courses and certifications.
                 </gwds-stack-item>
-                <gwds-stack-item main-title="GeneXus Webinars" icon-url="../assets/images/stack/stack-gx18-all-webinars.svg" button-label="Start now" button-url="www.google.com">
+                <gwds-stack-item
+                  main-title="GeneXus Webinars"
+                  icon-url="/assets/images/showcase/stack/stack-gx18-all-webinars.svg"
+                  button-label="Start now"
+                  button-url="www.google.com"
+                >
                   Online sessions on technology and current topics, led by GeneXus Community experts and partners.
                 </gwds-stack-item>
-                <gwds-stack-item main-title="GeneXus Community Wiki" icon-url="../assets/images/stack/stack-gx18-all-wiki.svg" button-label="Start now" button-url="www.google.com">
+                <gwds-stack-item
+                  main-title="GeneXus Community Wiki"
+                  icon-url="/assets/images/showcase/stack/stack-gx18-all-wiki.svg"
+                  button-label="Start now"
+                  button-url="www.google.com"
+                >
                   Training portal with self-study options and teaching support. Here you will also find the worldwide calendar of courses and certifications.
                 </gwds-stack-item>
                 <gwds-stack-item
                   main-title="GeneXus Beta Channel"
-                  icon-url="../assets/images/stack/stack-gx18-all-canal-beta.svg"
+                  icon-url="/assets/images/showcase/stack/stack-gx18-all-canal-beta.svg"
                   button-label="Start now"
                   button-url="www.google.com"
                 >

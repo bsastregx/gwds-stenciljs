@@ -15,7 +15,6 @@ export class GwdsStack {
   @Prop() pb0: boolean = false;
 
   @State() textColor: string = null;
-  @State() slottedContent: NodeList = null;
 
   @Element() el: HTMLElement;
 
@@ -26,8 +25,8 @@ export class GwdsStack {
 
   slottedItems() {
     const buffer = [];
-    this.slottedContent = this.el.querySelectorAll('*');
-    this.slottedContent.forEach(
+    const slottedContent = this.el.querySelectorAll('*');
+    slottedContent.forEach(
       function (node, index) {
         const listItem = (
           <li onClick={this.clickHandler.bind(this, index)} class="gwds-stack__item">
@@ -41,7 +40,8 @@ export class GwdsStack {
   }
 
   clickHandler(index) {
-    this.slottedContent.forEach(function (node, index2) {
+    const slottedContent = this.el.querySelectorAll('*');
+    slottedContent.forEach(function (node, index2) {
       if (index === index2) {
         (node as unknown as GwdsStackItem).visible = true;
       } else {

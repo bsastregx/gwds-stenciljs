@@ -22,7 +22,6 @@ export class GwdsAccordion {
   accordionOpenedHandler(event: CustomEvent<object>) {
     //close all opened accordions, except the one that emitted this event.
     const itemId = event.detail['id'];
-    console.log('itemId', itemId);
     const accordionItems = this.el.querySelectorAll('gwds-accordion-item');
 
     accordionItems.forEach(item => {

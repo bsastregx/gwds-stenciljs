@@ -15,6 +15,19 @@
 | `selectedLang` | `selected-lang` |             | `"en" \| "es" \| "pt"` | `null`  |
 
 
+## Dependencies
+
+### Depends on
+
+- [gwds-icon](../gwds-icon)
+
+### Graph
+```mermaid
+graph TD;
+  gwds-language-switcher --> gwds-icon
+  style gwds-language-switcher fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

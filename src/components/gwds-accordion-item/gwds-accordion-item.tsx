@@ -11,8 +11,8 @@ export class GwdsAccordionItem {
   accordionCollapse!: HTMLDivElement;
   accordionBody!: HTMLDivElement;
 
-  @Prop({ reflect: true }) active: boolean = false;
-  @Prop({ reflect: true }) itemId: string = null; //for internal use
+  @Prop({ reflect: true, mutable: true }) active: boolean = false;
+  @Prop({ reflect: true, mutable: true }) itemId: string = null; //for internal use
   @Prop() itemTitle: string = null;
 
   @State() accordionCollapseHeight: string = '0';
