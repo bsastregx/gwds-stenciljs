@@ -1,4 +1,4 @@
-import { Component, Host, h, State, Prop, Element } from '@stencil/core';
+import { Component, Host, h, State, Prop, Element, Watch } from '@stencil/core';
 import textContrast from '../../utils/utils';
 
 @Component({
@@ -15,6 +15,9 @@ export class GwdsMessage {
   @Prop() buttonLabel: string = null;
   @Prop() buttonUrl: string = null;
   @Prop() buttonTarget: '_blank' | '_self' = '_self';
+  @Prop() buttonCloses: boolean = false;
+  @Prop() closed: boolean = false;
+  @Prop({ mutable: true }) hideClose: boolean = false;
 
   @Element() el: HTMLElement;
   wrapper!: HTMLDivElement;
@@ -23,28 +26,45 @@ export class GwdsMessage {
   @State() height0: boolean = false;
   @State() textColor: string = null;
 
+  @Watch('closed')
+  watchPropHandler(newValue: boolean) {
+    if (newValue) {
+      this.setHeight();
+      this.opacity0 = true;
+      setTimeout(() => {
+        this.height0 = true;
+      }, 200);
+    }
+  }
+
   setHeight() {
     const wrapperHeight = this.wrapper.offsetHeight;
     this.el.style.height = wrapperHeight + 'px';
   }
 
   close() {
-    this.setHeight();
-    this.opacity0 = true;
-    setTimeout(() => {
-      this.height0 = true;
-    }, 200);
+    this.closed = true;
   }
 
   componentWillLoad() {
     //define text color based on contrast with the background
     this.textColor = textContrast(this.bgColor);
+
+    if (this.buttonCloses) {
+      this.hideClose = true;
+    }
   }
 
   render() {
     return (
       <Host
-        class={{ 'gwds-message': true, 'gwds-message--opacity-0': this.opacity0, 'gwds-message--height-0': this.height0, 'gwds-message--fixed': this.fixed }}
+        class={{
+          'gwds-message': true,
+          'gwds-message--opacity-0': this.opacity0,
+          'gwds-message--height-0': this.height0,
+          'gwds-message--fixed': this.fixed,
+          'gwds-message--hide-close': this.hideClose,
+        }}
         style={{
           backgroundColor: `var(--gwds__color--${this.bgColor})`,
           color: `var(${this.textColor})`,
@@ -62,12 +82,22 @@ export class GwdsMessage {
                   {this.linkLabel}
                 </a>
               ) : null}
-              {this.buttonLabel && this.buttonUrl ? <gwds-button class="gwds-message__button" label={this.buttonLabel} url={this.buttonUrl} size="small"></gwds-button> : null}
+              {this.buttonLabel && (this.buttonUrl || this.buttonCloses) ? (
+                <gwds-button
+                  class="gwds-message__button"
+                  label={this.buttonLabel}
+                  url={this.buttonUrl}
+                  size="small"
+                  onClick={this.buttonCloses ? this.close.bind(this) : null}
+                ></gwds-button>
+              ) : null}
             </div>
           </div>
-          <span onClick={this.close.bind(this)} class={{ 'gwds-message__close': true }}>
-            <gwds-icon src="/assets/icons/times.svg"></gwds-icon>
-          </span>
+          {!this.hideClose ? (
+            <span onClick={this.close.bind(this)} class={{ 'gwds-message__close': true }}>
+              <gwds-icon src="/assets/icons/times.svg"></gwds-icon>
+            </span>
+          ) : null}
         </div>
       </Host>
     );

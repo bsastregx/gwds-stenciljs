@@ -187,10 +187,13 @@ export namespace Components {
     }
     interface GwdsMessage {
         "bgColor": string;
+        "buttonCloses": boolean;
         "buttonLabel": string;
         "buttonTarget": '_blank' | '_self';
         "buttonUrl": string;
+        "closed": boolean;
         "fixed": boolean;
+        "hideClose": boolean;
         "linkLabel": string;
         "linkTarget": '_blank' | '_self';
         "linkUrl": string;
@@ -705,10 +708,13 @@ declare namespace LocalJSX {
     }
     interface GwdsMessage {
         "bgColor"?: string;
+        "buttonCloses"?: boolean;
         "buttonLabel"?: string;
         "buttonTarget"?: '_blank' | '_self';
         "buttonUrl"?: string;
+        "closed"?: boolean;
         "fixed"?: boolean;
+        "hideClose"?: boolean;
         "linkLabel"?: string;
         "linkTarget"?: '_blank' | '_self';
         "linkUrl"?: string;

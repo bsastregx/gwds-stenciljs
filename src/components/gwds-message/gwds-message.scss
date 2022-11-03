@@ -10,6 +10,10 @@
   transition: var(--gwds-message-speed) height;
   display: block;
 
+  a {
+    color: var(--gwds__color--fuchsia-500);
+  }
+
   &__wrapper {
     padding: var(--gwds__space--s) var(--gwds__space--s);
     display: flex;
@@ -39,7 +43,7 @@
   &__link {
   }
   &__button {
-    margin: 0;
+    margin: 0 !important;
   }
   &__close {
     cursor: pointer;
@@ -64,6 +68,11 @@
     bottom: 0;
     width: 100%;
     z-index: 99;
+  }
+  &--hide-close {
+    .gwds-message__container {
+      width: 100%;
+    }
   }
 
   /* RESPONSIVE */
