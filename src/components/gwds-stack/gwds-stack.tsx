@@ -40,7 +40,7 @@ export class GwdsStack {
   }
 
   clickHandler(index) {
-    const slottedContent = this.el.querySelectorAll('*');
+    const slottedContent = this.el.querySelectorAll('gwds-stack-item');
     slottedContent.forEach(function (node, index2) {
       if (index === index2) {
         (node as unknown as GwdsStackItem).visible = true;

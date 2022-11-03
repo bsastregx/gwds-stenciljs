@@ -6,47 +6,53 @@
 }
 .gwds-message {
   font-size: var(--gwds__font-size--m);
-  display: flex;
   overflow: hidden;
   transition: var(--gwds-message-speed) height;
-  justify-content: center;
+  display: block;
+
+  &__wrapper {
+    padding: var(--gwds__space--s) var(--gwds__space--s);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    transition: var(--gwds-message-speed) opacity;
+    gap: var(--gwds__space--s);
+  }
   &__container {
     display: flex;
+    gap: var(--gwds__space--s);
+    flex-direction: column;
+    width: calc(100% - 40px); // 100% - (close icon width + .gwds-message__wrapper gap)
+  }
+  &__link-button-container {
+    display: flex;
+    gap: var(--gwds__space--s);
+    flex-direction: column;
   }
   &__message {
-    padding: var(--gwds__space--s) var(--gwds__space--s);
+    //padding: var(--gwds__space--s) var(--gwds__space--s);
     padding-right: 0;
-    transition: var(--gwds-message-speed) all;
     display: flex;
     align-items: center;
     gap: var(--gwds__space--xs);
   }
+  &__link {
+  }
+  &__button {
+    margin: 0;
+  }
   &__close {
-    display: flex;
-    align-items: center;
-    &-cross-container {
-      height: 45px;
-      width: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
+    cursor: pointer;
 
-      &:hover {
-        .gwds-alert__close-cross {
-          transform: scale(1.3);
-        }
+    &:hover {
+      > * {
+        transform: scale(1.1);
       }
     }
-    &-cross {
-      font-size: var(--gwds__font-size--l);
-    }
-    transition: var(--gwds-message-speed) all;
   }
 
   &--opacity-0 {
-    .gwds-message__message,
-    .gwds-message__close {
+    .gwds-message__wrapper {
       opacity: 0;
     }
   }
@@ -58,5 +64,30 @@
     bottom: 0;
     width: 100%;
     z-index: 99;
+  }
+
+  /* RESPONSIVE */
+  /*sm*/
+  @media (min-width: 576px) {
+    &__link-button-container {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  /*md*/
+  @media (min-width: 768px) {
+    &__container {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  /*lg*/
+  @media (min-width: 992px) {
+  }
+  /*xl*/
+  @media (min-width: 1200px) {
+  }
+  /*xxl*/
+  @media (min-width: 1400px) {
   }
 }

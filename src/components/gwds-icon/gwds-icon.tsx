@@ -99,7 +99,11 @@ export class GwdsIcon {
   render() {
     return (
       <Host class="gwds-icon">
-        <div class="gwds-icon__div" style={{ 'width': `var(--gwds__space--${this.size}, )`, '--gwds__icon-color': this.color }} innerHTML={this.svgContent} />
+        <div
+          class="gwds-icon__div"
+          style={{ 'width': `var(--gwds__icon-size--${this.size}, )`, 'height': `var(--gwds__icon-size--${this.size}, )`, '--gwds__icon-color': this.color }}
+          innerHTML={this.svgContent}
+        />
       </Host>
     );
   }

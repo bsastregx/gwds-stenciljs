@@ -20,8 +20,7 @@ export class GwdsVideo {
         <div class={{ 'gwds-video__container': this.fullWidth }}>
           <iframe
             loading="lazy"
-            width="560"
-            height="315"
+            class="video"
             src={`${this.url}?rel=0&showinfo=0`}
             title="YouTube video player"
             frameborder="0"

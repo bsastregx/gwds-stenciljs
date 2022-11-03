@@ -17,15 +17,15 @@ export class GwdsMessage {
   @Prop() buttonTarget: '_blank' | '_self' = '_self';
 
   @Element() el: HTMLElement;
-  container!: HTMLDivElement;
+  wrapper!: HTMLDivElement;
 
   @State() opacity0: boolean = false;
   @State() height0: boolean = false;
   @State() textColor: string = null;
 
   setHeight() {
-    const containerHeight = this.container.offsetHeight;
-    this.el.style.height = containerHeight + 'px';
+    const wrapperHeight = this.wrapper.offsetHeight;
+    this.el.style.height = wrapperHeight + 'px';
   }
 
   close() {
@@ -50,19 +50,23 @@ export class GwdsMessage {
           color: `var(${this.textColor})`,
         }}
       >
-        <div ref={el => (this.container = el as HTMLDivElement)} class={{ 'gwds-message__container': true }}>
-          <p class={{ 'gwds-message__message m-0': true }}>
-            <slot />
-            {this.linkUrl && this.linkLabel ? <a href={this.linkUrl}>{this.linkLabel}</a> : null}
-          </p>
+        <div ref={el => (this.wrapper = el as HTMLDivElement)} class="gwds-message__wrapper">
+          <div class={{ 'gwds-message__container': true }}>
+            <p class={{ 'gwds-message__message m-0': true }}>
+              <slot />
+            </p>
 
-          <span class={{ 'gwds-message__close': true }}>
-            <div onClick={this.close.bind(this)} class={{ 'gwds-message__close-cross-container': true }}>
-              <span class={{ 'gwds-message__close-cross': true }}>
-                {/* <gwds-icon src={getAssetPath('icon-assets/times.svg')}></gwds-icon> */}
-                <gwds-icon src="/assets/icons/times.svg"></gwds-icon>
-              </span>
+            <div class="gwds-message__link-button-container">
+              {this.linkUrl && this.linkLabel ? (
+                <a class="gwds-message__link" href={this.linkUrl}>
+                  {this.linkLabel}
+                </a>
+              ) : null}
+              {this.buttonLabel && this.buttonUrl ? <gwds-button class="gwds-message__button" label={this.buttonLabel} url={this.buttonUrl} size="small"></gwds-button> : null}
             </div>
+          </div>
+          <span onClick={this.close.bind(this)} class={{ 'gwds-message__close': true }}>
+            <gwds-icon src="/assets/icons/times.svg"></gwds-icon>
           </span>
         </div>
       </Host>
