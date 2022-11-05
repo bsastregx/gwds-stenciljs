@@ -11,7 +11,7 @@
 | ----------- | ------------ | ----------- | ---------------------- | ----------- |
 | `fullWidth` | `full-width` |             | `boolean`              | `false`     |
 | `source`    | `source`     |             | `"vimeo" \| "youtube"` | `'youtube'` |
-| `url`       | `url`        |             | `string`               | `null`      |
+| `videoId`   | `video-id`   |             | `string`               | `null`      |
 
 
 ## Dependencies

@@ -12,10 +12,9 @@ export class GwdsVideoSection {
   @Prop() pt0: boolean = false; //padding-top:0
   @Prop() pb0: boolean = false; //padding-bottom:0
   @Prop() alignContent: 'left' | 'right' = 'left';
-  @Prop() alignTop: boolean = false;
-  @Prop() url: string = null;
-  @Prop() source: 'youtube' | 'vimeo';
-  @Prop() fullWidth: boolean = true;
+  @Prop() videoId: string = null;
+  @Prop() lite: boolean = false;
+  @Prop() videoPoster: string = null;
 
   //First Button
   @Prop() firstButtonLabel: string = null;
@@ -88,8 +87,9 @@ export class GwdsVideoSection {
                   ) : null}
                 </div>
               </div>
+
               <div class={this.rightColClasses}>
-                <gwds-video url={this.url} fullWidth={this.fullWidth}></gwds-video>
+                {this.lite ? <gwds-video-lite videoId={this.videoId} poster={this.videoPoster}></gwds-video-lite> : <gwds-video videoId={this.videoId} fullWidth></gwds-video>}
               </div>
             </div>
           </div>

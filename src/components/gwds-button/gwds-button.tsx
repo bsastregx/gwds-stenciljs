@@ -23,12 +23,17 @@ export class GwButton {
           'gwds-button--tertiary': this.type === 'tertiary',
           'gwds-button--small': this.size === 'small',
           'gwds-button--regular': this.size === 'regular',
+          'gwds-button--has-link': this.url !== null,
           'm-0': this.m0,
         }}
       >
-        <a tabindex="0" class={{ 'gwds-button__button': true }} href={this.url} target={this.target}>
-          {this.label}
-        </a>
+        {this.url !== null ? (
+          <a tabindex="0" class={{ 'gwds-button__button': true }} href={this.url} target={this.target}>
+            {this.label}
+          </a>
+        ) : (
+          this.label
+        )}
       </Host>
     );
   }

@@ -14,7 +14,7 @@ export class GwLookAtMe {
   @Prop() pt0: boolean = false; //padding-top:0
   @Prop() pb0: boolean = false; //padding-bottom:0
   @Prop() alignContent: 'left' | 'center' | 'right' = 'left';
-  @Prop() bgImage: string = null;
+  @Prop() bgImage: string = '';
   @Prop() bgSize: string = '1600px';
   @Prop() description: string = null;
   //First Button

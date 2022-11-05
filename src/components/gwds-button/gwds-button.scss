@@ -1,3 +1,6 @@
+$buttonPadding: var(--gwds__space--s) var(--gwds__space--m);
+$buttonSmallPadding: var(--gwds__space--xs) var(--gwds__space--s);
+
 :host {
   display: inline-block;
 }
@@ -8,62 +11,76 @@
   font-size: var(--gwds__font-size--m);
   font-weight: var(--gwds__font-weight--medium);
 
-  &__button {
-    cursor: pointer;
-    background-position: center;
-    display: inline-block;
-    padding: var(--gwds__space--s) var(--gwds__space--m);
-    border-radius: var(--gwds__radius--m);
-    background-color: transparent;
-    text-decoration: none;
-    transition: transform var(--gwds__transition--super-fast), background var(--gwds__transition--regular);
+  cursor: pointer;
+  background-position: center;
+  display: inline-block;
+  border-radius: var(--gwds__radius--m);
+  background-color: transparent;
+  transition: transform var(--gwds__transition--super-fast), background var(--gwds__transition--regular);
+  padding: $buttonPadding;
 
-    &:hover {
-      transform: scale(1.05);
+  &--has-link {
+    padding: 0;
+    &.gwds-button--small {
+      padding: 0;
+      a {
+        padding: $buttonSmallPadding;
+      }
+    }
+    a {
+      padding: $buttonPadding;
+    }
+  }
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  &--small {
+    padding: $buttonSmallPadding;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    a {
       text-decoration: none;
     }
-    &:active {
-      background-size: 100% !important;
-      transition: background 0s;
-    }
+  }
+  &:active {
+    background-size: 100% !important;
+    transition: background 0s;
   }
 
   &--primary {
-    .gwds-button__button {
+    color: var(--gwds__color--white) !important;
+    background-color: var(--gwds__color--fuchsia-500);
+    &:hover {
       color: var(--gwds__color--white);
-      background-color: var(--gwds__color--fuchsia-500);
-      &:hover {
-        color: var(--gwds__color--white);
-        background: var(--gwds__color--fuchsia-500) radial-gradient(circle, transparent 1%, var(--gwds__color--fuchsia-500) 1%) center/15000%;
-      }
-      &:active {
-        background-color: #fb5981;
-      }
+      background: var(--gwds__color--fuchsia-500) radial-gradient(circle, transparent 1%, var(--gwds__color--fuchsia-500) 1%) center/15000%;
+    }
+    &:active {
+      background-color: #fb5981;
+    }
+    a {
+      color: var(--gwds__color--white) !important;
     }
   }
   &--secondary {
-    .gwds-button__button {
+    color: var(--gwds__color--black);
+    background-color: var(--gwds__color--white);
+    border: 1px solid transparent;
+    &:hover {
       color: var(--gwds__color--black);
-      background-color: var(--gwds__color--white);
-      border: 1px solid var(--gwds__color--black);
-      &:hover {
-        color: var(--gwds__color--black);
-        background: var(--gwds__color--white) radial-gradient(circle, transparent 1%, rgba(0, 0, 0, 0.025) 1%) center/15000%;
-      }
+      background: var(--gwds__color--white) radial-gradient(circle, transparent 1%, rgba(0, 0, 0, 0.025) 1%) center/15000%;
     }
   }
   &--tertiary {
-    .gwds-button__button {
+    color: inherit;
+    background-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: inherit;
+    &:hover {
       color: inherit;
-      background-color: transparent;
-      &:hover {
-        color: inherit;
-      }
-    }
-  }
-  &--small {
-    .gwds-button__button {
-      padding: var(--gwds__space--xs) var(--gwds__space--s);
     }
   }
 
@@ -72,9 +89,6 @@
   @media (min-width: 576px) {
     display: inline-block;
     margin: var(--gwds__space--s) var(--gwds__space--s) var(--gwds__space--s) 0;
-    &__button {
-      padding: var(--gwds__space--s) var(--gwds__space--m);
-    }
   }
   /*md*/
   @media (min-width: 768px) {

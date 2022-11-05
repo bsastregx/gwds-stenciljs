@@ -24,6 +24,7 @@
  - [gwds-blocks](../gwds-blocks)
  - [gwds-learn-more](../gwds-learn-more)
  - [gwds-look-at-me](../gwds-look-at-me)
+ - [gwds-message](../gwds-message)
  - [gwds-show-and-tell](../gwds-show-and-tell)
  - [gwds-stack-item](../gwds-stack-item)
  - [gwds-video-section](../gwds-video-section)
@@ -34,6 +35,7 @@ graph TD;
   gwds-blocks --> gwds-button
   gwds-learn-more --> gwds-button
   gwds-look-at-me --> gwds-button
+  gwds-message --> gwds-button
   gwds-show-and-tell --> gwds-button
   gwds-stack-item --> gwds-button
   gwds-video-section --> gwds-button

@@ -106,6 +106,7 @@ export class GwdsStack2 {
                   visible
                   main-title="GeneXus Training"
                   icon-url="/assets/images/showcase/stack/stack-gx18-all-canal-beta.svg"
+                  icon-alt="all canal beta"
                   button-label="Start now"
                   button-url="www.google.com"
                 >
@@ -114,6 +115,7 @@ export class GwdsStack2 {
                 <gwds-stack-item
                   main-title="GeneXus Webinars"
                   icon-url="/assets/images/showcase/stack/stack-gx18-all-webinars.svg"
+                  icon-alt="all webinars"
                   button-label="Start now"
                   button-url="www.google.com"
                 >
@@ -122,6 +124,7 @@ export class GwdsStack2 {
                 <gwds-stack-item
                   main-title="GeneXus Community Wiki"
                   icon-url="/assets/images/showcase/stack/stack-gx18-all-wiki.svg"
+                  icon-alt="all wiki"
                   button-label="Start now"
                   button-url="www.google.com"
                 >
@@ -130,6 +133,7 @@ export class GwdsStack2 {
                 <gwds-stack-item
                   main-title="GeneXus Beta Channel"
                   icon-url="/assets/images/showcase/stack/stack-gx18-all-canal-beta.svg"
+                  icon-alt="canal beta"
                   button-label="Start now"
                   button-url="www.google.com"
                 >

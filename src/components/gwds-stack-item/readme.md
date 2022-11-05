@@ -12,6 +12,7 @@
 | `buttonBlank` | `button-blank` |             | `boolean` | `false` |
 | `buttonLabel` | `button-label` |             | `string`  | `null`  |
 | `buttonUrl`   | `button-url`   |             | `string`  | `null`  |
+| `iconAlt`     | `icon-alt`     |             | `string`  | `null`  |
 | `iconUrl`     | `icon-url`     |             | `string`  | `null`  |
 | `mainTitle`   | `main-title`   |             | `string`  | `null`  |
 | `visible`     | `visible`      |             | `boolean` | `false` |

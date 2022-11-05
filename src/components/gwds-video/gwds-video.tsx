@@ -6,7 +6,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
   shadow: false,
 })
 export class GwdsVideo {
-  @Prop() url: string = null;
+  @Prop() videoId: string = null;
   @Prop() source: 'youtube' | 'vimeo' = 'youtube';
   @Prop() fullWidth: boolean = false;
 
@@ -21,7 +21,7 @@ export class GwdsVideo {
           <iframe
             loading="lazy"
             class="video"
-            src={`${this.url}?rel=0&showinfo=0`}
+            src={`https://www.youtube.com/embed/${this.videoId}?rel=0&showinfo=0`}
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

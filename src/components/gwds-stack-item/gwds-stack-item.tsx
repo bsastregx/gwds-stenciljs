@@ -7,6 +7,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
 })
 export class GwdsStackItem {
   @Prop() iconUrl: string = null;
+  @Prop() iconAlt: string = null;
   @Prop() mainTitle: string = null;
   @Prop() buttonLabel: string = null;
   @Prop() buttonUrl: string = null;
@@ -28,7 +29,7 @@ export class GwdsStackItem {
             'mt-0': true,
           }}
         >
-          {this.iconUrl ? <img src={this.iconUrl} class="gwds-stack-item__icon"></img> : null}
+          {this.iconUrl ? <img src={this.iconUrl} alt={this.iconAlt} class="gwds-stack-item__icon"></img> : null}
           {this.mainTitle}
         </h2>
         <slot></slot>

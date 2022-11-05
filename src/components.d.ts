@@ -258,6 +258,7 @@ export namespace Components {
         "buttonBlank": boolean;
         "buttonLabel": string;
         "buttonUrl": string;
+        "iconAlt": string;
         "iconUrl": string;
         "mainTitle": string;
         "visible": boolean;
@@ -275,17 +276,23 @@ export namespace Components {
     interface GwdsVideo {
         "fullWidth": boolean;
         "source": 'youtube' | 'vimeo';
-        "url": string;
+        "videoId": string;
+    }
+    interface GwdsVideoLite {
+        "maxWidth": string;
+        "params": string;
+        "playLabel": string;
+        "poster": string;
+        "videoId": string;
     }
     interface GwdsVideoSection {
         "alignContent": 'left' | 'right';
-        "alignTop": boolean;
         "bgColor": string;
         "firstButtonLabel": string;
         "firstButtonTarget": '_blank' | '_self';
         "firstButtonType": 'primary' | 'secondary' | 'tertiary';
         "firstButtonUrl": string;
-        "fullWidth": boolean;
+        "lite": boolean;
         "mainTitle": string;
         "pb0": boolean;
         "pt0": boolean;
@@ -293,12 +300,12 @@ export namespace Components {
         "secondButtonTarget": '_blank' | '_self';
         "secondButtonType": 'primary' | 'secondary' | 'tertiary';
         "secondButtonUrl": string;
-        "source": 'youtube' | 'vimeo';
         "thirdButtonLabel": string;
         "thirdButtonTarget": '_blank' | '_self';
         "thirdButtonType": 'primary' | 'secondary' | 'tertiary';
         "thirdButtonUrl": string;
-        "url": string;
+        "videoId": string;
+        "videoPoster": string;
     }
 }
 export interface GwdsAccordionItemCustomEvent<T> extends CustomEvent<T> {
@@ -486,6 +493,12 @@ declare global {
         prototype: HTMLGwdsVideoElement;
         new (): HTMLGwdsVideoElement;
     };
+    interface HTMLGwdsVideoLiteElement extends Components.GwdsVideoLite, HTMLStencilElement {
+    }
+    var HTMLGwdsVideoLiteElement: {
+        prototype: HTMLGwdsVideoLiteElement;
+        new (): HTMLGwdsVideoLiteElement;
+    };
     interface HTMLGwdsVideoSectionElement extends Components.GwdsVideoSection, HTMLStencilElement {
     }
     var HTMLGwdsVideoSectionElement: {
@@ -523,6 +536,7 @@ declare global {
         "gwds-tag": HTMLGwdsTagElement;
         "gwds-tooltip": HTMLGwdsTooltipElement;
         "gwds-video": HTMLGwdsVideoElement;
+        "gwds-video-lite": HTMLGwdsVideoLiteElement;
         "gwds-video-section": HTMLGwdsVideoSectionElement;
     }
 }
@@ -779,6 +793,7 @@ declare namespace LocalJSX {
         "buttonBlank"?: boolean;
         "buttonLabel"?: string;
         "buttonUrl"?: string;
+        "iconAlt"?: string;
         "iconUrl"?: string;
         "mainTitle"?: string;
         "visible"?: boolean;
@@ -796,17 +811,23 @@ declare namespace LocalJSX {
     interface GwdsVideo {
         "fullWidth"?: boolean;
         "source"?: 'youtube' | 'vimeo';
-        "url"?: string;
+        "videoId"?: string;
+    }
+    interface GwdsVideoLite {
+        "maxWidth"?: string;
+        "params"?: string;
+        "playLabel"?: string;
+        "poster"?: string;
+        "videoId"?: string;
     }
     interface GwdsVideoSection {
         "alignContent"?: 'left' | 'right';
-        "alignTop"?: boolean;
         "bgColor"?: string;
         "firstButtonLabel"?: string;
         "firstButtonTarget"?: '_blank' | '_self';
         "firstButtonType"?: 'primary' | 'secondary' | 'tertiary';
         "firstButtonUrl"?: string;
-        "fullWidth"?: boolean;
+        "lite"?: boolean;
         "mainTitle"?: string;
         "pb0"?: boolean;
         "pt0"?: boolean;
@@ -814,12 +835,12 @@ declare namespace LocalJSX {
         "secondButtonTarget"?: '_blank' | '_self';
         "secondButtonType"?: 'primary' | 'secondary' | 'tertiary';
         "secondButtonUrl"?: string;
-        "source"?: 'youtube' | 'vimeo';
         "thirdButtonLabel"?: string;
         "thirdButtonTarget"?: '_blank' | '_self';
         "thirdButtonType"?: 'primary' | 'secondary' | 'tertiary';
         "thirdButtonUrl"?: string;
-        "url"?: string;
+        "videoId"?: string;
+        "videoPoster"?: string;
     }
     interface IntrinsicElements {
         "gwds-accordion": GwdsAccordion;
@@ -852,6 +873,7 @@ declare namespace LocalJSX {
         "gwds-tag": GwdsTag;
         "gwds-tooltip": GwdsTooltip;
         "gwds-video": GwdsVideo;
+        "gwds-video-lite": GwdsVideoLite;
         "gwds-video-section": GwdsVideoSection;
     }
 }
@@ -889,6 +911,7 @@ declare module "@stencil/core" {
             "gwds-tag": LocalJSX.GwdsTag & JSXBase.HTMLAttributes<HTMLGwdsTagElement>;
             "gwds-tooltip": LocalJSX.GwdsTooltip & JSXBase.HTMLAttributes<HTMLGwdsTooltipElement>;
             "gwds-video": LocalJSX.GwdsVideo & JSXBase.HTMLAttributes<HTMLGwdsVideoElement>;
+            "gwds-video-lite": LocalJSX.GwdsVideoLite & JSXBase.HTMLAttributes<HTMLGwdsVideoLiteElement>;
             "gwds-video-section": LocalJSX.GwdsVideoSection & JSXBase.HTMLAttributes<HTMLGwdsVideoSectionElement>;
         }
     }
