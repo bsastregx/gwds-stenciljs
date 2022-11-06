@@ -20,7 +20,9 @@ export class Live2022SearchBox {
   }
 
   filterCategory(value, cat) {
+    //to lowercase
     value = value.toLocaleLowerCase().trim();
+
     let categoryIsEmpty = true;
     const deepDives = (cat as HTMLElement).querySelectorAll('live-2022-card');
     deepDives.forEach(deepDive => {
@@ -31,14 +33,32 @@ export class Live2022SearchBox {
       const speaker1 = deepDive.getAttribute('speaker-1-name');
       const speaker2 = deepDive.getAttribute('speaker-2-name');
 
-      const titleMatch = title.toLocaleLowerCase().includes(value);
+      const titleMatch =
+        title.toLocaleLowerCase().includes(value) ||
+        title
+          .toLocaleLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .includes(value);
       let speaker1Match = false;
       if (speaker1) {
-        speaker1Match = speaker1.toLocaleLowerCase().includes(value);
+        speaker1Match =
+          speaker1.toLocaleLowerCase().includes(value) ||
+          speaker1
+            .toLocaleLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .includes(value);
       }
       let speaker2Match = false;
       if (speaker2) {
-        speaker1Match = speaker2.toLocaleLowerCase().includes(value);
+        speaker1Match =
+          speaker2.toLocaleLowerCase().includes(value) ||
+          speaker2
+            .toLocaleLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .includes(value);
       }
 
       if (titleMatch || speaker1Match || speaker2Match) {
