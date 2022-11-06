@@ -72,6 +72,11 @@ export namespace Components {
         "experimental": boolean;
         "label": string;
     }
+    interface GwdsFormInput {
+        "maxWidth": string;
+        "minWidth": string;
+        "placeholder": string;
+    }
     interface GwdsGoodNews {
         "authorAvatarAlt": string;
         "authorAvatarUrl": string;
@@ -96,6 +101,7 @@ export namespace Components {
         "to": string;
     }
     interface GwdsGrid {
+        "gap": 'xs' | 's' | 'm';
         "perRow": '2' | '3' | '4' | '6';
     }
     interface GwdsIcon {
@@ -307,6 +313,21 @@ export namespace Components {
         "videoId": string;
         "videoPoster": string;
     }
+    interface Live2022Card {
+        "bgColor": string;
+        "cardTitle": string;
+        "imageAlt": string;
+        "imageUrl": string;
+        "maxWidth": string;
+        "minWidth": string;
+        "speaker1AvatarUrl": string;
+        "speaker1Name": string;
+        "speaker2AvatarUrl": string;
+        "speaker2Name": string;
+        "url": string;
+    }
+    interface Live2022SearchBox {
+    }
 }
 export interface GwdsAccordionItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -360,6 +381,12 @@ declare global {
     var HTMLGwdsComponentTitleElement: {
         prototype: HTMLGwdsComponentTitleElement;
         new (): HTMLGwdsComponentTitleElement;
+    };
+    interface HTMLGwdsFormInputElement extends Components.GwdsFormInput, HTMLStencilElement {
+    }
+    var HTMLGwdsFormInputElement: {
+        prototype: HTMLGwdsFormInputElement;
+        new (): HTMLGwdsFormInputElement;
     };
     interface HTMLGwdsGoodNewsElement extends Components.GwdsGoodNews, HTMLStencilElement {
     }
@@ -505,6 +532,18 @@ declare global {
         prototype: HTMLGwdsVideoSectionElement;
         new (): HTMLGwdsVideoSectionElement;
     };
+    interface HTMLLive2022CardElement extends Components.Live2022Card, HTMLStencilElement {
+    }
+    var HTMLLive2022CardElement: {
+        prototype: HTMLLive2022CardElement;
+        new (): HTMLLive2022CardElement;
+    };
+    interface HTMLLive2022SearchBoxElement extends Components.Live2022SearchBox, HTMLStencilElement {
+    }
+    var HTMLLive2022SearchBoxElement: {
+        prototype: HTMLLive2022SearchBoxElement;
+        new (): HTMLLive2022SearchBoxElement;
+    };
     interface HTMLElementTagNameMap {
         "gwds-accordion": HTMLGwdsAccordionElement;
         "gwds-accordion-item": HTMLGwdsAccordionItemElement;
@@ -514,6 +553,7 @@ declare global {
         "gwds-button": HTMLGwdsButtonElement;
         "gwds-card": HTMLGwdsCardElement;
         "gwds-component-title": HTMLGwdsComponentTitleElement;
+        "gwds-form-input": HTMLGwdsFormInputElement;
         "gwds-good-news": HTMLGwdsGoodNewsElement;
         "gwds-good-news-section": HTMLGwdsGoodNewsSectionElement;
         "gwds-gradient-title": HTMLGwdsGradientTitleElement;
@@ -538,6 +578,8 @@ declare global {
         "gwds-video": HTMLGwdsVideoElement;
         "gwds-video-lite": HTMLGwdsVideoLiteElement;
         "gwds-video-section": HTMLGwdsVideoSectionElement;
+        "live-2022-card": HTMLLive2022CardElement;
+        "live-2022-search-box": HTMLLive2022SearchBoxElement;
     }
 }
 declare namespace LocalJSX {
@@ -607,6 +649,11 @@ declare namespace LocalJSX {
         "experimental"?: boolean;
         "label"?: string;
     }
+    interface GwdsFormInput {
+        "maxWidth"?: string;
+        "minWidth"?: string;
+        "placeholder"?: string;
+    }
     interface GwdsGoodNews {
         "authorAvatarAlt"?: string;
         "authorAvatarUrl"?: string;
@@ -631,6 +678,7 @@ declare namespace LocalJSX {
         "to"?: string;
     }
     interface GwdsGrid {
+        "gap"?: 'xs' | 's' | 'm';
         "perRow"?: '2' | '3' | '4' | '6';
     }
     interface GwdsIcon {
@@ -842,6 +890,21 @@ declare namespace LocalJSX {
         "videoId"?: string;
         "videoPoster"?: string;
     }
+    interface Live2022Card {
+        "bgColor"?: string;
+        "cardTitle"?: string;
+        "imageAlt"?: string;
+        "imageUrl"?: string;
+        "maxWidth"?: string;
+        "minWidth"?: string;
+        "speaker1AvatarUrl"?: string;
+        "speaker1Name"?: string;
+        "speaker2AvatarUrl"?: string;
+        "speaker2Name"?: string;
+        "url"?: string;
+    }
+    interface Live2022SearchBox {
+    }
     interface IntrinsicElements {
         "gwds-accordion": GwdsAccordion;
         "gwds-accordion-item": GwdsAccordionItem;
@@ -851,6 +914,7 @@ declare namespace LocalJSX {
         "gwds-button": GwdsButton;
         "gwds-card": GwdsCard;
         "gwds-component-title": GwdsComponentTitle;
+        "gwds-form-input": GwdsFormInput;
         "gwds-good-news": GwdsGoodNews;
         "gwds-good-news-section": GwdsGoodNewsSection;
         "gwds-gradient-title": GwdsGradientTitle;
@@ -875,6 +939,8 @@ declare namespace LocalJSX {
         "gwds-video": GwdsVideo;
         "gwds-video-lite": GwdsVideoLite;
         "gwds-video-section": GwdsVideoSection;
+        "live-2022-card": Live2022Card;
+        "live-2022-search-box": Live2022SearchBox;
     }
 }
 export { LocalJSX as JSX };
@@ -889,6 +955,7 @@ declare module "@stencil/core" {
             "gwds-button": LocalJSX.GwdsButton & JSXBase.HTMLAttributes<HTMLGwdsButtonElement>;
             "gwds-card": LocalJSX.GwdsCard & JSXBase.HTMLAttributes<HTMLGwdsCardElement>;
             "gwds-component-title": LocalJSX.GwdsComponentTitle & JSXBase.HTMLAttributes<HTMLGwdsComponentTitleElement>;
+            "gwds-form-input": LocalJSX.GwdsFormInput & JSXBase.HTMLAttributes<HTMLGwdsFormInputElement>;
             "gwds-good-news": LocalJSX.GwdsGoodNews & JSXBase.HTMLAttributes<HTMLGwdsGoodNewsElement>;
             "gwds-good-news-section": LocalJSX.GwdsGoodNewsSection & JSXBase.HTMLAttributes<HTMLGwdsGoodNewsSectionElement>;
             "gwds-gradient-title": LocalJSX.GwdsGradientTitle & JSXBase.HTMLAttributes<HTMLGwdsGradientTitleElement>;
@@ -913,6 +980,8 @@ declare module "@stencil/core" {
             "gwds-video": LocalJSX.GwdsVideo & JSXBase.HTMLAttributes<HTMLGwdsVideoElement>;
             "gwds-video-lite": LocalJSX.GwdsVideoLite & JSXBase.HTMLAttributes<HTMLGwdsVideoLiteElement>;
             "gwds-video-section": LocalJSX.GwdsVideoSection & JSXBase.HTMLAttributes<HTMLGwdsVideoSectionElement>;
+            "live-2022-card": LocalJSX.Live2022Card & JSXBase.HTMLAttributes<HTMLLive2022CardElement>;
+            "live-2022-search-box": LocalJSX.Live2022SearchBox & JSXBase.HTMLAttributes<HTMLLive2022SearchBoxElement>;
         }
     }
 }

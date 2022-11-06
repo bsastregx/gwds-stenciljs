@@ -88,6 +88,28 @@ const textContrast = bgColor => {
     case 'green-50':
       textColor = '--gwds__color--black';
       break;
+    //LIVE 2022
+    case 'yellow-live':
+      textColor = '--gwds__color--black';
+      break;
+    case 'red-live':
+      textColor = '--gwds__color--black';
+      break;
+    case 'gray-live':
+      textColor = '--gwds__color--black';
+      break;
+    case 'purple-live':
+      textColor = '--gwds__color--black';
+      break;
+    case 'blue-live':
+      textColor = '--gwds__color--black';
+      break;
+    case 'green-live':
+      textColor = '--gwds__color--black';
+      break;
+    case 'black-live':
+      textColor = '--gwds__color--white';
+      break;
     default:
       textColor = '--gwds__color--black';
   }

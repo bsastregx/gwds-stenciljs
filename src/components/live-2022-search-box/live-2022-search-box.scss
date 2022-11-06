@@ -1,0 +1,8 @@
+:host {
+  display: block;
+}
+.live-2022-search-box {
+  &__input {
+    margin-bottom: var(--gwds__space--s);
+  }
+}

@@ -7,6 +7,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
 })
 export class GwdsGrid {
   @Prop() perRow: '2' | '3' | '4' | '6' = '3';
+  @Prop() gap: 'xs' | 's' | 'm' = 's';
 
   render() {
     return (
@@ -19,6 +20,7 @@ export class GwdsGrid {
             'gwds-grid__container--4': this.perRow === '4',
             'gwds-grid__container--6': this.perRow === '6',
           }}
+          style={{ gap: `var(--gwds__space--${this.gap})` }}
         >
           <slot></slot>
         </div>

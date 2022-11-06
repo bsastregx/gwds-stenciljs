@@ -7,10 +7,16 @@ import { Component, Host, h, Prop, getAssetPath } from '@stencil/core';
   assetsDirs: ['assets'],
 })
 export class GwdsAvatar {
-  @Prop() imgUrl: string = getAssetPath(`./assets/images/avatar-placeholder.svg`);
+  @Prop() imgUrl: string = null;
   @Prop() imgAlt: string = null;
   @Prop() size: 'm' | 'l' | 'xl' | 'xxl' = 'm';
   @Prop() line: boolean = false;
+
+  componentWillLoad() {
+    if (this.imgUrl === null) {
+      this.imgUrl = '/assets-stencil/images/avatars/avatar-placeholder.svg';
+    }
+  }
 
   render() {
     return (

@@ -4,6 +4,7 @@
 .gwds-good-news {
   &__wrapper {
     display: flex;
+    align-items: center;
     font-size: var(--gwds__font-size--s);
   }
   &__img-wrapper {

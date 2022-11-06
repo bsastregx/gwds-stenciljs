@@ -20,11 +20,13 @@
 ### Used by
 
  - [gwds-good-news](../gwds-good-news)
+ - [live-2022-card](../live-2022-card)
 
 ### Graph
 ```mermaid
 graph TD;
   gwds-good-news --> gwds-avatar
+  live-2022-card --> gwds-avatar
   style gwds-avatar fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

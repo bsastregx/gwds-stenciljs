@@ -7,11 +7,13 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type     | Default  |
-| ---------- | ----------- | ----------- | -------- | -------- |
-| `maxWidth` | `max-width` |             | `string` | `'100%'` |
-| `poster`   | `poster`    |             | `string` | `null`   |
-| `videoId`  | `video-id`  |             | `string` | `null`   |
+| Property    | Attribute    | Description | Type     | Default  |
+| ----------- | ------------ | ----------- | -------- | -------- |
+| `maxWidth`  | `max-width`  |             | `string` | `'100%'` |
+| `params`    | `params`     |             | `string` | `''`     |
+| `playLabel` | `play-label` |             | `string` | `'Play'` |
+| `poster`    | `poster`     |             | `string` | `null`   |
+| `videoId`   | `video-id`   |             | `string` | `null`   |
 
 
 ## Dependencies

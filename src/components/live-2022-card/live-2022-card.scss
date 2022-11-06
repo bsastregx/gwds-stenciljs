@@ -1,0 +1,38 @@
+:host {
+  display: block;
+}
+.live-2022-card {
+  display: block;
+
+  &__link {
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: var(--gwds__space--s);
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent;
+    transition: var(--gwds__transition--super-fast) border-color;
+
+    &:hover {
+      text-decoration: none;
+      border-color: var(--gwds__color--black);
+    }
+  }
+  &__title {
+    font-size: 20px !important;
+  }
+  &__avatar-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--gwds__space--xs);
+    margin-bottom: var(--gwds__space--xs);
+  }
+  &__image-wrapper {
+    text-align: right;
+  }
+  &__author {
+    font-weight: var(--gwds__font-weight--light);
+  }
+}

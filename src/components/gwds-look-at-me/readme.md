@@ -11,7 +11,7 @@
 | -------------------- | ---------------------- | ----------- | ---------------------------------------- | ----------- |
 | `alignContent`       | `align-content`        |             | `"center" \| "left" \| "right"`          | `'left'`    |
 | `bgColor`            | `bg-color`             |             | `string`                                 | `null`      |
-| `bgImage`            | `bg-image`             |             | `string`                                 | `null`      |
+| `bgImage`            | `bg-image`             |             | `string`                                 | `''`        |
 | `bgSize`             | `bg-size`              |             | `string`                                 | `'1600px'`  |
 | `description`        | `description`          |             | `string`                                 | `null`      |
 | `firstButtonLabel`   | `first-button-label`   |             | `string`                                 | `null`      |
