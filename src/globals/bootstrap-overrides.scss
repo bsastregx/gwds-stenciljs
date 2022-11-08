@@ -1,10 +1,13 @@
-// .container,
-// .container-fluid,
-// .container-xxl,
-// .container-xl,
-// .container-lg,
-// .container-md,
-// .container-sm {
-//   padding-left: var(--gwds__space--s);
-//   padding-right: var(--gwds__space--s);
-// }
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.row {
+  --bs-gutter-x: 40px;
+}

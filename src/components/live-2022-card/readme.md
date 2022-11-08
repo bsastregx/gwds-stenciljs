@@ -10,15 +10,15 @@
 | Property            | Attribute              | Description | Type     | Default   |
 | ------------------- | ---------------------- | ----------- | -------- | --------- |
 | `bgColor`           | `bg-color`             |             | `string` | `null`    |
+| `cardTitle`         | `card-title`           |             | `string` | `null`    |
 | `imageAlt`          | `image-alt`            |             | `string` | `null`    |
 | `imageUrl`          | `image-url`            |             | `string` | `null`    |
-| `maxWidth`          | `max-width`            |             | `string` | `'400px'` |
-| `minWidth`          | `min-width`            |             | `string` | `'320px'` |
+| `maxWidth`          | `max-width`            |             | `string` | `'500px'` |
+| `minWidth`          | `min-width`            |             | `string` | `'250px'` |
 | `speaker1AvatarUrl` | `speaker-1-avatar-url` |             | `string` | `null`    |
 | `speaker1Name`      | `speaker-1-name`       |             | `string` | `null`    |
 | `speaker2AvatarUrl` | `speaker-2-avatar-url` |             | `string` | `null`    |
 | `speaker2Name`      | `speaker-2-name`       |             | `string` | `null`    |
-| `title`             | `title`                |             | `string` | `null`    |
 | `url`               | `url`                  |             | `string` | `null`    |
 
 

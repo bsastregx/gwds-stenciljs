@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                          | Default                                                  |
-| -------- | --------- | ----------- | ----------------------------- | -------------------------------------------------------- |
-| `imgAlt` | `img-alt` |             | `string`                      | `null`                                                   |
-| `imgUrl` | `img-url` |             | `string`                      | `getAssetPath(`./assets/images/avatar-placeholder.svg`)` |
-| `line`   | `line`    |             | `boolean`                     | `false`                                                  |
-| `size`   | `size`    |             | `"l" \| "m" \| "xl" \| "xxl"` | `'m'`                                                    |
+| Property | Attribute | Description | Type                          | Default |
+| -------- | --------- | ----------- | ----------------------------- | ------- |
+| `imgAlt` | `img-alt` |             | `string`                      | `null`  |
+| `imgUrl` | `img-url` |             | `string`                      | `null`  |
+| `line`   | `line`    |             | `boolean`                     | `false` |
+| `size`   | `size`    |             | `"l" \| "m" \| "xl" \| "xxl"` | `'m'`   |
 
 
 ## Dependencies
