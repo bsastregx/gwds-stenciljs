@@ -96,7 +96,9 @@ export class GwShowAndTell {
                   ) : null}
                 </div>
               </div>
-              <div class={this.rightColClasses}>{this.imageUrl ? <img class="gwds-show-and-tell__image" src={this.imageUrl} alt={this.imageAlt} loading="lazy"></img> : null}</div>
+              <div class={this.rightColClasses}>
+                {this.imageUrl ? <img class="gwds-show-and-tell__image" src={this.imageUrl} alt={this.imageAlt} loading="lazy" width="510" height="287"></img> : null}
+              </div>
             </div>
           </div>
         </section>

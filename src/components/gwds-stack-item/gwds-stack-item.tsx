@@ -29,7 +29,7 @@ export class GwdsStackItem {
             'mt-0': true,
           }}
         >
-          {this.iconUrl ? <img src={this.iconUrl} alt={this.iconAlt} class="gwds-stack-item__icon"></img> : null}
+          {this.iconUrl ? <img src={this.iconUrl} alt={this.iconAlt} class="gwds-stack-item__icon" width="60" height="60"></img> : null}
           {this.mainTitle}
         </h2>
         <slot></slot>

@@ -16,7 +16,7 @@ export class GwdsListItem {
           'gwds-list-item': true,
         }}
       >
-        {this.iconUrl ? <img class="gwds-list-item__icon" src={this.iconUrl} alt={this.iconAlt} /> : null}
+        {this.iconUrl ? <img class="gwds-list-item__icon" src={this.iconUrl} alt={this.iconAlt} width="60" height="60" /> : null}
         <slot></slot>
       </Host>
     );
