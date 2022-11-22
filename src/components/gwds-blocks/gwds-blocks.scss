@@ -23,19 +23,8 @@
       .gwds-grid__container {
         grid-template-columns: repeat(1, 1fr);
       }
-      .container--main {
-        display: flex;
-      }
-      .gwds-blocks__wrapper,
-      .gwds-grid {
-        width: 50%;
-        box-sizing: border-box;
-      }
       .gwds-blocks__wrapper {
         padding-right: var(--gwds__space--l);
-      }
-      .gwds-blocks__main-wrapper {
-        width: 50%;
       }
     }
   }
